@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Igyへのお問い合わせはこちらから。ご質問やご相談がございましたら、お気軽にお問い合わせフォームよりご連絡ください。" />
+    <meta name="keywords" content="お問い合わせ, Contact, Igy, 相談, 見積もり" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="お問い合わせ | Igy" />
+    <meta property="og:description" content="Igyへのお問い合わせはこちらから。Web制作、システム開発、コンサルティングなど、お気軽にご相談ください。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://igy.co.jp/contact.html" />
+    <meta property="og:image" content="https://igy.co.jp/ogp.png" />
+
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://igy.co.jp/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://igy.co.jp/contact.html"
+      }]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <title>お問い合わせ | Igy</title>
+    <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <!-- ========== HEADER ========== -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="block group">
+                    <img src="/images/logo_full.png" alt="Igy Logo"
+                        class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li>
+                        <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">ABOUT US</span>
+                            <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">MESSAGE</span>
+                            <span class="block text-xs opacity-60">代表挨拶</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">SERVICES</span>
+                            <span class="block text-xs opacity-60">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">FAQ</span>
+                            <span class="block text-xs opacity-60">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html"
+                            class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+                            <span class="text-sm font-bold">CONTACT</span>
+                            <span class="text-xs opacity-80">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
+        <div class="p-6">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <ul class="mt-12 space-y-6">
+                <li>
+                    <a href="/#about" class="block text-text-primary">
+                        <span class="block text-lg font-bold">ABOUT US</span>
+                        <span class="block text-sm text-text-secondary">私たちについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/message.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">MESSAGE</span>
+                        <span class="block text-sm text-text-secondary">代表挨拶</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#services" class="block text-text-primary">
+                        <span class="block text-lg font-bold">SERVICES</span>
+                        <span class="block text-sm text-text-secondary">事業内容</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#faq" class="block text-text-primary">
+                        <span class="block text-lg font-bold">FAQ</span>
+                        <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">CONTACT</span>
+                        <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========== BREADCRUMB ========== -->
+    <div class="pt-24 bg-bg-alt">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+            <nav class="flex items-center gap-2 text-sm text-text-secondary">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-primary font-medium">お問い合わせ</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="bg-bg-alt pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl reveal">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-primary to-primary-light rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">お問い合わせ</h1>
+                <p class="text-accent-gold font-bold tracking-widest uppercase mb-8">Contact</p>
+                <p class="text-xl text-text-secondary leading-relaxed">
+                    ご質問やご相談がございましたら、下記フォームよりお問い合わせください。<br />
+                    担当者より24時間以内にご連絡いたします。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold text-primary mb-8">その他のお問い合わせ方法</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">メール</h3>
+                                <p class="text-text-secondary">igy.official.contact@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 flex-shrink-0">
+                                <img src="./images/line_icon.png" alt="LINE"
+                                    class="w-full h-full object-contain overflow-visible" />
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">LINE</h3>
+                                <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer"
+                                    class="text-text-secondary hover:text-primary transition-colors underline decoration-dotted">LINEからもご相談可能!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="reveal delay-200">
+                    <h2 class="text-2xl font-bold text-primary mb-8">お問い合わせフォーム</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-primary mb-2">会社名 <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="company" name="company" required
+                                class="form-input w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="株式会社○○" />
+                        </div>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-primary mb-2">お名前 <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="name" name="name" required
+                                class="form-input w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="山田 太郎" />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-primary mb-2">メールアドレス <span
+                                    class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required
+                                class="form-input w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="example@company.com" />
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-primary mb-2">お問い合わせ内容 <span
+                                    class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="form-input w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                                placeholder="ご質問やご要望をお書きください"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="btn-primary w-full py-4 bg-primary text-white rounded-lg font-semibold text-lg hover:bg-primary-light transition-colors">
+                            送信する
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <a href="/" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Links</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>
+                            <a href="/#about" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">ABOUT US</span>
+                                <span class="block text-sm opacity-70">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/message.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">MESSAGE</span>
+                                <span class="block text-sm opacity-70">代表ご挨拶</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">SERVICES</span>
+                                <span class="block text-sm opacity-70">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">FAQ</span>
+                                <span class="block text-sm opacity-70">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">CONTACT</span>
+                                <span class="block text-sm opacity-70">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>igy.official.contact@gmail.com</li>
+                        <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">
+                    © 2026 Igy. All rights reserved.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://lin.ee/E6cJSdc" class="text-white/40 hover:text-white transition-colors"
+                        aria-label="LINE" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/igy_official_?igsh=MTRsd3V5eTNpbm94dg%3D%3D&utm_source=qr"
+                        class="text-white/40 hover:text-white transition-colors" aria-label="Instagram" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

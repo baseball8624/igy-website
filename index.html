@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Igy（イギー）は、誠実さと高精度を基盤に、信頼性の高いビジネスソリューションを提供します。" />
+  <meta name="keywords" content="Igy, イギー, 誠実, 信頼, ビジネスソリューション, コンサルティング" />
+  <meta name="author" content="Igy" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="Igy - 誠実さが、未来の基準になる。" />
+  <meta property="og:description" content="誠実さと高精度を基盤に、信頼性の高いビジネスソリューションを提供します。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Igy",
+      "url": "https://igy.co.jp/",
+      "logo": "https://igy.co.jp/logo_full.png",
+      "sameAs": [
+        "https://www.instagram.com/igy_official_"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "igy.official.contact@gmail.com",
+        "contactType": "customer support"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Igy",
+      "url": "https://igy.co.jp/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://igy.co.jp/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- OGP -->
+  <meta property="og:image" content="https://igy.co.jp/ogp.png" />
+  <meta property="og:url" content="https://igy.co.jp/" />
+  <meta property="og:site_name" content="Igy" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Igy - 誠実さが、未来の基準になる。" />
+  <meta name="twitter:description" content="誠実さと高精度を基盤に、信頼性の高いビジネスソリューションを提供します。" />
+  <meta name="twitter:image" content="/images/ogp.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <title>Igy - 誠実さが、未来の基準になる。</title>
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- Loading Animation Styles (inline for immediate load) -->
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      width: 240px;
+      height: auto;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- ========== PAGE LOADER ========== -->
+  <div id="page-loader">
+    <img src="/logo_full.png" alt="Igy" class="loader-logo">
+  </div>
+
+
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="/" class="block group">
+          <img src="/images/logo_full.png" alt="Igy Logo"
+            class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex items-center gap-8">
+          <li>
+            <a href="#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+              <span class="block text-sm font-bold">ABOUT US</span>
+              <span class="block text-xs opacity-60">私たちについて</span>
+            </a>
+          </li>
+          <li>
+            <a href="/message.html" class="text-text-secondary hover:text-primary transition-colors font-medium">
+              <span class="block text-sm font-bold">MESSAGE</span>
+              <span class="block text-xs opacity-60">代表挨拶</span>
+            </a>
+          </li>
+          <li>
+            <a href="#services" class="text-text-secondary hover:text-primary transition-colors font-medium">
+              <span class="block text-sm font-bold">SERVICES</span>
+              <span class="block text-xs opacity-60">事業内容</span>
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+              <span class="block text-sm font-bold">FAQ</span>
+              <span class="block text-xs opacity-60">よくあるご質問</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact.html"
+              class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+              <span class="text-sm font-bold">CONTACT</span>
+              <span class="text-xs opacity-80">お問い合わせ</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu (moved outside header to avoid backdrop-filter inheritance) -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
+    <div class="p-6">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <ul class="mt-12 space-y-6">
+        <li>
+          <a href="#about" class="block text-text-primary">
+            <span class="block text-lg font-bold">ABOUT US</span>
+            <span class="block text-sm text-text-secondary">私たちについて</span>
+          </a>
+        </li>
+        <li>
+          <a href="/message.html" class="block text-text-primary">
+            <span class="block text-lg font-bold">MESSAGE</span>
+            <span class="block text-sm text-text-secondary">代表挨拶</span>
+          </a>
+        </li>
+        <li>
+          <a href="#services" class="block text-text-primary">
+            <span class="block text-lg font-bold">SERVICES</span>
+            <span class="block text-sm text-text-secondary">事業内容</span>
+          </a>
+        </li>
+        <li>
+          <a href="#faq" class="block text-text-primary">
+            <span class="block text-lg font-bold">FAQ</span>
+            <span class="block text-sm text-text-secondary">よくあるご質問</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact.html" class="block text-text-primary">
+            <span class="block text-lg font-bold">CONTACT</span>
+            <span class="block text-sm text-text-secondary">お問い合わせ</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/hero-bg.png" alt="Hero Background"
+        class="w-full h-full object-cover object-left md:object-center animate-ken-burns">
+      <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+    </div>
+
+    <!-- Geometric Orbs -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="geometric-orb geometric-orb-1 w-64 h-64 bg-accent/20 top-[20%] left-[15%] blur-[100px]"></div>
+      <div class="geometric-orb geometric-orb-2 w-96 h-96 bg-blue-500/20 bottom-[20%] right-[10%] blur-[120px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 md:mb-8 reveal-title">
+          テクノロジーが、<br class="pc-only">ビジネスの<br class="pc-only">
+          <span class="gradient-text-alt" style="display: inline-block;">「速度」と「基準」を変える。</span>
+        </h1>
+        <p
+          class="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-10 reveal delay-200 max-w-3xl mx-auto">
+          AIによる自動化と、データに基づく確実な意思決定。<br>
+          Igyは、テクノロジーをビジネスの中枢に実装し、<br>
+          不確実な未来を、確かなものへと変革します。
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="py-24 lg:py-32 relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="./images/handshake.png" alt="" class="w-full h-full object-cover opacity-25" />
+    </div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-bg-alt via-bg-alt/90 to-bg-alt/70"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Content -->
+        <div class="reveal">
+          <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Vision</p>
+          <p class="text-text-secondary text-sm mb-4">私たちの視点</p>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 md:mb-8 leading-tight">
+            テクノロジーは、ビジネスを<br class="md:hidden">「正しく」するためにある。
+          </h2>
+          <div class="space-y-4 md:space-y-6 text-text-secondary text-base md:text-lg leading-relaxed">
+            <p>
+              無駄なコスト。長すぎる開発期間。根拠のない提案。<br class="pc-only">
+              それらはすべて、お客様の情熱を削ぐ「ノイズ」です。<br class="pc-only">
+              私たちがAIや最新技術にこだわる理由は、ただ一つ。<br class="pc-only">
+              そのノイズを極限まで取り除き、あなたの事業が持つ「本来の価値」を、<br class="pc-only">
+              最短・最速で社会に届けるためです。<br>
+              利益を生み、時間を生み、未来を生む。<br class="pc-only">
+              それが、私たちが考えるビジネスの「あるべき姿」です。
+            </p>
+          </div>
+
+          <!-- CTA to CEO Message -->
+          <div class="mt-8 mb-12">
+            <a href="/message.html"
+              class="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition-all duration-300 group">
+              <span>代表メッセージを見る</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values with Background Image -->
+      <div class="mt-16 relative rounded-2xl overflow-hidden">
+        <!-- Background Image -->
+        <img src="./images/handshake.png" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-primary/80"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 py-12 px-8">
+          <div class="grid md:grid-cols-3 gap-8 text-white">
+            <div class="reveal stagger-1 flex items-center gap-4 w-[300px] mx-auto">
+              <div
+                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Speed / 圧倒的な速度</h3>
+                <p class="text-white/80 text-xs md:text-sm leading-relaxed">AIと自動化技術により、実装までの時間を劇的に短縮。ビジネスの機会損失を防ぎます。
+                </p>
+              </div>
+            </div>
+            <div class="reveal stagger-2 flex items-center gap-4 w-[300px] mx-auto">
+              <div
+                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Logic / データに基づく論理</h3>
+                <p class="text-white/80 text-xs md:text-sm leading-relaxed">
+                  勘や経験則には頼りません。アクセス解析と市場データに基づき、最も確率の高い「勝ち筋」だけを実装します。</p>
+              </div>
+            </div>
+            <div class="reveal stagger-3 flex items-center gap-4 w-[300px] mx-auto">
+              <div
+                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Asset / 資産としての構築</h3>
+                <p class="text-white/80 text-xs md:text-sm leading-relaxed">
+                  作って終わりの施策ではなく、継続的な運用によって利益を生み続ける「事業資産」となるシステムを構築します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section id="services" class="py-24 lg:py-32 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Solutions</p>
+        <p class="text-text-secondary text-sm mb-4">事業内容</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          ビジネスを加速させる3つの実装
+        </h2>
+        <!-- Accent Bar -->
+        <div class="flex justify-center mb-6">
+          <div class="w-16 h-1 bg-accent-gold rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1: Webマーケティング総合支援 -->
+        <a href="/services/marketing.html" class="block group">
+          <article
+            class="service-card bg-white border border-border rounded-2xl p-8 reveal stagger-1 transition-all duration-300 hover:shadow-xl hover:border-accent-gold">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="service-label">CROSS-CHANNEL GROWTH</span>
+            <h3
+              class="text-lg md:text-xl font-bold text-primary mb-2 md:mb-3 reveal-right leading-tight group-hover:text-accent-gold transition-colors">
+              Webマーケティング総合支援
+            </h3>
+            <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">点ではなく、線で考えるWebマーケティング</p>
+            <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
+              制作はA社、広告はB社、LINEはC社——施策がバラバラだと、全体像が見えません。<br class="md:hidden">一社で統合することで、連携させ、成果を最大化します。
+            </p>
+          </article>
+        </a>
+
+        <!-- Service 2: AI導入・業務自動化システム -->
+        <a href="/services/ai.html" class="block group">
+          <article
+            class="service-card bg-white border border-border rounded-2xl p-8 reveal stagger-2 transition-all duration-300 hover:shadow-xl hover:border-accent-gold">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="service-label">INTELLIGENT AUTOMATION</span>
+            <h3
+              class="text-lg md:text-xl font-bold text-primary mb-2 md:mb-3 reveal-right leading-tight group-hover:text-accent-gold transition-colors">
+              AI導入・業務自動化システム
+            </h3>
+            <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">ルーティンを、システムへ。</p>
+            <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
+              「この作業、自動化できないかな?」<br class="md:hidden">その疑問に、AIと開発技術で応えます。<br
+                class="md:hidden">データ入力、問い合わせ対応、集計作業——御社の業務に合わせた自動化を設計します。
+            </p>
+          </article>
+        </a>
+
+        <!-- Service 3: データ分析・改善コンサルティング -->
+        <a href="/services/analytics.html" class="block group">
+          <article
+            class="service-card bg-white border border-border rounded-2xl p-8 reveal stagger-3 transition-all duration-300 hover:shadow-xl hover:border-accent-gold">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+              </svg>
+            </div>
+            <span class="service-label">DATA-DRIVEN STRATEGY</span>
+            <h3
+              class="text-lg md:text-xl font-bold text-primary mb-2 md:mb-3 reveal-right leading-tight group-hover:text-accent-gold transition-colors">
+              データ分析・改善コンサルティング
+            </h3>
+            <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">「感覚」を捨て、「根拠」で勝つ。</p>
+            <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
+              アクセス解析と広告データを数値で特定。<br class="md:hidden">過去、年商を数倍に成長させた知見に基づき、<br class="md:hidden">利益率を高める「確実な一手」をご提案します。
+            </p>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS SECTION ========== -->
+  <section id="process" class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Process</p>
+        <p class="text-text-secondary text-sm mb-4">導入の流れ</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          「納品」は、ゴールではありません。
+        </h2>
+        <p class="text-lg text-text-secondary">
+          私たちは、作って終わりの関係を望みません。<br class="pc-only">
+          Webサイトやシステムは、運用を開始してからが本当のスタートです。<br class="pc-only">
+          実際のデータに基づいた改善を繰り返し、ビジネスを確実に成長させる。<br class="pc-only">
+          長く、深く、共に栄えるパートナーとして、あなたの事業に伴走します。
+        </p>
+      </div>
+
+      <!-- Architectural Timeline Design -->
+      <div class="process-timeline">
+        <!-- Timeline Line (Horizontal on PC, Vertical on Mobile) -->
+        <div class="timeline-line"></div>
+
+        <!-- Process Steps -->
+        <div class="process-steps">
+          <!-- Step 1 -->
+          <div class="process-step reveal delay-100">
+            <div class="step-number-watermark">01</div>
+            <div class="timeline-dot"></div>
+            <div class="step-content">
+              <h3 class="step-title">ヒアリング・現状分析</h3>
+              <p class="step-subtitle">STRATEGY</p>
+              <p class="step-description"><span class="text-segment">現在の課題、目標、予算を</span><br><span
+                  class="text-segment">丁寧にヒアリングいたします。</span><br><span
+                  class="text-segment">既存のデータや業務フローがあれば</span><br><span
+                  class="text-segment">無料で分析を行い改善ポイントを明確化します。</span></p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step reveal delay-200">
+            <div class="step-number-watermark">02</div>
+            <div class="timeline-dot"></div>
+            <div class="step-content">
+              <h3 class="step-title">戦略立案・お見積もり</h3>
+              <p class="step-subtitle">PLANNING</p>
+              <p class="step-description"><span class="text-segment">「何をすれば成果が出るか」を</span><br><span
+                  class="text-segment">具体的に提案いたします。</span><br><span
+                  class="text-segment">優先順位と費用を明確にした上で、</span><br><span class="text-segment">ご判断いただきます。</span></p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step reveal delay-300">
+            <div class="step-number-watermark">03</div>
+            <div class="timeline-dot"></div>
+            <div class="step-content">
+              <h3 class="step-title">実行・開発</h3>
+              <p class="step-subtitle">DEVELOPMENT</p>
+              <p class="step-description"><span class="text-segment">Webサイト制作、システム開発、</span><br><span
+                  class="text-segment">データ分析など、合意した施策を実行。</span><br><span class="text-segment">進捗を共有しながら進めます。</span></p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step reveal delay-400">
+            <div class="step-number-watermark">04</div>
+            <div class="timeline-dot"></div>
+            <div class="step-content">
+              <h3 class="step-title">確認・納品</h3>
+              <p class="step-subtitle">DELIVERY</p>
+              <p class="step-description"><span class="text-segment">動作確認、品質チェックを経て納品。</span><br><span
+                  class="text-segment">使い方のレクチャーや、分析結果の説明を行い、</span><br><span
+                  class="text-segment">すぐに活用できる状態にします。</span></p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-step reveal delay-500">
+            <div class="step-number-watermark">05</div>
+            <div class="timeline-dot"></div>
+            <div class="step-content">
+              <h3 class="step-title">運用・改善・成長</h3>
+              <p class="step-subtitle">GROWTH</p>
+              <p class="step-description"><span class="text-segment">納品後もデータを見ながら継続的に改善提案。</span><br><span
+                  class="text-segment">運用サポート、追加開発、定期レポートで、</span><br><span class="text-segment">成果を積み上げ続けます。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SECTION ========== -->
+  <section id="faq" class="py-24 lg:py-32 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">FAQ</p>
+        <p class="text-text-secondary text-sm mb-4">よくあるご質問</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          お客様の疑問にお答えします
+        </h2>
+      </div>
+
+      <!-- FAQ Grid -->
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Column 1: Consultation & Development -->
+        <div class="space-y-8">
+          <!-- Category 1: Consultation -->
+          <div class="reveal">
+            <h3 class="text-lg font-bold text-primary mb-4 pb-2 border-b-2 border-accent-gold">
+              Consultation<span class="block text-sm text-text-secondary font-normal mt-1">ご相談・ご依頼について</span>
+            </h3>
+            <div class="space-y-2">
+              <!-- Q1 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">具体的な要件が決まっていなくても相談できますか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    はい、もちろんです。むしろ要件定義の段階からご一緒させていただくことで、よりビジネスの目的に沿ったご提案が可能になります。現状の課題やぼんやりとしたイメージだけでも構いませんので、まずはお気軽にご相談ください。
+                  </div>
+                </div>
+              </div>
+              <!-- Q2 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">予算が決まっていないのですが、見積もりは可能ですか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    はい、可能です。ご希望の機能や実現したいことに合わせて、松・竹・梅のように段階的なプランをご提案することも可能です。「まずは最小限の機能でリリースしたい」といったご要望にも柔軟に対応いたします。
+                  </div>
+                </div>
+              </div>
+              <!-- Q3 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">遠方ですが、オンラインでの打ち合わせは可能ですか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    はい、基本的にはZoomやGoogle Meetなどのツールを使用し、全国どこからでもご依頼いただけます。必要に応じて対面での打ち合わせも柔軟に対応させていただきます。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Development -->
+          <div class="reveal delay-100">
+            <h3 class="text-lg font-bold text-primary mb-4 pb-2 border-b-2 border-accent-gold">
+              Development<span class="block text-sm text-text-secondary font-normal mt-1">開発・制作について</span>
+            </h3>
+            <div class="space-y-2">
+              <!-- Q1 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">開発期間はどのくらいかかりますか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    プロジェクトの規模により異なりますが、目安としてWebサイト制作であれば1〜2ヶ月、システム開発であれば3ヶ月〜半年程度が一般的です。お急ぎの場合は、優先順位をつけて段階的にリリースする等のご提案も可能です。
+                  </div>
+                </div>
+              </div>
+              <!-- Q2 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">自社にエンジニアや詳しい担当者がいなくても大丈夫ですか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    全く問題ございません。専門用語をなるべく使わず、分かりやすい言葉でご説明することを心がけています。技術的な判断は私たちが責任を持ってサポートいたしますので、安心してお任せください。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Contract & Support -->
+        <div class="space-y-8">
+          <!-- Category 3: Contract & Payment -->
+          <div class="reveal delay-200">
+            <h3 class="text-lg font-bold text-primary mb-4 pb-2 border-b-2 border-accent-gold">
+              Contract & Payment<span class="block text-sm text-text-secondary font-normal mt-1">契約・お支払いについて</span>
+            </h3>
+            <div class="space-y-2">
+              <!-- Q1 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">支払いのタイミングや方法を教えてください。</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    基本的には「銀行振込」でお願いしております。お支払い時期は「月末締め翌月末払い」が標準ですが、プロジェクト規模によっては「着手金」と「納品時」の分割払いをご相談させていただく場合もございます。
+                  </div>
+                </div>
+              </div>
+              <!-- Q2 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">見積もり後に追加費用が発生することはありますか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    当初の仕様から変更がない限り、見積もり額以上の費用を請求することはございません。もし仕様変更などで追加費用が必要になる場合は、作業に着手する前に必ずご相談し、再見積もりを提出いたします。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Support -->
+          <div class="reveal delay-300">
+            <h3 class="text-lg font-bold text-primary mb-4 pb-2 border-b-2 border-accent-gold">
+              Support<span class="block text-sm text-text-secondary font-normal mt-1">運用・保守について</span>
+            </h3>
+            <div class="space-y-2">
+              <!-- Q1 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">システムは作って終わりですか？リリース後のサポートはありますか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    私たちは「作って終わり」ではなく、「育てていく」ことを重視しています。リリース後の保守管理、セキュリティ対策、機能追加などの運用サポートも万全の体制を整えています。
+                  </div>
+                </div>
+              </div>
+              <!-- Q2 -->
+              <div class="faq-item border-b border-border">
+                <button
+                  class="faq-question w-full text-left py-6 px-4 flex justify-between items-start gap-4 hover:bg-gray-50 transition-colors rounded-lg">
+                  <span class="text-base font-semibold text-primary flex-1">既存のシステムの改修や引き継ぎはお願いできますか？</span>
+                  <svg class="faq-icon w-5 h-5 text-accent-gold flex-shrink-0 transition-transform" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <div class="pb-6 px-4 text-text-secondary leading-relaxed">
+                    はい、可能です。ただし、既存システムの状況（設計書やコードの状態）によっては、一度調査のお時間をいただく場合がございます。まずは現状をお聞かせください。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <!--
+  <section id="trust" class="py-24 lg:py-32 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-accent font-medium tracking-widest uppercase text-sm mb-4">Trust & Quality</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          数字が証明する<br />私たちの実績
+        </h2>
+        <p class="text-lg text-white/70">
+          お客様との信頼関係を大切に、<br />着実な成果を積み重ねてきました。
+        </p>
+      </div>
+
+      <div class="marquee-container overflow-hidden">
+        <div class="marquee-track flex animate-marquee">
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="150">0</span>+
+            </div>
+            <p class="text-white/70">プロジェクト完了</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="98">0</span>%
+            </div>
+            <p class="text-white/70">顧客満足度</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="50">0</span>+
+            </div>
+            <p class="text-white/70">継続クライアント</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="5">0</span>年
+            </div>
+            <p class="text-white/70">平均取引期間</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="150">0</span>+
+            </div>
+            <p class="text-white/70">プロジェクト完了</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="98">0</span>%
+            </div>
+            <p class="text-white/70">顧客満足度</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="50">0</span>+
+            </div>
+            <p class="text-white/70">継続クライアント</p>
+          </div>
+          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+            <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+              <span class="stat-number" data-target="5">0</span>年
+            </div>
+            <p class="text-white/70">平均取引期間</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24 grid md:grid-cols-3 gap-8">
+        <div class="quality-card reveal stagger-1 bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">納期厳守</h3>
+          <p class="text-white/70">
+            約束した納期は必ず守ります。無理なスケジュールは最初から提案しません。
+          </p>
+        </div>
+        <div class="quality-card reveal stagger-2 bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">明朗会計</h3>
+          <p class="text-white/70">
+            追加費用や隠れコストは一切なし。最初に提示した金額がすべてです。
+          </p>
+        </div>
+        <div class="quality-card reveal stagger-3 bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">迅速対応</h3>
+          <p class="text-white/70">
+            お問い合わせには24時間以内に返答。緊急時も専用窓口で対応します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="py-24 lg:py-32 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Content -->
+        <div class="reveal text-center lg:text-left">
+          <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">CONTACT</p>
+          <p class="text-white/60 text-sm mb-4">お問い合わせ</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            お気軽にご相談ください
+          </h2>
+          <p class="text-lg text-white/70 mb-8">
+            ご質問やご相談がございましたら、下記フォームよりお問い合わせください。
+            担当者より24時間以内にご連絡いたします。
+          </p>
+
+          <div class="space-y-6 text-left">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">メール</h3>
+                <p class="text-white/70">igy.official.contact@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 flex-shrink-0">
+                <img src="./images/line_icon.png" alt="LINE" class="w-full h-full object-contain overflow-visible" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">LINE</h3>
+                <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer"
+                  class="text-white/70 hover:text-accent-gold transition-colors underline decoration-dotted">LINEからもご相談可能!</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form CTA -->
+          <div class="reveal delay-200 mt-12">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+              <h3 class="text-2xl font-bold text-white mb-4">お問い合わせフォーム</h3>
+              <p class="text-white/70 mb-6">
+                詳細なご相談は、お問い合わせフォームからお気軽にご連絡ください。
+              </p>
+              <a href="/contact.html"
+                class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-accent-gold hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+                お問い合わせフォームへ
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12">
+        <!-- Logo & Description -->
+        <div class="md:col-span-2">
+          <a href="#" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold mb-4">Links</h4>
+          <ul class="space-y-2 text-white/60">
+            <li>
+              <a href="#about" class="hover:text-white transition-colors">
+                <span class="block font-semibold">ABOUT US</span>
+                <span class="block text-sm opacity-70">私たちについて</span>
+              </a>
+            </li>
+            <li>
+              <a href="/message.html" class="hover:text-white transition-colors">
+                <span class="block font-semibold">MESSAGE</span>
+                <span class="block text-sm opacity-70">代表ご挨拶</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="hover:text-white transition-colors">
+                <span class="block font-semibold">SERVICES</span>
+                <span class="block text-sm opacity-70">事業内容</span>
+              </a>
+            </li>
+            <li>
+              <a href="#faq" class="hover:text-white transition-colors">
+                <span class="block font-semibold">FAQ</span>
+                <span class="block text-sm opacity-70">よくあるご質問</span>
+              </a>
+            </li>
+            <li>
+              <a href="/contact.html" class="hover:text-white transition-colors">
+                <span class="block font-semibold">CONTACT</span>
+                <span class="block text-sm opacity-70">お問い合わせ</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-white/60">
+            <li>igy.official.contact@gmail.com</li>
+            <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 text-sm">
+          © 2026 Igy. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://lin.ee/E6cJSdc" class="text-white/40 hover:text-white transition-colors" aria-label="LINE"
+            target="_blank" rel="noopener noreferrer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/igy_official_?igsh=MTRsd3V5eTNpbm94dg%3D%3D&utm_source=qr"
+            class="text-white/40 hover:text-white transition-colors" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========== STICKY CONTACT BANNER ========== -->
+  <div id="sticky-contact"
+    class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full transition-transform duration-500 ease-out">
+    <div class="bg-primary/95 backdrop-blur-lg border-t border-white/10 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <p class="text-white text-sm md:text-base font-medium hidden sm:block">
+          お気軽にご相談ください
+        </p>
+        <a href="/contact.html"
+          class="inline-flex items-center justify-center px-6 py-2.5 bg-white text-primary rounded-full font-semibold text-sm hover:bg-accent hover:text-white transition-all duration-300 shadow-md hover:shadow-lg mx-auto sm:mx-0">
+          お問い合わせ
+          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

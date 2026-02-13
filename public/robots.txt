@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://igy.co.jp/sitemap.xml

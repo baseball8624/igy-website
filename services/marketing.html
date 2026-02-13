@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IgyのWebマーケティング総合支援サービス。データを統合し、AIで最適化。制作、運用、改善まで一貫してサポートします。" />
+    <meta name="keywords" content="Webマーケティング, AI最適化, データ統合, 広告運用, LINE配信, Igy" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <title>Webマーケティング総合支援 | Igy</title>
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="Webマーケティング総合支援 | Igy" />
+    <meta property="og:description" content="IgyのWebマーケティング総合支援サービス。データを統合し、AIで最適化。制作、運用、改善まで一貫してサポートします。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://igy.co.jp/services/marketing.html" />
+    <meta property="og:image" content="https://igy.co.jp/ogp.png" />
+
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://igy.co.jp/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://igy.co.jp/#services"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Webマーケティング総合支援",
+        "item": "https://igy.co.jp/services/marketing.html"
+      }]
+    }
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-20">
+                <a href="/" class="block group">
+                    <img src="/images/logo_full.png" alt="Igy Logo"
+                        class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+                </a>
+                <ul class="hidden md:flex items-center gap-8">
+                    <li>
+                        <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">ABOUT US</span>
+                            <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">SERVICES</span>
+                            <span class="block text-xs opacity-60">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">FAQ</span>
+                            <span class="block text-xs opacity-60">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">MESSAGE</span>
+                            <span class="block text-xs opacity-60">代表メッセージ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#contact"
+                            class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+                            <span class="text-sm font-bold">CONTACT</span>
+                            <span class="text-xs opacity-80">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
+            <div class="p-6">
+                <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <ul class="mt-12 space-y-6">
+                    <li>
+                        <a href="/#about" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">ABOUT US</span>
+                            <span class="block text-sm text-text-secondary">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">SERVICES</span>
+                            <span class="block text-sm text-text-secondary">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">FAQ</span>
+                            <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">MESSAGE</span>
+                            <span class="block text-sm text-text-secondary">代表メッセージ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#contact" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">CONTACT</span>
+                            <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== BREADCRUMB ========== -->
+    <div class="pt-24 bg-bg-alt">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+            <nav class="flex items-center gap-2 text-sm text-text-secondary">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <span>/</span>
+                <a href="/#services" class="hover:text-primary transition-colors">Services</a>
+                <span>/</span>
+                <span class="text-primary font-medium">Webマーケティング総合支援</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section
+        class="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-light py-24 lg:py-32">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 reveal-right">Webマーケティング<br
+                        class="md:hidden">総合支援</h1>
+                <p class="text-accent-gold font-bold tracking-widest uppercase text-lg mb-8 reveal delay-100">Web
+                    Marketing</p>
+                <p class="text-2xl md:text-3xl text-white/90 font-medium leading-relaxed reveal delay-200">
+                    点ではなく、線で考えるWebマーケティング
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1: データ統合とAI最適化 ========== -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">データを統合し、AIで最適化する。<br />それが1社に任せる理由</h2>
+                    <div class="space-y-4 text-text-secondary text-lg leading-relaxed">
+                        <p>
+                            Webサイト制作は制作会社、広告運用は代理店、LINE配信は別の会社——。多くの企業が、Web施策を複数の会社に分散して依頼しています。
+                        </p>
+                        <p>
+                            その結果、何が起きるか。
+                        </p>
+                        <p>
+                            データがバラバラになります。サイトのアクセスデータ、広告のクリックデータ、LINE配信の開封データ——すべてが別々の場所に散らばり、全体像が見えなくなります。「広告経由で来た人が、サイトのどこで離脱したのか」「LINE配信後に、どの商品が売れたのか」といった、本来知るべき情報が繋がりません。
+                        </p>
+                        <p class="font-semibold text-primary">
+                            1社に任せれば、すべてのデータが統合されます。そして、統合されたデータをAIに学習させることで、「どの施策が効いているか」「次に何をすべきか」が明確になります。
+                        </p>
+                        <p>
+                            これが、1社に任せる最大の理由です。
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal delay-200 order-first lg:order-last">
+                    <img src="/images/marketing_integration.jpg" alt="データ統合とAI最適化のイメージ"
+                        class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: 制作・運用・改善の連携 ========== -->
+    <section class="py-20 lg:py-28 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal">
+                    <img src="/Users/fujiitakuma/.gemini/antigravity/brain/5ff03849-04a2-4ff8-af79-2ee9827220bf/marketing_web_mockup_1770972323517.png"
+                        alt="Webサイト制作と運用のダッシュボード" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div class="reveal delay-200">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">制作、運用、改善——<br />すべてを連携させる</h2>
+                    <div class="space-y-6 text-text-secondary text-lg leading-relaxed">
+                        <div>
+                            <h3 class="font-bold text-primary text-xl mb-2">制作段階から、運用を見据える</h3>
+                            <p>
+                                Webサイトを作る時点で、「どう広告を回すか」「どうデータを取るか」を設計します。後から「広告に最適化されてない」「データが取れない」という問題を防ぎます。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary text-xl mb-2">運用データを、制作に反映させる</h3>
+                            <p>
+                                広告やLINE配信の反応データを見て、サイトのデザインや文章を改善します。「このページの離脱率が高い」→「構成を変える」→「CVRが上がる」というサイクルを回します。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary text-xl mb-2">AIで、制作と運用を効率化する</h3>
+                            <p>
+                                サイト制作、LP、広告文、SNS、LINEの各コンテンツをAIで効率化。過去のデータから「反応が良いパターン」を学習させ、常に最適なクリエイティブを配信します。A/Bテストも自動化し、人の手を介さずに改善を重ねます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: 継続的な改善 ========== -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">作って終わりではなく、<br />改善し続ける</h2>
+                    <div class="space-y-4 text-text-secondary text-lg leading-relaxed">
+                        <p>
+                            制作会社は、サイトを作ったら終わりです。代理店は、広告を回すだけで、サイト改善には関与しません。
+                        </p>
+                        <p class="font-semibold text-primary">
+                            私たちは、毎月データを見て、改善を提案します。
+                        </p>
+                        <div class="bg-bg-alt p-6 rounded-lg border-l-4 border-accent-gold">
+                            <p class="mb-3">
+                                「先月の広告はクリック率は良かったが、CVR(成約率)が低かった。LPの構成を変えてみましょう」
+                            </p>
+                            <p>
+                                「LINE配信の開封率が落ちています。配信時間を変えてテストしましょう」
+                            </p>
+                        </div>
+                        <p>
+                            月次レポートを出すだけでなく、次の一手を提案し、実行する。PDCAを回し続けることで、成果を積み上げていきます。
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal delay-200 order-first lg:order-last">
+                    <div class="bg-gradient-to-br from-primary to-primary-light p-8 rounded-lg text-white">
+                        <h3 class="text-2xl font-bold mb-6">継続的な改善サイクル</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center flex-shrink-0 font-bold text-primary">
+                                    1</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">データ分析</h4>
+                                    <p class="text-sm text-white/80">月次でアクセス解析、広告効果、配信結果を分析</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center flex-shrink-0 font-bold text-primary">
+                                    2</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">改善提案</h4>
+                                    <p class="text-sm text-white/80">課題を特定し、具体的な改善策を提示</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center flex-shrink-0 font-bold text-primary">
+                                    3</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">実行</h4>
+                                    <p class="text-sm text-white/80">サイト改修、広告調整、配信最適化を実施</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center flex-shrink-0 font-bold text-primary">
+                                    4</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">効果検証</h4>
+                                    <p class="text-sm text-white/80">改善の効果を測定し、次のサイクルへ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="py-20 lg:py-28" style="background-color: #f9f7f4;">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">料金について</h2>
+            <div class="bg-white p-8 lg:p-12 rounded-2xl shadow-md">
+                <div class="space-y-6 text-text-secondary text-lg leading-relaxed">
+                    <p class="text-xl font-semibold text-primary">
+                        現在、実績構築のため、<span class="text-accent-gold">モニター価格でのご提供</span>も可能です。
+                    </p>
+                    <p>
+                        導入事例としてご協力いただける企業様には、通常よりも柔軟な条件でご提案いたします。
+                    </p>
+                    <p>
+                        企業規模、施策内容、運用範囲により柔軟に対応いたします。「まず小さく始めたい」というご相談も大歓迎です。
+                    </p>
+                    <p class="font-semibold text-primary">
+                        まずは無料で現状分析を行い、最適なプランをご提案させてください。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAIN CTA ========== -->
+    <section class="py-20 bg-gradient-to-br from-primary via-primary to-primary-light">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                まずはお気軽にご相談ください。
+            </h2>
+            <p class="text-lg text-white/80 mb-10 leading-relaxed">
+                無料で分析を行い、改善の可能性をお伝えします。
+            </p>
+            <a href="/contact.html"
+                class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                無料で改善提案を依頼する
+                <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== OTHER SERVICES ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">OTHER SERVICES</p>
+                <h2 class="text-3xl font-bold text-primary mb-6">他のサービス</h2>
+                <p class="text-lg text-text-secondary">Igyの他のサービスもご覧ください</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- AI導入・業務自動化システム -->
+                <a href="/services/ai.html" class="group reveal delay-100">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            AI導入・業務自動化システム</h3>
+                        <p class="text-sm text-text-secondary">ルーティンを、システムへ。</p>
+                    </div>
+                </a>
+
+                <!-- データ分析・改善コンサルティング -->
+                <a href="/services/analytics.html" class="group reveal delay-200">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            データ分析・改善コンサルティング</h3>
+                        <p class="text-sm text-text-secondary">「感覚」を捨て、「根拠」で勝つ。</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <a href="/" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+                    <p class="mt-4 text-white/60 max-w-md">
+                        誠実さが、未来の基準になる。私たちは信頼と品質で、お客様のビジネスに真の価値をお届けします。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Links</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>
+                            <a href="/#about" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">ABOUT US</span>
+                                <span class="block text-sm opacity-70">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">SERVICES</span>
+                                <span class="block text-sm opacity-70">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">FAQ</span>
+                                <span class="block text-sm opacity-70">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/message.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">MESSAGE</span>
+                                <span class="block text-sm opacity-70">代表メッセージ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#contact" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">CONTACT</span>
+                                <span class="block text-sm opacity-70">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>igy.official.contact@gmail.com</li>
+                        <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                <p class="text-white/40 text-sm">© 2026 Igy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

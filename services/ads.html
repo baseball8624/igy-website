@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IgyのSNS・Web広告運用サービス。フォロワー数より売上を追う運用で、AIで最適化した広告配信とSNS投稿により、認知から成約まで最短距離で導きます。" />
+    <meta name="keywords" content="SNS運用, Web広告, 広告運用, Instagram, Facebook, Google広告, Igy" />
+
+    <!-- OGP -->
+
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <title>SNS・Web広告運用 | Igy</title>
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="SNS・Web広告運用 | Igy" />
+    <meta property="og:description" content="Igyの広告運用サービス。データに基づいたターゲット選定と効果測定で、確実に成果につながる広告キャンペーンを展開します。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://igy.co.jp/services/ads.html" />
+    <meta property="og:image" content="https://igy.co.jp/ogp.png" />
+
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://igy.co.jp/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://igy.co.jp/#services"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SNS・Web広告運用",
+        "item": "https://igy.co.jp/services/ads.html"
+      }]
+    }
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-20">
+                <a href="/" class="block group">
+                    <img src="/images/logo_full.png" alt="Igy Logo"
+                        class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+                </a>
+                <ul class="hidden md:flex items-center gap-8">
+                    <li>
+                        <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">ABOUT US</span>
+                            <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">SERVICES</span>
+                            <span class="block text-xs opacity-60">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">FAQ</span>
+                            <span class="block text-xs opacity-60">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html"
+                            class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+                            <span class="text-sm font-bold">CONTACT</span>
+                            <span class="text-xs opacity-80">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
+            <div class="p-6">
+                <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <ul class="mt-12 space-y-6">
+                    <li>
+                        <a href="/#about" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">ABOUT US</span>
+                            <span class="block text-sm text-text-secondary">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">SERVICES</span>
+                            <span class="block text-sm text-text-secondary">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">FAQ</span>
+                            <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html" class="block text-text-primary font-medium">
+                            <span class="block text-lg font-bold">CONTACT</span>
+                            <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== BREADCRUMB ========== -->
+    <div class="pt-24 bg-bg-alt">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+            <nav class="flex items-center gap-2 text-sm text-text-secondary">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <span>/</span>
+                <a href="/#services" class="hover:text-primary transition-colors">Services</a>
+                <span>/</span>
+                <span class="text-primary font-medium">SNS・Web広告運用</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="bg-bg-alt pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-primary to-primary-light rounded-2xl flex items-center justify-center mb-8 reveal">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2 reveal-right">フォロワー数より、売上を追う。</h1>
+                <p class="text-accent-gold font-bold tracking-widest uppercase mb-8 reveal delay-100">Ads & SNS
+                    Marketing</p>
+                <p class="text-xl text-text-secondary leading-relaxed reveal delay-200">
+                    AIで最適化した広告配信とSNS投稿で、認知から成約まで最短距離で導きます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PHILOSOPHY NOTE ========== -->
+    <section class="py-20 bg-gradient-to-br from-primary to-primary-light">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <svg class="w-12 h-12 text-white/30 mx-auto mb-6 reveal" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-xl md:text-2xl text-white font-medium leading-relaxed italic reveal-right">
+                数字の向こう側にいる『人』を見つめ、AIの速度で最適解を打ち出し続ける。
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== THE GAP (課題と解決) ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- 課題 -->
+                <div class="reveal">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-2xl">
+                        <h2 class="text-2xl font-bold text-red-900 mb-6 flex items-center gap-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            こんなお悩みありませんか?
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-red-900">
+                                <svg class="w-6 h-6 flex-shrink-0 mt-0.5 text-red-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                <span>「SNSを頑張っているのに、売上につながらない」</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-red-900">
+                                <svg class="w-6 h-6 flex-shrink-0 mt-0.5 text-red-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                <span>「広告を出しても、費用対効果が見えない」</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-red-900">
+                                <svg class="w-6 h-6 flex-shrink-0 mt-0.5 text-red-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                <span>「投稿ネタが尽きて、更新が止まっている」</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 解決策 -->
+                <div class="reveal delay-200">
+                    <div class="bg-primary/5 border-l-4 border-primary p-8 rounded-r-2xl">
+                        <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Igyの解決策
+                        </h2>
+                        <div class="space-y-4 text-text-secondary leading-relaxed">
+                            <p>
+                                Igyは「いいね」や「フォロワー数」ではなく、<strong class="text-primary">売上・問い合わせ・来店</strong>という成果にコミットします。
+                            </p>
+                            <p>
+                                AIツールで投稿を効率化し、Web広告と連動させることで、認知から成約までを一気通貫で設計。さらに、LP制作やWebサイト改善も同時対応できるため、<strong
+                                    class="text-primary">広告費を無駄にしない導線</strong>を構築できます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PLANS (料金プラン) ========== -->
+    <!--
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Plans</p>
+                <h2 class="text-3xl font-bold text-primary mb-6">料金プラン</h2>
+                <p class="text-lg text-text-secondary">
+                    ビジネスの規模や目的に合わせて、最適なプランをお選びいただけます。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="reveal delay-100 bg-white rounded-2xl p-8 border-2 border-border hover:border-primary transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Entry</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">¥50,000<span
+                                class="text-lg text-text-secondary">〜</span></div>
+                        <p class="text-sm text-text-secondary">/ 月額(目安)</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">SNS投稿: 週2回</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">広告運用: 1媒体</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">レポート: 月1回</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-text-secondary flex-shrink-0 mt-0.5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <span class="text-text-secondary line-through">LP制作</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">改善提案: 月1回</span>
+                        </li>
+                    </ul>
+                    <a href="/contact.html"
+                        class="block w-full text-center px-6 py-3 bg-gray-200 text-primary rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        お問い合わせ
+                    </a>
+                </div>
+
+                <div class="reveal delay-200 bg-primary rounded-2xl p-8 text-white relative">
+                    <div
+                        class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-gold text-primary text-sm font-bold px-4 py-1 rounded-full">
+                        人気
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Standard</h3>
+                        <div class="text-4xl font-bold mb-2">¥100,000<span class="text-lg text-white/70">〜</span></div>
+                        <p class="text-sm text-white/70">/ 月額(目安)</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-white/90">SNS投稿: 週4回</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-white/90">広告運用: 2媒体</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-white/90">レポート: 月2回</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-white/90">LP制作: 1本</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-white/90">改善提案: 月2回</span>
+                        </li>
+                    </ul>
+                    <a href="/contact.html"
+                        class="block w-full text-center px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        お問い合わせ
+                    </a>
+                </div>
+
+                <div
+                    class="reveal delay-300 bg-white rounded-2xl p-8 border-2 border-border hover:border-primary transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Pro</h3>
+                        <div class="text-4xl font-bold text-primary mb-2">¥200,000<span
+                                class="text-lg text-text-secondary">〜</span></div>
+                        <p class="text-sm text-text-secondary">/ 月額(目安)</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">SNS投稿: 毎日</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">広告運用: 3媒体以上</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">レポート: 週1回</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">LP制作: 2本</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-text-secondary">改善提案: 随時</span>
+                        </li>
+                    </ul>
+                    <a href="/contact.html"
+                        class="block w-full text-center px-6 py-3 bg-gray-200 text-primary rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-sm text-text-secondary">※広告費は別途(最低予算:月10万円〜推奨)</p>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- ========== WORKFLOW (導入フロー) ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Workflow</p>
+                <h2 class="text-3xl font-bold text-primary mb-6">導入フロー</h2>
+                <p class="text-lg text-text-secondary">
+                    4つのステップで、スムーズに運用を開始できます。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="reveal delay-100 text-center">
+                    <div
+                        class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        1</div>
+                    <h3 class="font-bold text-primary mb-2 text-lg">Analysis</h3>
+                    <p class="text-sm text-text-secondary font-medium mb-2">分析</p>
+                    <p class="text-sm text-text-secondary">現状のSNSアカウント・広告実績を分析。競合調査も実施します。</p>
+                </div>
+                <div class="reveal delay-200 text-center">
+                    <div
+                        class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        2</div>
+                    <h3 class="font-bold text-primary mb-2 text-lg">Strategy</h3>
+                    <p class="text-sm text-text-secondary font-medium mb-2">戦略</p>
+                    <p class="text-sm text-text-secondary">ターゲット設定、投稿方針、広告配信プランを策定します。</p>
+                </div>
+                <div class="reveal delay-300 text-center">
+                    <div
+                        class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        3</div>
+                    <h3 class="font-bold text-primary mb-2 text-lg">Execution</h3>
+                    <p class="text-sm text-text-secondary font-medium mb-2">実行</p>
+                    <p class="text-sm text-text-secondary">投稿・広告配信を開始。AIツールで効率化しながら、PDCAを高速で回します。</p>
+                </div>
+                <div class="reveal delay-400 text-center">
+                    <div
+                        class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        4</div>
+                    <h3 class="font-bold text-primary mb-2 text-lg">Optimization</h3>
+                    <p class="text-sm text-text-secondary font-medium mb-2">最適化</p>
+                    <p class="text-sm text-text-secondary">データを見ながら、投稿内容・広告クリエイティブ・ターゲティングを改善し続けます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========== MAIN CTA ========== -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                御社の可能性を、AIと共に解き放つ。
+            </h2>
+            <p class="text-lg text-white/80 mb-10 leading-relaxed">
+                課題の特定からAI活用の具体案まで、まずは無料でご提案します。
+            </p>
+            <a href="/contact.html"
+                class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                無料で改善提案を依頼する
+                <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ========== OTHER SERVICES ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">OTHER SERVICES</p>
+                <h2 class="text-3xl font-bold text-primary mb-6">他のサービス</h2>
+                <p class="text-lg text-text-secondary">Igyの他のサービスもご覧ください</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Webサイト制作 -->
+                <a href="/services/web.html" class="group reveal delay-100">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            Webサイト制作</h3>
+                        <p class="text-sm text-text-secondary">見た目だけでなく「売れる仕組み」まで設計</p>
+                    </div>
+                </a>
+
+                <!-- ブランディング -->
+                <a href="/services/sales-dx.html" class="group reveal delay-200">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            営業DX</h3>
+                        <p class="text-sm text-text-secondary">AIによるターゲット選定から個別アプローチまでを自動化</p>
+                    </div>
+                </a>
+
+                <!-- LINE公式アカウント構築 -->
+                <a href="/services/line.html" class="group reveal delay-300">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            LINE公式アカウント構築</h3>
+                        <p class="text-sm text-text-secondary">顧客との接点を「資産」に変える</p>
+                    </div>
+                </a>
+
+                <!-- 業務自動化・AI導入 -->
+                <a href="/services/dx.html" class="group reveal delay-400">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            業務自動化・AI導入</h3>
+                        <p class="text-sm text-text-secondary">人がやらなくていい作業は、AIに任せる</p>
+                    </div>
+                </a>
+
+                <!-- AIアプリ・システム開発 -->
+                <a href="/services/development.html" class="group reveal delay-100">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            AIアプリ・システム開発</h3>
+                        <p class="text-sm text-text-secondary">業務課題をピンポイントで解決する開発</p>
+                    </div>
+                </a>
+
+                <!-- データ分析・改善 -->
+                <a href="/services/data.html" class="group reveal delay-200">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            データ分析・改善</h3>
+                        <p class="text-sm text-text-secondary">感覚ではなく数字で判断する経営へ</p>
+                    </div>
+                </a>
+
+                <!-- 運用サポート -->
+                <a href="/services/support.html" class="group reveal delay-300">
+                    <div class="p-6 bg-bg-alt rounded-2xl hover:shadow-lg transition-all duration-300 h-full">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-primary text-lg mb-2 group-hover:text-accent-gold transition-colors">
+                            運用サポート</h3>
+                        <p class="text-sm text-text-secondary">納品して終わりではなく、成長を伴走</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <a href="/" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+                    <div class="mt-6 flex items-center gap-4">
+                        <a href="https://lin.ee/E6cJSdc" class="text-white/40 hover:text-white transition-colors"
+                            aria-label="LINE" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/igy_official_?igsh=MTRsd3V5eTNpbm94dg%3D%3D&utm_source=qr"
+                            class="text-white/40 hover:text-white transition-colors" aria-label="Instagram"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Links</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>
+                            <a href="/#about" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">ABOUT US</span>
+                                <span class="block text-sm opacity-70">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">SERVICES</span>
+                                <span class="block text-sm opacity-70">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">FAQ</span>
+                                <span class="block text-sm opacity-70">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">CONTACT</span>
+                                <span class="block text-sm opacity-70">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>igy.official.contact@gmail.com</li>
+                        <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                <p class="text-white/40 text-sm">© 2026 Igy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

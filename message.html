@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Igy代表・藤井拓真からのご挨拶。テクノロジーで三者すべてが幸せになる未来を創ります。" />
+    <meta name="keywords" content="Igy, 代表挨拶, 藤井拓真, AI, テクノロジー" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="代表ご挨拶 - Igy" />
+    <meta property="og:description" content="Igy代表・藤井拓真からのご挨拶。お客様の成功が、私たちの成功です。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://igy.co.jp/ogp.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <title>代表ご挨拶 - Igy</title>
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- Page-specific styles -->
+    <style>
+        /* CEO Message Section Styles */
+        #ceo-message {
+            background: linear-gradient(to bottom, #F8F9FA 0%, #FFFFFF 100%);
+            padding: 6rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .ceo-message-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ceo-message-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .ceo-message-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--color-accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .ceo-message-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .ceo-message-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-accent-gold);
+            margin: 0 auto;
+        }
+
+        .ceo-message-content {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            line-height: 2;
+            letter-spacing: 0.02em;
+        }
+
+        .ceo-message-content p {
+            margin-bottom: 2rem;
+        }
+
+        .ceo-message-content p:last-of-type {
+            margin-bottom: 3rem;
+        }
+
+        /* Highlighted text with elegant underline */
+        .ceo-highlight {
+            position: relative;
+            display: inline;
+            font-weight: 600;
+            color: var(--color-primary);
+            background: linear-gradient(to bottom, transparent 60%, rgba(201, 169, 98, 0.25) 60%);
+            padding: 0.1em 0.2em;
+            line-height: 1.8;
+        }
+
+        /* Signature section */
+        .ceo-signature {
+            text-align: right;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+            padding-right: 1rem;
+        }
+
+        .ceo-signature-company {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .ceo-signature-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Timeline section */
+        .ceo-timeline-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .ceo-timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .ceo-timeline {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .ceo-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent-gold), var(--color-border));
+        }
+
+        .ceo-timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .ceo-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-accent-gold);
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 0 0 2px var(--color-accent-gold);
+        }
+
+        .ceo-timeline-item:last-child::before {
+            background: var(--color-primary);
+            box-shadow: 0 0 0 2px var(--color-primary);
+        }
+
+        .ceo-timeline-text {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #ceo-message {
+                padding: 4rem 1.25rem;
+            }
+
+            .ceo-message-title {
+                font-size: 1.5rem;
+            }
+
+            .ceo-message-content {
+                font-size: 0.9375rem;
+                line-height: 1.9;
+            }
+
+            .ceo-timeline {
+                padding-left: 2rem;
+            }
+
+            .ceo-signature {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-scrolled">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="block group">
+                    <img src="/images/logo_full.png" alt="Igy Logo"
+                        class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li>
+                        <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">ABOUT US</span>
+                            <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">MESSAGE</span>
+                            <span class="block text-xs opacity-60">代表挨拶</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">SERVICES</span>
+                            <span class="block text-xs opacity-60">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">FAQ</span>
+                            <span class="block text-xs opacity-60">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html"
+                            class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+                            <span class="text-sm font-bold">CONTACT</span>
+                            <span class="text-xs opacity-80">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
+        <div class="p-6">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <ul class="mt-12 space-y-6">
+                <li>
+                    <a href="/#about" class="block text-text-primary">
+                        <span class="block text-lg font-bold">ABOUT US</span>
+                        <span class="block text-sm text-text-secondary">私たちについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/message.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">MESSAGE</span>
+                        <span class="block text-sm text-text-secondary">代表挨拶</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#services" class="block text-text-primary">
+                        <span class="block text-lg font-bold">SERVICES</span>
+                        <span class="block text-sm text-text-secondary">事業内容</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#faq" class="block text-text-primary">
+                        <span class="block text-lg font-bold">FAQ</span>
+                        <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">CONTACT</span>
+                        <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========== CEO MESSAGE SECTION ========== -->
+    <section id="ceo-message">
+        <div class="ceo-message-container">
+            <!-- Header -->
+            <div class="ceo-message-header">
+                <span class="ceo-message-label">CEO Message</span>
+                <h1 class="ceo-message-title">代表ご挨拶</h1>
+                <div class="ceo-message-divider"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="ceo-message-content">
+                <p>
+                    数ある企業の中から、Igyのウェブサイトをご覧いただき、誠にありがとうございます。
+                </p>
+
+                <p>
+                    代表の藤井拓真と申します。<br>
+                    私はIT企業(現・東証プライム上場)において、医療機関や各業界の事業者様100社以上のデジタル化・業務効率化を支援してまいりました。お客様の課題解決にこだわり抜いた結果、社内の月間・年間最高記録を塗り替え、全国トップセールスを達成。その後、部長として組織マネジメントに携わる機会をいただきました。現場で1,000を超える事業者様と向き合う中で、確信したことがあります。
+                </p>
+
+                <p>
+                    それは、<span class="ceo-highlight">テクノロジーは「使う人」と「提供する人」、そして「社会」の三者すべてが幸せになってこそ、真の価値を持つ</span>ということです。
+                </p>
+
+                <p>
+                    大企業には大企業の強みがあります。しかし、一人ひとりのお客様に深く寄り添い、その企業独自の課題に最適解を届けるには、スピード感と柔軟性が不可欠です。「もっと目の前のお客様を、本気で成功させたい」——その想いが、私を起業へと突き動かしました。
+                </p>
+
+                <p>
+                    いま、AI技術の進化は目覚ましく、ビジネスの在り方そのものを変えようとしています。この変革の波を、一部の大企業だけでなく、すべての企業が活かせる時代にしたい。Igyは、最先端のAI・システム開発技術と、現場で培った「成果を出すための実行力」を掛け合わせ、お客様の競争力を確実に高めるパートナーであり続けます。
+                </p>
+
+                <p>
+                    <span class="ceo-highlight">お客様の成功が、私たちの成功です。</span>
+                </p>
+
+                <p>
+                    共に未来を創る仲間として、ぜひお力添えさせてください。
+                </p>
+            </div>
+
+            <!-- Signature -->
+            <div class="ceo-signature">
+                <div class="ceo-signature-company">Igy 代表</div>
+                <div class="ceo-signature-name">藤井 拓真</div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="ceo-timeline-section">
+                <h2 class="ceo-timeline-title">【経歴】</h2>
+                <div class="ceo-timeline">
+                    <div class="ceo-timeline-item">
+                        <p class="ceo-timeline-text">大学まで野球に打ち込む</p>
+                    </div>
+                    <div class="ceo-timeline-item">
+                        <p class="ceo-timeline-text">IT企業入社(現・東証プライム上場企業)</p>
+                    </div>
+                    <div class="ceo-timeline-item">
+                        <p class="ceo-timeline-text">社内記録を更新し、全国トップセールス達成</p>
+                    </div>
+                    <div class="ceo-timeline-item">
+                        <p class="ceo-timeline-text">部長として組織マネジメントを経験</p>
+                    </div>
+                    <div class="ceo-timeline-item">
+                        <p class="ceo-timeline-text">2026年1月 Igy創業</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <a href="/" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Links</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>
+                            <a href="/#about" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">ABOUT US</span>
+                                <span class="block text-sm opacity-70">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/message.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">MESSAGE</span>
+                                <span class="block text-sm opacity-70">代表ご挨拶</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">SERVICES</span>
+                                <span class="block text-sm opacity-70">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">FAQ</span>
+                                <span class="block text-sm opacity-70">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold">CONTACT</span>
+                                <span class="block text-sm opacity-70">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>igy.official.contact@gmail.com</li>
+                        <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">
+                    © 2026 Igy. All rights reserved.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://lin.ee/E6cJSdc" class="text-white/40 hover:text-white transition-colors"
+                        aria-label="LINE" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/igy_official_?igsh=MTRsd3V5eTNpbm94dg%3D%3D&utm_source=qr"
+                        class="text-white/40 hover:text-white transition-colors" aria-label="Instagram" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
