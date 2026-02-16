@@ -197,19 +197,27 @@
 }
 
 /* ========== Base Styles ========== */
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
 
-body {
-  font-family: var(--font-sans);
-  color: var(--color-text-primary);
-  background-color: var(--color-bg);
-  line-height: 1.7;
-  word-break: keep-all;
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
 }
 
 /* ========== Scroll Progress Bar ========== */
@@ -626,6 +634,18 @@ textarea:focus-visible {
 }
 
 /* ========== Reduced Motion ========== */
+/* ========== Mobile Text Wrapping Improvements ========== */
+@media (max-width: 767px) {
+  .step-description {
+    max-width: 100%;
+  }
+
+  .text-segment {
+    display: inline-block;
+    word-break: break-word;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -800,6 +820,17 @@ textarea:focus-visible {
     font-size: 15px;
   }
 
+  .sticky-banner-mobile {
+    padding: 10px 14px;
+    font-size: 13px;
+    bottom: 16px;
+  }
+
+  .banner-icon-mobile {
+    width: 18px;
+    height: 18px;
+  }
+
   /* LINEボタン（デスクトップ・大きめ） */
   .sticky-btn-line {
     padding: 16px 28px;
@@ -925,12 +956,8 @@ textarea:focus-visible {
 
   /* Timeline Container Center Alignment */
   .process-timeline {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    /* Ensure right side spacing balance */
-    padding-right: 1rem;
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* Timeline becomes vertical */
@@ -946,8 +973,9 @@ textarea:focus-visible {
   /* Steps stack vertically */
   .process-steps {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-left: 4.5rem;
+    gap: 4rem;
+    padding-left: 0;
+    margin-left: 2rem;
   }
 
   /* Step adjustments for vertical layout */
@@ -958,11 +986,13 @@ textarea:focus-visible {
 
   /* Watermark positioned to the left */
   .step-number-watermark {
-    left: -4.5rem;
-    top: -0.5rem;
+    left: 0;
+    top: -1.5rem;
     transform: translateX(0);
-    font-size: 3.5rem;
+    font-size: 3rem;
+    opacity: 0.1;
   }
+
 
   /* Dot positioned on vertical line */
   .timeline-dot {
