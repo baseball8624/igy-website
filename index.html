@@ -217,12 +217,19 @@
   </div>
 
   <!-- ========== HERO SECTION ========== -->
-  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
+  <section id="hero" class="relative min-h-[70vh] md:min-h-screen flex items-center overflow-hidden">
+    <!-- Background: Video (PC) / Image (Mobile) -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <!-- フォールバック画像（動画読み込み前 & スマホ） -->
       <img src="/images/hero-bg.png" alt="Hero Background"
-        class="w-full h-full object-cover object-left md:object-center animate-ken-burns">
-      <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+        class="w-full h-full object-cover object-center animate-ken-burns md:hidden">
+      <!-- 動画（PCのみ表示） -->
+      <video class="hidden md:block absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted
+        playsinline poster="/images/hero-bg.png">
+        <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
+      </video>
+      <!-- テキスト視認性のためのオーバーレイ（動画の上に重ねる） -->
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/55 to-primary/70"></div>
     </div>
 
     <!-- Geometric Orbs -->
@@ -234,15 +241,17 @@
     <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-6 lg:px-8 pt-28 md:pt-40 pb-12 md:pb-20 lg:py-32">
       <div class="max-w-2xl mx-auto text-center">
         <h1
-          class="text-lg md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 md:mb-8 reveal-title">
-          テクノロジーが、<br class="pc-only">ビジネスの<br class="pc-only">
+          class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 md:mb-8 reveal-title break-words">
+          <span class="inline-block">テクノロジーが、</span><span class="inline-block">ビジネスの</span><br class="md:hidden">
           <span class="gradient-text-alt" style="display: inline-block;">「速度」と「基準」を変える。</span>
         </h1>
         <p
-          class="text-xs md:text-lg lg:text-xl text-white/90 leading-relaxed mb-8 md:mb-10 reveal delay-200 max-w-2xl mx-auto px-3 md:px-0">
-          AIによる自動化と、データに基づく確実な意思決定。<br>
-          Igyは、テクノロジーをビジネスの中枢に実装し、<br>
-          不確実な未来を、確かなものへと変革します。
+          class="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed mb-8 md:mb-10 reveal delay-200 max-w-2xl mx-auto px-3 md:px-0 break-words">
+          <span class="inline-block">AIによる自動化と、</span><span class="inline-block">データに基づく</span><span
+            class="inline-block">確実な意思決定。</span><br>
+          <span class="inline-block">Igyは、</span><span class="inline-block">テクノロジーを</span><span
+            class="inline-block">ビジネスの中枢に実装し、</span><br>
+          <span class="inline-block">不確実な未来を、</span><span class="inline-block">確かなものへと変革します。</span>
         </p>
 
       </div>
@@ -272,17 +281,32 @@
           <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Vision</p>
           <p class="text-text-secondary text-sm mb-4">私たちの視点</p>
           <h2 class="text-xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 md:mb-8 leading-tight">
-            テクノロジーは、ビジネスを<br class="md:hidden">「正しく」するためにある。
+            <span class="inline-block">テクノロジーは、</span><br class="md:hidden">
+            <span class="inline-block">ビジネスを</span><span class="inline-block">「正しく」する</span><span
+              class="inline-block">ためにある。</span>
           </h2>
           <div class="space-y-4 md:space-y-6 text-text-secondary text-base md:text-lg leading-relaxed">
             <p>
-              無駄なコスト。長すぎる開発期間。根拠のない提案。<br class="pc-only">
-              それらはすべて、お客様の情熱を削ぐ「ノイズ」です。<br class="pc-only">
-              私たちがAIや最新技術にこだわる理由は、ただ一つ。<br class="pc-only">
-              そのノイズを極限まで取り除き、あなたの事業が持つ「本来の価値」を、<br class="pc-only">
-              最短・最速で社会に届けるためです。<br>
-              利益を生み、時間を生み、未来を生む。<br class="pc-only">
-              それが、私たちが考えるビジネスの「あるべき姿」です。
+              <span class="inline-block">無駄な</span><span class="inline-block">コスト。</span><span
+                class="inline-block">長すぎる</span><span class="inline-block">開発期間。</span><br class="md:hidden">
+              <span class="inline-block">根拠のない</span><span class="inline-block">提案。</span><br class="md:hidden">
+              <span class="inline-block">それらは</span><span class="inline-block">すべて、</span><span
+                class="inline-block">お客様の</span><span class="inline-block">情熱を削ぐ</span><span
+                class="inline-block">「ノイズ」です。</span><br class="md:hidden">
+              <span class="inline-block">私たちが</span><span class="inline-block">AIや</span><span
+                class="inline-block">最新技術に</span><span class="inline-block">こだわる</span><span
+                class="inline-block">理由は、</span><span class="inline-block">ただ一つ。</span><br class="md:hidden">
+              <span class="inline-block">そのノイズを</span><span class="inline-block">極限まで</span><span
+                class="inline-block">取り除き、</span><br class="md:hidden">
+              <span class="inline-block">あなたの</span><span class="inline-block">事業が持つ</span><span
+                class="inline-block">「本来の価値」を、</span><br class="md:hidden">
+              <span class="inline-block">最短・最速で</span><span class="inline-block">社会に</span><span
+                class="inline-block">届ける</span><span class="inline-block">ためです。</span><br class="md:hidden">
+              <span class="inline-block">利益を生み、</span><span class="inline-block">時間を生み、</span><span
+                class="inline-block">未来を生む。</span><br class="md:hidden">
+              <span class="inline-block">それが、</span><span class="inline-block">私たちが</span><span
+                class="inline-block">考える</span><span class="inline-block">ビジネスの</span><span
+                class="inline-block">「あるべき姿」です。</span>
             </p>
           </div>
 
@@ -392,7 +416,13 @@
             </h3>
             <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">点ではなく、線で考えるWebマーケティング</p>
             <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
-              制作はA社、広告はB社、LINEはC社——施策がバラバラだと、全体像が見えません。<br class="md:hidden">一社で統合することで、連携させ、成果を最大化します。
+              <span class="inline-block">制作はA社、</span><span class="inline-block">広告はB社、</span><span
+                class="inline-block">LINEはC社——</span><br class="md:hidden">
+              <span class="inline-block">施策が</span><span class="inline-block">バラバラだと、</span><span
+                class="inline-block">全体像が</span><span class="inline-block">見えません。</span><br class="md:hidden">
+              <span class="inline-block">一社で</span><span class="inline-block">統合する</span><span
+                class="inline-block">ことで、</span><span class="inline-block">連携させ、</span><span
+                class="inline-block">成果を</span><span class="inline-block">最大化します。</span>
             </p>
           </article>
         </a>
@@ -414,8 +444,15 @@
             </h3>
             <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">ルーティンを、システムへ。</p>
             <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
-              「この作業、自動化できないかな?」<br class="md:hidden">その疑問に、AIと開発技術で応えます。<br
-                class="md:hidden">データ入力、問い合わせ対応、集計作業——御社の業務に合わせた自動化を設計します。
+              <span class="inline-block">「この作業、</span><span class="inline-block">自動化</span><span
+                class="inline-block">できないかな?」</span><br class="md:hidden">
+              <span class="inline-block">その疑問に、</span><span class="inline-block">AIと</span><span
+                class="inline-block">開発技術で</span><span class="inline-block">応えます。</span><br class="md:hidden">
+              <span class="inline-block">データ入力、</span><span class="inline-block">問い合わせ対応、</span><span
+                class="inline-block">集計作業——</span><br class="md:hidden">
+              <span class="inline-block">御社の</span><span class="inline-block">業務に</span><span
+                class="inline-block">合わせた</span><span class="inline-block">自動化を</span><span
+                class="inline-block">設計します。</span>
             </p>
           </article>
         </a>
@@ -440,7 +477,13 @@
             </h3>
             <p class="text-base md:text-lg font-bold text-primary mb-3 md:mb-4 leading-tight">「感覚」を捨て、「根拠」で勝つ。</p>
             <p class="text-sm md:text-base text-text-secondary mb-6 leading-relaxed">
-              アクセス解析と広告データを数値で特定。<br class="md:hidden">過去、年商を数倍に成長させた知見に基づき、<br class="md:hidden">利益率を高める「確実な一手」をご提案します。
+              <span class="inline-block">アクセス解析と</span><span class="inline-block">広告データを</span><span
+                class="inline-block">数値で</span><span class="inline-block">特定。</span><br class="md:hidden">
+              <span class="inline-block">過去、</span><span class="inline-block">年商を</span><span
+                class="inline-block">数倍に</span><span class="inline-block">成長させた</span><span
+                class="inline-block">知見に</span><span class="inline-block">基づき、</span><br class="md:hidden">
+              <span class="inline-block">利益率を</span><span class="inline-block">高める</span><span
+                class="inline-block">「確実な一手」を</span><span class="inline-block">ご提案します。</span>
             </p>
           </article>
         </a>
@@ -455,13 +498,25 @@
         <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">Process</p>
         <p class="text-text-secondary text-sm mb-4">導入の流れ</p>
         <h2 class="text-2xl md:text-4xl font-bold text-primary mb-6">
-          「納品」は、ゴールではありません。
+          <span class="inline-block">「納品」は、</span><span class="inline-block">ゴールでは</span><span
+            class="inline-block">ありません。</span>
         </h2>
         <p class="text-lg text-text-secondary">
-          私たちは、作って終わりの関係を望みません。<br class="pc-only">
-          Webサイトやシステムは、運用を開始してからが本当のスタートです。<br class="pc-only">
-          実際のデータに基づいた改善を繰り返し、ビジネスを確実に成長させる。<br class="pc-only">
-          長く、深く、共に栄えるパートナーとして、あなたの事業に伴走します。
+          <span class="inline-block">私たちは、</span><span class="inline-block">作って</span><span
+            class="inline-block">終わりの</span><span class="inline-block">関係を</span><span
+            class="inline-block">望みません。</span><br class="pc-only">
+          <span class="inline-block">Webサイトや</span><span class="inline-block">システムは、</span><span
+            class="inline-block">運用を</span><span class="inline-block">開始して</span><span
+            class="inline-block">からが</span><span class="inline-block">本当の</span><span
+            class="inline-block">スタートです。</span><br class="pc-only">
+          <span class="inline-block">実際の</span><span class="inline-block">データに</span><span
+            class="inline-block">基づいた</span><span class="inline-block">改善を</span><span
+            class="inline-block">繰り返し、</span><span class="inline-block">ビジネスを</span><span
+            class="inline-block">確実に</span><span class="inline-block">成長させる。</span><br class="pc-only">
+          <span class="inline-block">長く、</span><span class="inline-block">深く、</span><span
+            class="inline-block">共に</span><span class="inline-block">栄える</span><span
+            class="inline-block">パートナーとして、</span><span class="inline-block">あなたの</span><span
+            class="inline-block">事業に</span><span class="inline-block">伴走します。</span>
         </p>
       </div>
 
@@ -757,51 +812,51 @@
         </p>
       </div>
 
-      <div class="marquee-container overflow-hidden">
+      <div class="marquee-container overflow-hidden w-full">
         <div class="marquee-track flex animate-marquee">
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="150">0</span>+
             </div>
             <p class="text-white/70">プロジェクト完了</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="98">0</span>%
             </div>
             <p class="text-white/70">顧客満足度</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="50">0</span>+
             </div>
             <p class="text-white/70">継続クライアント</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="5">0</span>年
             </div>
             <p class="text-white/70">平均取引期間</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="150">0</span>+
             </div>
             <p class="text-white/70">プロジェクト完了</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="98">0</span>%
             </div>
             <p class="text-white/70">顧客満足度</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="50">0</span>+
             </div>
             <p class="text-white/70">継続クライアント</p>
           </div>
-          <div class="marquee-item flex-shrink-0 mx-8 text-center min-w-[200px]">
+          <div class="marquee-item flex-shrink-0 mx-4 md:mx-8 text-center min-w-[160px] md:min-w-[200px]">
             <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
               <span class="stat-number" data-target="5">0</span>年
             </div>
@@ -860,11 +915,15 @@
           <p class="text-accent-gold font-medium tracking-widest uppercase text-sm mb-4">CONTACT</p>
           <p class="text-white/60 text-sm mb-4">お問い合わせ</p>
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-            お気軽にご相談ください
+            <span class="inline-block">お気軽に</span><span class="inline-block">ご相談</span><span
+              class="inline-block">ください</span>
           </h2>
           <p class="text-lg text-white/70 mb-8">
-            ご質問やご相談がございましたら、下記フォームよりお問い合わせください。
-            担当者より24時間以内にご連絡いたします。
+            <span class="inline-block">ご質問や</span><span class="inline-block">ご相談が</span><span
+              class="inline-block">ございましたら、</span><span class="inline-block">下記フォームより</span><span
+              class="inline-block">お問い合わせ</span><span class="inline-block">ください。</span>
+            <span class="inline-block">担当者より</span><span class="inline-block">24時間以内に</span><span
+              class="inline-block">ご連絡</span><span class="inline-block">いたします。</span>
           </p>
 
           <div class="space-y-6 text-left">
