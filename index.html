@@ -218,17 +218,19 @@
 
   <!-- ========== HERO SECTION ========== -->
   <section id="hero" class="relative min-h-[70vh] md:min-h-screen flex items-center overflow-hidden">
-    <!-- Background: Video (PC) / Image (Mobile) -->
+    <!-- Background: Video -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <!-- フォールバック画像（動画読み込み前 & スマホ） -->
-      <img src="/images/hero-bg.png" alt="Hero Background"
-        class="w-full h-full object-cover object-center animate-ken-burns md:hidden">
-      <!-- 動画（PCのみ表示） -->
+      <!-- スマホ用動画 -->
+      <video class="md:hidden absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline
+        poster="/images/hero-bg.png">
+        <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
+      </video>
+      <!-- PC用動画 -->
       <video class="hidden md:block absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted
         playsinline poster="/images/hero-bg.png">
         <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
       </video>
-      <!-- テキスト視認性のためのオーバーレイ（動画の上に重ねる） -->
+      <!-- テキスト視認性のためのオーバーレイ -->
       <div class="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/55 to-primary/70"></div>
     </div>
 
