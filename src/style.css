@@ -204,6 +204,7 @@
     width: 100%;
     max-width: 100vw;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -436,6 +437,7 @@
 @media (hover: none) {
   .service-card {
     border-bottom: 2px solid rgba(201, 169, 98, 0.3);
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* タップ時に浮き上がる＋ゴールドグロー（二重枠防止のためリング削除） */
@@ -684,6 +686,10 @@ textarea:focus-visible {
 }
 
 /* ========== Touch Feedback (スマホ用タップフィードバック) ========== */
+.touch-feedback {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media (hover: none) {
 
   .touch-feedback:active,
