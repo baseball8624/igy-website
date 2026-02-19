@@ -384,9 +384,11 @@
   animation: shine 0.6s ease-out;
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(10, 25, 47, 0.25);
+@media (hover: hover) {
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(10, 25, 47, 0.25);
+  }
 }
 
 /* ========== Service Card Premium Hover ========== */
@@ -409,13 +411,15 @@
   pointer-events: none;
 }
 
-.service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(10, 25, 47, 0.15);
-}
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(10, 25, 47, 0.15);
+  }
 
-.service-card:hover::before {
-  animation: shine 0.8s ease-out;
+  .service-card:hover::before {
+    animation: shine 0.8s ease-out;
+  }
 }
 
 /* ========== Service Label (English category) ========== */
@@ -605,12 +609,14 @@ textarea:focus-visible {
   transition: all 0.4s var(--ease-premium);
 }
 
-.value-card:hover {
-  transform: translateY(-5px);
-}
+@media (hover: hover) {
+  .value-card:hover {
+    transform: translateY(-5px);
+  }
 
-.value-card:hover .value-icon {
-  transform: scale(1.1);
+  .value-card:hover .value-icon {
+    transform: scale(1.1);
+  }
 }
 
 .value-icon {
@@ -622,9 +628,11 @@ textarea:focus-visible {
   transition: all 0.4s var(--ease-premium);
 }
 
-.quality-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
+@media (hover: hover) {
+  .quality-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+  }
 }
 
 /* ========== Link Hover Effects ========== */
