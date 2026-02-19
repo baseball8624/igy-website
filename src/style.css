@@ -1125,7 +1125,8 @@ textarea:focus-visible {
     top: -1.5rem;
     transform: translateX(0);
     font-size: 3rem;
-    opacity: 0.1;
+    color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
   }
 
 
