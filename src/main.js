@@ -43,14 +43,42 @@ function initSeamlessLoop() {
     const videos = wrapper.querySelectorAll('video');
     if (videos.length < 2) return;
 
-    // 初期再生（active-video）
-    videos[0].play().catch(() => { });
+    // 2本目の動画の遅延ロード処理
+    let nextVideoLoaded = false;
+    const loadNextVideo = () => {
+      if (nextVideoLoaded) return;
+
+      const nextVideo = videos[1];
+      const source = nextVideo.querySelector('source');
+      if (source && source.dataset.src) {
+        source.src = source.dataset.src;
+        nextVideo.load();
+        nextVideoLoaded = true;
+      }
+    };
+
+    // 1本目が再生開始して落ち着いたら2本目をロード（ポスター消去アニメーション後あたり）
+    const onPlaying = () => {
+      setTimeout(loadNextVideo, 2000);
+    };
+
+    // イベントリスナー設定
+    if (!videos[0].paused && videos[0].currentTime > 0) {
+      onPlaying();
+    } else {
+      videos[0].addEventListener('playing', onPlaying, { once: true });
+      // autoplayが効かない場合のためにJSでもplay呼び出し（ただしユーザー操作が必要な場合もある）
+      videos[0].play().catch(() => { });
+    }
 
     let activeIndex = 0;
     const fadeDuration = 1.0; // クロスフェード時間（秒）
 
-    // 定期監視
+    // 定期監視ループ
     setInterval(() => {
+      // まだ2本目がロードされていなければループ処理しない
+      if (!nextVideoLoaded) return;
+
       const activeVideo = videos[activeIndex];
       const nextIndex = (activeIndex + 1) % videos.length;
       const nextVideo = videos[nextIndex];
@@ -61,7 +89,6 @@ function initSeamlessLoop() {
       }
 
       // 残り時間が (フェード時間 + 0.2秒) を切ったら次を再生
-      // ※ duration が取得できていない場合はスキップ
       if (!Number.isNaN(activeVideo.duration)) {
         const remaining = activeVideo.duration - activeVideo.currentTime;
         if (remaining < fadeDuration + 0.2 && nextVideo.paused) {
@@ -69,37 +96,21 @@ function initSeamlessLoop() {
           nextVideo.play().then(() => {
             // フェードイン (opacity-0 を削除)
             nextVideo.classList.remove('opacity-0');
-            // 前面に移動 (z-index調整でもいいが、DOM順序が後の方が上に来るので、opacity制御だけで実質クロスフェードに見える)
-            // ただし、activeVideoが上にあるとnextが見えないので、activeVideoの透過も必要
+            // 前面に移動
+            videos[nextIndex].style.zIndex = '1';
+            videos[activeIndex].style.zIndex = '0';
 
-            // CSS transitionで activeVideo をフェードアウト
-            // activeVideo.classList.add('opacity-0'); // これだと背景（黒や紺）が透ける可能性があるため、nextVideoがアクティブ動画の上に重なる形が望ましい
-
-            // 今回のHTML構造では、絶対配置で重なっている。
-            // active(0) と next(1) がある。DOM順では next が上。
-            // 初期状態: active(visible), next(opacity-0) -> activeが見えている
-            // 切り替え: next(visible) にすると、nextが上なのでactiveを覆い隠す（クロスフェードではなくカットイン気味になるが、nextにじわっとopacityが乗ればクロスフェードになる）
-
-            // 完全に切り替わったら
+            // 完全に切り替わったらactiveをリセット
             setTimeout(() => {
-              // 古いactiveをリセットして隠す
               activeVideo.classList.add('opacity-0');
               activeVideo.pause();
               activeVideo.currentTime = 0;
-
-              // インデックス更新
               activeIndex = nextIndex;
-
-              // 順番入れ替え（常にnextが上に来るようにZ-index管理するか、DOMをいじるか）
-              // DOM順序を変えると再読み込みが走りそうなのでNG。
-              // z-indexで制御するのが確実。
-              // activeVideoに z-0, nextVideoに z-10 をつける
-
-              videos[activeIndex].style.zIndex = '1';
-              videos[(activeIndex + 1) % videos.length].style.zIndex = '0'; // 次の待機系は後ろへ
-
             }, fadeDuration * 1000);
-          }).catch(e => console.error("Loop play failed", e));
+          }).catch(e => {
+            console.error("Loop play failed", e);
+            // エラー時は強制リセット等が必要だが、一旦ログのみ
+          });
         }
       }
     }, 200);
