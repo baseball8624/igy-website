@@ -448,8 +448,9 @@
   }
 
   /* タップ時に浮き上がる＋ゴールドグロー（二重枠防止のためリング削除） */
-  .service-card:active,
-  .service-card.is-active {
+  /* タップ時に浮き上がる＋ゴールドグロー（二重枠防止のためリング削除） */
+  .touch-feedback:active .service-card,
+  .touch-feedback.is-active .service-card {
     transform: translateY(-6px) scale(1.02);
     box-shadow:
       0 16px 40px rgba(10, 25, 47, 0.18),

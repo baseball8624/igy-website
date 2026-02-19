@@ -35,7 +35,7 @@ function initTouchFeedback() {
   // iOSで:activeを有効にするためのハック
   document.body.addEventListener('touchstart', () => { }, { passive: true });
 
-  const touchElements = document.querySelectorAll('.service-card, .btn-primary, .touch-feedback');
+  const touchElements = document.querySelectorAll('.btn-primary, .touch-feedback');
 
   touchElements.forEach(el => {
     el.addEventListener('touchstart', function () {
