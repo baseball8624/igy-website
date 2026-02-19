@@ -7,7 +7,8 @@
     <meta name="description" content="IgyのWebサイト制作サービス。SEO対策、パフォーマンス最適化、レスポンシブデザインで、ブランドの本質を捉えた美しく機能的なWebサイトを制作します。" />
     <meta name="keywords" content="Webサイト制作, ホームページ制作, SEO, レスポンシブデザイン, Igy" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -61,11 +62,19 @@
                     <img src="/images/logo_full.png" alt="Igy Logo"
                         class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
                 </a>
+                <!-- Desktop Navigation -->
                 <ul class="hidden md:flex items-center gap-8">
                     <li>
                         <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
                             <span class="block text-sm font-bold">ABOUT US</span>
                             <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">MESSAGE</span>
+                            <span class="block text-xs opacity-60">代表ご挨拶</span>
                         </a>
                     </li>
                     <li>
@@ -82,7 +91,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/#contact"
+                        <a href="/contact.html"
                             class="btn-primary inline-flex flex-col items-center px-5 md:px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
                             <span class="text-sm font-bold">CONTACT</span>
                             <span class="text-xs opacity-80">お問い合わせ</span>
@@ -96,42 +105,49 @@
                     </svg>
                 </button>
             </nav>
-        </div>
-
-        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
-            <div class="p-6">
-                <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                <ul class="mt-12 space-y-6">
-                    <li>
-                        <a href="/#about" class="block text-text-primary font-medium">
-                            <span class="block text-lg font-bold">ABOUT US</span>
-                            <span class="block text-sm text-text-secondary">私たちについて</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/#services" class="block text-text-primary font-medium">
-                            <span class="block text-lg font-bold">SERVICES</span>
-                            <span class="block text-sm text-text-secondary">事業内容</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/#faq" class="block text-text-primary font-medium">
-                            <span class="block text-lg font-bold">FAQ</span>
-                            <span class="block text-sm text-text-secondary">よくあるご質問</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/#contact" class="block text-text-primary font-medium">
-                            <span class="block text-lg font-bold">CONTACT</span>
-                            <span class="block text-sm text-text-secondary">お問い合わせ</span>
-                        </a>
-                    </li>
-                </ul>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden z-[9999]">
+                <div class="p-6">
+                    <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary"
+                        aria-label="メニューを閉じる">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <ul class="mt-12 space-y-6">
+                        <li>
+                            <a href="/#about" class="block text-text-primary">
+                                <span class="block text-lg font-bold">ABOUT US</span>
+                                <span class="block text-sm text-text-secondary">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/message.html" class="block text-text-primary">
+                                <span class="block text-lg font-bold">MESSAGE</span>
+                                <span class="block text-sm text-text-secondary">代表ご挨拶</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="block text-text-primary">
+                                <span class="block text-lg font-bold">SERVICES</span>
+                                <span class="block text-sm text-text-secondary">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="block text-text-primary">
+                                <span class="block text-lg font-bold">FAQ</span>
+                                <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="block text-text-primary">
+                                <span class="block text-lg font-bold">CONTACT</span>
+                                <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>

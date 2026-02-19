@@ -199,6 +199,12 @@ function initHeader() {
 
   if (!header) return;
 
+  // If there's no hero section (e.g., service pages), always show scrolled header
+  if (!hero) {
+    header.classList.add('header-scrolled');
+    return;
+  }
+
   let lastScroll = 0;
 
   const handleScroll = () => {
