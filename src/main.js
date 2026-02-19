@@ -126,10 +126,11 @@ function initScrollReveal() {
 
   if (revealElements.length === 0) return;
 
+  const isMobile = window.innerWidth < 768;
   const observerOptions = {
     root: null,
-    rootMargin: '-50px',
-    threshold: 0.1
+    rootMargin: isMobile ? '0px' : '-50px',
+    threshold: isMobile ? 0.05 : 0.1
   };
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -168,10 +169,11 @@ function initCharacterStagger() {
   });
 
   // Observe stagger elements
+  const isMobile = window.innerWidth < 768;
   const observerOptions = {
     root: null,
-    rootMargin: '-50px',
-    threshold: 0.1
+    rootMargin: isMobile ? '0px' : '-50px',
+    threshold: isMobile ? 0.05 : 0.1
   };
 
   const staggerObserver = new IntersectionObserver((entries) => {
@@ -529,7 +531,7 @@ function initStickyBanner() {
     const currentScroll = window.scrollY;
     // Hero通過後（または300px以降）に表示
     const showThreshold = hero ? (hero.offsetHeight * 0.6) : 300;
-    
+
     if (currentScroll > showThreshold) {
       if (mobileBanner) mobileBanner.classList.add('visible');
       if (desktopBanner) desktopBanner.classList.add('visible');

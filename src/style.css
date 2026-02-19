@@ -664,6 +664,24 @@ textarea:focus-visible {
     padding-bottom: 80px;
   }
 
+  /* スマホではrevealアニメーションの初期translateを無効化（上コンテンツへの食い込み防止） */
+  .reveal {
+    transform: none;
+  }
+
+  .reveal-title {
+    transform: none;
+  }
+
+  .reveal-right {
+    transform: none;
+  }
+
+  .char-stagger .char,
+  .word-stagger .word {
+    transform: none;
+  }
+
   .step-description {
     max-width: 100%;
   }
