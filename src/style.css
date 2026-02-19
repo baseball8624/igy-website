@@ -1121,11 +1121,12 @@ textarea:focus-visible {
 
   /* Watermark positioned to the left */
   .step-number-watermark {
-    left: 0;
-    top: -1.5rem;
+    left: auto;
+    right: 0;
+    top: -2.5rem;
     transform: translateX(0);
-    font-size: 3rem;
-    color: rgba(0, 0, 0, 0.1);
+    font-size: 4rem;
+    color: rgba(201, 169, 98, 0.15);
     opacity: 1;
   }
 
