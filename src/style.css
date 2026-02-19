@@ -391,6 +391,13 @@
   }
 }
 
+@media (hover: none) {
+  .btn-primary:active {
+    transform: scale(0.97);
+    opacity: 0.85;
+  }
+}
+
 /* ========== Service Card Premium Hover ========== */
 .service-card {
   position: relative;
@@ -419,6 +426,16 @@
 
   .service-card:hover::before {
     animation: shine 0.8s ease-out;
+  }
+}
+
+/* スマホ: タップ時に軽く沈んで押せる感を出す */
+@media (hover: none) {
+  .service-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 16px rgba(10, 25, 47, 0.12);
+    border-color: var(--color-accent-gold);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
 }
 
@@ -653,6 +670,15 @@ textarea:focus-visible {
 
 .link-hover:hover::after {
   width: 100%;
+}
+
+/* ========== Touch Feedback (スマホ用タップフィードバック) ========== */
+@media (hover: none) {
+  .touch-feedback:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+  }
 }
 
 /* ========== Reduced Motion ========== */
