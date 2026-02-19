@@ -57,8 +57,12 @@
   <meta name="twitter:image" content="/images/ogp.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/logo.png" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Preload Poster Images -->
+  <link rel="preload" as="image" href="/images/poster_sp_tiny.jpg" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/poster_pc_tiny.jpg" media="(min-width: 768px)">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +71,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
     rel="stylesheet">
 
-  <title>Igy - 誠実さが、未来の基準になる。</title>
+  <title>株式会社Igy（イギー）| テクノロジーで、ビジネスの「速度」と「基準」を変える。</title>
   <link rel="stylesheet" href="/src/style.css" />
 
   <!-- Loading Animation Styles (inline for immediate load) -->
@@ -225,7 +229,7 @@
         <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
           <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
         </video>
-        <img src="/images/poster_sp.jpg"
+        <img src="/images/poster_sp_tiny.jpg"
           class="video-poster absolute inset-0 w-full h-full object-cover object-center z-10 pointer-events-none transition-opacity duration-1000"
           alt="">
       </div>
@@ -235,7 +239,7 @@
         <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
           <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
         </video>
-        <img src="/images/poster_pc.jpg"
+        <img src="/images/poster_pc_tiny.jpg"
           class="video-poster absolute inset-0 w-full h-full object-cover object-center z-10 pointer-events-none transition-opacity duration-1000"
           alt="">
       </div>
