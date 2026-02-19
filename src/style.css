@@ -198,6 +198,13 @@
 
 /* ========== Base Styles ========== */
 @layer base {
+
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
