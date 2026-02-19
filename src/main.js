@@ -28,7 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initStickyBanner();
   initTouchFeedback();
+  initVideoPoster();
 });
+
+// ========== Video Poster Control (ポスター画像の制御) ==========
+function initVideoPoster() {
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    // 親要素から .video-poster を探す
+    const container = video.parentElement;
+    const poster = container.querySelector('.video-poster');
+
+    if (!poster) return;
+
+    const hidePoster = () => {
+      // 既に非表示なら何もしない
+      if (poster.classList.contains('opacity-0')) return;
+      poster.classList.add('opacity-0');
+    };
+
+    // すでに再生可能なら即実行 (readyState 3 = HAVE_FUTURE_DATA, 4 = HAVE_ENOUGH_DATA)
+    if (video.readyState >= 3) {
+      hidePoster();
+    } else {
+      // イベントリスナー（念のため複数監視）
+      video.addEventListener('canplay', hidePoster, { once: true });
+      video.addEventListener('play', hidePoster, { once: true });
+      video.addEventListener('playing', hidePoster, { once: true });
+    }
+  });
+}
 
 // ========== Touch Feedback (スマホ用タップエフェクトの強化) ==========
 function initTouchFeedback() {

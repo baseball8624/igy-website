@@ -220,18 +220,28 @@
   <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-primary">
     <!-- Background: Video -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-primary">
-      <!-- スマホ用動画 -->
-      <video class="md:hidden absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline
-        poster="/images/poster_sp.png">
-        <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
-      </video>
-      <!-- PC用動画 -->
-      <video class="hidden md:block absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted
-        playsinline poster="/images/poster_pc.png">
-        <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
-      </video>
+      <!-- スマホ用 -->
+      <div class="md:hidden absolute inset-0 w-full h-full">
+        <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
+          <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
+        </video>
+        <div
+          class="video-poster absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-10 pointer-events-none transition-opacity duration-1000"
+          style="background-image: url('/images/poster_sp.png');"></div>
+      </div>
+
+      <!-- PC用 -->
+      <div class="hidden md:block absolute inset-0 w-full h-full">
+        <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
+          <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
+        </video>
+        <div
+          class="video-poster absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-10 pointer-events-none transition-opacity duration-1000"
+          style="background-image: url('/images/poster_pc.png');"></div>
+      </div>
+
       <!-- テキスト視認性のためのオーバーレイ -->
-      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/55 to-primary/70"></div>
+      <div class="absolute inset-0 z-20 bg-gradient-to-b from-primary/70 via-primary/55 to-primary/70"></div>
     </div>
 
     <!-- Geometric Orbs -->
