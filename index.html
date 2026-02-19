@@ -225,8 +225,15 @@
     <!-- Background: Video -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-primary">
       <!-- スマホ用 -->
-      <div class="md:hidden absolute inset-0 w-full h-full">
-        <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
+      <div id="video-sp-wrapper" class="md:hidden absolute inset-0 w-full h-full">
+        <video
+          class="active-video absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+          muted playsinline>
+          <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
+        </video>
+        <video
+          class="next-video absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+          muted playsinline>
           <source src="/images/ホームページTOP動画　改.mp4" type="video/mp4">
         </video>
         <img src="/images/poster_sp_tiny.jpg"
@@ -235,8 +242,15 @@
       </div>
 
       <!-- PC用 -->
-      <div class="hidden md:block absolute inset-0 w-full h-full">
-        <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay loop muted playsinline>
+      <div id="video-pc-wrapper" class="hidden md:block absolute inset-0 w-full h-full">
+        <video
+          class="active-video absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+          muted playsinline>
+          <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
+        </video>
+        <video
+          class="next-video absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0"
+          muted playsinline>
           <source src="/images/ホームページTOP動画.mp4" type="video/mp4">
         </video>
         <img src="/images/poster_pc_tiny.jpg"

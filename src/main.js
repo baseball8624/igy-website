@@ -29,29 +29,105 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyBanner();
   initTouchFeedback();
   initVideoPoster();
+  initSeamlessLoop();
 });
+
+// ========== Seamless Video Loop (動画のシームレスループ) ==========
+function initSeamlessLoop() {
+  const wrappers = ['video-sp-wrapper', 'video-pc-wrapper'];
+
+  wrappers.forEach(id => {
+    const wrapper = document.getElementById(id);
+    if (!wrapper) return;
+
+    const videos = wrapper.querySelectorAll('video');
+    if (videos.length < 2) return;
+
+    // 初期再生（active-video）
+    videos[0].play().catch(() => { });
+
+    let activeIndex = 0;
+    const fadeDuration = 1.0; // クロスフェード時間（秒）
+
+    // 定期監視
+    setInterval(() => {
+      const activeVideo = videos[activeIndex];
+      const nextIndex = (activeIndex + 1) % videos.length;
+      const nextVideo = videos[nextIndex];
+
+      // 再生が止まっていたら復帰（安全策）
+      if (activeVideo.paused && !activeVideo.ended && activeVideo.readyState >= 3) {
+        activeVideo.play().catch(() => { });
+      }
+
+      // 残り時間が (フェード時間 + 0.2秒) を切ったら次を再生
+      // ※ duration が取得できていない場合はスキップ
+      if (!Number.isNaN(activeVideo.duration)) {
+        const remaining = activeVideo.duration - activeVideo.currentTime;
+        if (remaining < fadeDuration + 0.2 && nextVideo.paused) {
+          nextVideo.currentTime = 0;
+          nextVideo.play().then(() => {
+            // フェードイン (opacity-0 を削除)
+            nextVideo.classList.remove('opacity-0');
+            // 前面に移動 (z-index調整でもいいが、DOM順序が後の方が上に来るので、opacity制御だけで実質クロスフェードに見える)
+            // ただし、activeVideoが上にあるとnextが見えないので、activeVideoの透過も必要
+
+            // CSS transitionで activeVideo をフェードアウト
+            // activeVideo.classList.add('opacity-0'); // これだと背景（黒や紺）が透ける可能性があるため、nextVideoがアクティブ動画の上に重なる形が望ましい
+
+            // 今回のHTML構造では、絶対配置で重なっている。
+            // active(0) と next(1) がある。DOM順では next が上。
+            // 初期状態: active(visible), next(opacity-0) -> activeが見えている
+            // 切り替え: next(visible) にすると、nextが上なのでactiveを覆い隠す（クロスフェードではなくカットイン気味になるが、nextにじわっとopacityが乗ればクロスフェードになる）
+
+            // 完全に切り替わったら
+            setTimeout(() => {
+              // 古いactiveをリセットして隠す
+              activeVideo.classList.add('opacity-0');
+              activeVideo.pause();
+              activeVideo.currentTime = 0;
+
+              // インデックス更新
+              activeIndex = nextIndex;
+
+              // 順番入れ替え（常にnextが上に来るようにZ-index管理するか、DOMをいじるか）
+              // DOM順序を変えると再読み込みが走りそうなのでNG。
+              // z-indexで制御するのが確実。
+              // activeVideoに z-0, nextVideoに z-10 をつける
+
+              videos[activeIndex].style.zIndex = '1';
+              videos[(activeIndex + 1) % videos.length].style.zIndex = '0'; // 次の待機系は後ろへ
+
+            }, fadeDuration * 1000);
+          }).catch(e => console.error("Loop play failed", e));
+        }
+      }
+    }, 200);
+  });
+}
 
 // ========== Video Poster Control (ポスター画像の制御) ==========
 function initVideoPoster() {
-  const videos = document.querySelectorAll('video');
-  videos.forEach(video => {
-    // 親要素から .video-poster を探す
-    const container = video.parentElement;
-    const poster = container.querySelector('.video-poster');
+  const wrappers = ['video-sp-wrapper', 'video-pc-wrapper'];
 
-    if (!poster) return;
+  wrappers.forEach(id => {
+    const wrapper = document.getElementById(id);
+    if (!wrapper) return;
+
+    // 最初のビデオだけ監視すればよい
+    const video = wrapper.querySelector('.active-video');
+    const poster = wrapper.querySelector('.video-poster');
+
+    if (!video || !poster) return;
 
     const hidePoster = () => {
-      // 既に非表示なら何もしない
       if (poster.classList.contains('opacity-0')) return;
       poster.classList.add('opacity-0');
     };
 
-    // すでに再生可能なら即実行 (readyState 3 = HAVE_FUTURE_DATA, 4 = HAVE_ENOUGH_DATA)
     if (video.readyState >= 3) {
       hidePoster();
     } else {
-      // イベントリスナー（念のため複数監視）
       video.addEventListener('canplay', hidePoster, { once: true });
       video.addEventListener('play', hidePoster, { once: true });
       video.addEventListener('playing', hidePoster, { once: true });
