@@ -836,11 +836,13 @@ textarea:focus-visible {
   /* 元の12pxに戻す */
   transform: translateY(calc(100% + 32px));
   opacity: 1;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  overflow: hidden;
+  /* 元の12pxに戻す */
+  transform: translateY(calc(100% + 32px));
+  opacity: 1;
+  /* コンテナの影と背景関連を削除し、完全にボタンのみにする */
   max-width: 100%;
-  /* 画面幅を超えないように */
+  pointer-events: none;
+  /* コンテナ自体はクリック透過（念のため） */
 }
 
 .sticky-banner-mobile.visible {
@@ -862,6 +864,10 @@ textarea:focus-visible {
   text-decoration: none;
   transition: all 0.3s var(--ease-premium);
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* ボタン個別に影を追加 */
+  pointer-events: auto;
+  /* コンテナでnoneにしたのでこちらで有効化 */
 }
 
 .sticky-banner-btn:active {
