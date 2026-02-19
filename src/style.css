@@ -392,7 +392,9 @@
 }
 
 @media (hover: none) {
-  .btn-primary:active {
+
+  .btn-primary:active,
+  .btn-primary.is-active {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 12px 30px rgba(10, 25, 47, 0.3), 0 0 16px rgba(201, 169, 98, 0.3);
     transition: transform 0.15s var(--ease-bounce), box-shadow 0.15s ease;
@@ -437,7 +439,8 @@
   }
 
   /* タップ時に浮き上がる＋ゴールドグロー */
-  .service-card:active {
+  .service-card:active,
+  .service-card.is-active {
     transform: translateY(-6px) scale(1.02);
     box-shadow:
       0 16px 40px rgba(10, 25, 47, 0.18),
@@ -683,7 +686,9 @@ textarea:focus-visible {
 
 /* ========== Touch Feedback (スマホ用タップフィードバック) ========== */
 @media (hover: none) {
-  .touch-feedback:active {
+
+  .touch-feedback:active,
+  .touch-feedback.is-active {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 0 0 2px var(--color-accent-gold), 0 0 18px rgba(201, 169, 98, 0.4);
     transition: transform 0.15s var(--ease-bounce), box-shadow 0.15s ease;

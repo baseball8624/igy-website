@@ -27,7 +27,34 @@ document.addEventListener('DOMContentLoaded', () => {
   initGeometricAnimation();
   initFAQ();
   initStickyBanner();
+  initTouchFeedback();
 });
+
+// ========== Touch Feedback (スマホ用タップエフェクトの強化) ==========
+function initTouchFeedback() {
+  // iOSで:activeを有効にするためのハック
+  document.body.addEventListener('touchstart', () => { }, { passive: true });
+
+  const touchElements = document.querySelectorAll('.service-card, .btn-primary, .touch-feedback');
+
+  touchElements.forEach(el => {
+    el.addEventListener('touchstart', function () {
+      this.classList.add('is-active');
+    }, { passive: true });
+
+    el.addEventListener('touchend', function () {
+      // 少し遅らせてクラスを外すことでアニメーションを見せる
+      setTimeout(() => {
+        this.classList.remove('is-active');
+      }, 150);
+    }, { passive: true });
+
+    // キャンセル時も外す
+    el.addEventListener('touchcancel', function () {
+      this.classList.remove('is-active');
+    }, { passive: true });
+  });
+}
 
 // ========== Scroll Progress Bar ==========
 function initScrollProgress() {
