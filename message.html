@@ -14,7 +14,8 @@
     <meta property="og:image" content="https://igy-inc.jp/images/poster_pc.jpg?v=20260219" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="./favicon.png?v=3" />
+    <link rel="apple-touch-icon" href="./favicon.png?v=3" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,51 +260,53 @@
                     </svg>
                 </button>
             </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden z-[9999]">
+                <div class="p-6">
+                    <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary"
+                        aria-label="メニューを閉じる">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <ul class="mt-12 space-y-6">
+                        <li>
+                            <a href="/#about" class="block text-text-primary">
+                                <span class="block text-lg font-bold">ABOUT US</span>
+                                <span class="block text-sm text-text-secondary">私たちについて</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/message.html" class="block text-text-primary">
+                                <span class="block text-lg font-bold">MESSAGE</span>
+                                <span class="block text-sm text-text-secondary">代表ご挨拶</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services" class="block text-text-primary">
+                                <span class="block text-lg font-bold">SERVICES</span>
+                                <span class="block text-sm text-text-secondary">事業内容</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#faq" class="block text-text-primary">
+                                <span class="block text-lg font-bold">FAQ</span>
+                                <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="block text-text-primary">
+                                <span class="block text-lg font-bold">CONTACT</span>
+                                <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-2xl md:hidden">
-        <div class="p-6">
-            <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <ul class="mt-12 space-y-6">
-                <li>
-                    <a href="/#about" class="block text-text-primary">
-                        <span class="block text-lg font-bold">ABOUT US</span>
-                        <span class="block text-sm text-text-secondary">私たちについて</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/message.html" class="block text-text-primary">
-                        <span class="block text-lg font-bold">MESSAGE</span>
-                        <span class="block text-sm text-text-secondary">代表ご挨拶</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/#services" class="block text-text-primary">
-                        <span class="block text-lg font-bold">SERVICES</span>
-                        <span class="block text-sm text-text-secondary">事業内容</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/#faq" class="block text-text-primary">
-                        <span class="block text-lg font-bold">FAQ</span>
-                        <span class="block text-sm text-text-secondary">よくあるご質問</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/contact.html" class="block text-text-primary">
-                        <span class="block text-lg font-bold">CONTACT</span>
-                        <span class="block text-sm text-text-secondary">お問い合わせ</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <!-- ========== CEO MESSAGE SECTION ========== -->
     <section id="ceo-message">
