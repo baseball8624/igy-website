@@ -7,7 +7,7 @@
  * Usage: node blog/build.js
  */
 
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, copyFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -43,6 +43,49 @@ function ensureDir(dirPath) {
     if (!existsSync(dirPath)) {
         mkdirSync(dirPath, { recursive: true });
     }
+}
+
+// DIST_MODE: Viteが生成した本番用アセットのパスを取得
+function resolveDistAssets() {
+    const distAssetsDir = join(ROOT_DIR, 'dist', 'assets');
+    if (!existsSync(distAssetsDir)) return null;
+
+    const files = readdirSync(distAssetsDir);
+    const styleCss = files.find(f => f.startsWith('style-') && f.endsWith('.css'));
+    const blogCss = files.find(f => f.startsWith('blog-') && f.endsWith('.css'));
+    const blogJs = files.find(f => f.startsWith('blog-') && f.endsWith('.js'));
+    const mainJs = files.find(f => f.startsWith('main-') && f.endsWith('.js'));
+
+    return {
+        styleCss: styleCss ? `/assets/${styleCss}` : null,
+        blogCss: blogCss ? `/assets/${blogCss}` : null,
+        blogJs: blogJs ? `/assets/${blogJs}` : null,
+        mainJs: mainJs ? `/assets/${mainJs}` : null,
+    };
+}
+
+// DIST_MODE: HTMLの/src/パスを本番アセットパスに置換
+function replaceAssetsForDist(html, distAssets) {
+    if (!distAssets) return html;
+    if (distAssets.styleCss) html = html.replace('/src/style.css', distAssets.styleCss);
+    if (distAssets.blogCss) html = html.replace('/src/blog.css', distAssets.blogCss);
+    if (distAssets.blogJs) html = html.replace(/\/src\/blog\.js/g, distAssets.blogJs);
+    if (distAssets.mainJs) html = html.replace(/\/src\/main\.js/g, distAssets.mainJs);
+    // type="module" 属性を維持
+    return html;
+}
+
+// ブログ画像をdist/にコピー
+function copyBlogImagesToDist() {
+    const srcImagesDir = join(__dirname, 'images');
+    const distImagesDir = join(ROOT_DIR, 'dist', 'blog', 'images');
+    if (!existsSync(srcImagesDir)) return;
+    ensureDir(distImagesDir);
+    const images = readdirSync(srcImagesDir);
+    images.forEach(img => {
+        copyFileSync(join(srcImagesDir, img), join(distImagesDir, img));
+    });
+    if (images.length > 0) console.log(`✅ ${images.length} 件のブログ画像を dist/blog/images/ にコピー`);
 }
 
 function formatDate(dateStr) {
@@ -177,7 +220,7 @@ function generatePagination(currentPage, totalPages, baseUrl) {
 
 // ── 記事ページ生成 ──
 
-function buildArticlePages(posts, categories) {
+function buildArticlePages(posts, categories, distAssets) {
     const template = loadTemplate('article.html');
     const outputDir = join(ROOT_DIR, 'blog');
     ensureDir(outputDir);
@@ -215,14 +258,14 @@ function buildArticlePages(posts, categories) {
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
         writeFileSync(join(outputDir, `${post.slug}.html`), html, 'utf-8');
-        if (DIST_MODE) writeFileSync(join(distOutputDir, `${post.slug}.html`), html, 'utf-8');
+        if (DIST_MODE) writeFileSync(join(distOutputDir, `${post.slug}.html`), replaceAssetsForDist(html, distAssets), 'utf-8');
         console.log(`✅ 記事ページ生成: blog/${post.slug}.html`);
     });
 }
 
 // ── 一覧ページ生成 ──
 
-function buildListPage(posts, categories) {
+function buildListPage(posts, categories, distAssets) {
     const template = loadTemplate('list.html');
     const outputDir = join(ROOT_DIR, 'blog');
     ensureDir(outputDir);
@@ -257,13 +300,13 @@ function buildListPage(posts, categories) {
         .replace(/{{SITE_URL}}/g, SITE_URL);
 
     writeFileSync(join(outputDir, 'index.html'), html, 'utf-8');
-    if (DIST_MODE) writeFileSync(join(distOutputDir, 'index.html'), html, 'utf-8');
+    if (DIST_MODE) writeFileSync(join(distOutputDir, 'index.html'), replaceAssetsForDist(html, distAssets), 'utf-8');
     console.log(`✅ 一覧ページ生成: blog/index.html`);
 }
 
 // ── カテゴリページ生成 ──
 
-function buildCategoryPages(posts, categories) {
+function buildCategoryPages(posts, categories, distAssets) {
     const template = loadTemplate('category.html');
     const outputDir = join(ROOT_DIR, 'blog', 'category');
     ensureDir(outputDir);
@@ -292,7 +335,7 @@ function buildCategoryPages(posts, categories) {
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
         writeFileSync(join(outputDir, `${cat.slug}.html`), html, 'utf-8');
-        if (DIST_MODE) writeFileSync(join(distOutputDir, `${cat.slug}.html`), html, 'utf-8');
+        if (DIST_MODE) writeFileSync(join(distOutputDir, `${cat.slug}.html`), replaceAssetsForDist(html, distAssets), 'utf-8');
         console.log(`✅ カテゴリページ生成: blog/category/${cat.slug}.html`);
     });
 }
@@ -356,10 +399,19 @@ function main() {
         return;
     }
 
-    buildArticlePages(posts, categories);
-    buildListPage(posts, categories);
-    buildCategoryPages(posts, categories);
+    // DIST_MODE: アセットパスを解決
+    const distAssets = DIST_MODE ? resolveDistAssets() : null;
+    if (DIST_MODE && distAssets) {
+        console.log('📦 DIST_MODE: 本番アセットパスに置換します');
+    }
+
+    buildArticlePages(posts, categories, distAssets);
+    buildListPage(posts, categories, distAssets);
+    buildCategoryPages(posts, categories, distAssets);
     updateSitemap(posts, categories);
+
+    // DIST_MODE: 画像をdist/にコピー
+    if (DIST_MODE) copyBlogImagesToDist();
 
     console.log('\n✨ ビルド完了!');
 }
