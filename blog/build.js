@@ -14,6 +14,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT_DIR = join(__dirname, '..');
+const DIST_MODE = process.env.BLOG_DIST === '1'; // dist/blog/ にも出力するフラグ
 
 const SITE_URL = 'https://igy-inc.jp';
 const POSTS_PER_PAGE = 10;
@@ -181,6 +182,10 @@ function buildArticlePages(posts, categories) {
     const outputDir = join(ROOT_DIR, 'blog');
     ensureDir(outputDir);
 
+    // dist/blog/ にも同時出力
+    const distOutputDir = join(ROOT_DIR, 'dist', 'blog');
+    if (DIST_MODE) ensureDir(distOutputDir);
+
     posts.forEach(post => {
         const cat = categories.find(c => c.slug === post.category);
         const toc = generateTOC(post.body);
@@ -210,6 +215,7 @@ function buildArticlePages(posts, categories) {
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
         writeFileSync(join(outputDir, `${post.slug}.html`), html, 'utf-8');
+        if (DIST_MODE) writeFileSync(join(distOutputDir, `${post.slug}.html`), html, 'utf-8');
         console.log(`✅ 記事ページ生成: blog/${post.slug}.html`);
     });
 }
@@ -220,6 +226,9 @@ function buildListPage(posts, categories) {
     const template = loadTemplate('list.html');
     const outputDir = join(ROOT_DIR, 'blog');
     ensureDir(outputDir);
+
+    const distOutputDir = join(ROOT_DIR, 'dist', 'blog');
+    if (DIST_MODE) ensureDir(distOutputDir);
 
     // カテゴリフィルタータブ
     let categoryTabs = '<button class="blog-filter-btn blog-filter-active" data-category="all">すべて</button>\n';
@@ -248,6 +257,7 @@ function buildListPage(posts, categories) {
         .replace(/{{SITE_URL}}/g, SITE_URL);
 
     writeFileSync(join(outputDir, 'index.html'), html, 'utf-8');
+    if (DIST_MODE) writeFileSync(join(distOutputDir, 'index.html'), html, 'utf-8');
     console.log(`✅ 一覧ページ生成: blog/index.html`);
 }
 
@@ -257,6 +267,9 @@ function buildCategoryPages(posts, categories) {
     const template = loadTemplate('category.html');
     const outputDir = join(ROOT_DIR, 'blog', 'category');
     ensureDir(outputDir);
+
+    const distOutputDir = join(ROOT_DIR, 'dist', 'blog', 'category');
+    if (DIST_MODE) ensureDir(distOutputDir);
 
     categories.forEach(cat => {
         const catPosts = posts.filter(p => p.category === cat.slug);
@@ -279,6 +292,7 @@ function buildCategoryPages(posts, categories) {
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
         writeFileSync(join(outputDir, `${cat.slug}.html`), html, 'utf-8');
+        if (DIST_MODE) writeFileSync(join(distOutputDir, `${cat.slug}.html`), html, 'utf-8');
         console.log(`✅ カテゴリページ生成: blog/category/${cat.slug}.html`);
     });
 }
