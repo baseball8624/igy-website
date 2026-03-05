@@ -1,0 +1,22 @@
+[
+    {
+        "slug": "web-ads",
+        "name": "Web広告",
+        "description": "Google広告・Meta広告の運用ノウハウ、比較"
+    },
+    {
+        "slug": "seo-content",
+        "name": "SEO・コンテンツ",
+        "description": "SEO対策、コンテンツマーケティング"
+    },
+    {
+        "slug": "line-sns",
+        "name": "LINE・SNS活用",
+        "description": "LINE公式、Instagram、SNS運用"
+    },
+    {
+        "slug": "ai-automation",
+        "name": "AI・業務自動化",
+        "description": "AI導入事例、業務効率化、ツール紹介"
+    }
+]

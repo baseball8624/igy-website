@@ -11,6 +11,7 @@ export default defineConfig({
         main: 'index.html',
         contact: 'contact.html',
         message: 'message.html',
+        blog: 'blog/index.html',
         ads: 'services/ads.html',
         ai: 'services/ai.html',
         analytics: 'services/analytics.html',
