@@ -1137,6 +1137,11 @@
   line-height: 1.8;
 }
 
+.cta-section .cta-desc strong {
+  color: var(--igy-gold-light);
+  font-weight: 800;
+}
+
 .cta-btn {
   display: inline-block;
   background: linear-gradient(135deg, #06C755, #04a547);
