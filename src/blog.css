@@ -1188,6 +1188,34 @@
   margin: 16px 0 0;
 }
 
+/* --- SIMPLE INLINE CTA BANNER --- */
+.cta-simple-banner {
+  margin: 40px 0;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.cta-simple-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #06C755, #04a547);
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 16px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 6px 16px rgba(6, 199, 85, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.cta-simple-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6, 199, 85, 0.4);
+}
+
 /* Flow diagram */
 .flow-diagram {
   display: flex;
