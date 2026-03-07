@@ -1098,9 +1098,10 @@
 
 .funnel-step:nth-child(5) {
   background: #2dc98a;
-  clip-path: polygon(28% 0, 72% 0, 65% 100%, 35% 100%);
+  clip-path: polygon(28% 0, 72% 0, 50% 100%, 50% 100%);
   padding-left: 35%;
   padding-right: 35%;
+  padding-bottom: 24px;
 }
 
 .funnel-label {
