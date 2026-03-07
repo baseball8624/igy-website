@@ -1331,6 +1331,11 @@
   text-decoration: underline;
 }
 
+/* Utility for mobile line break (default hidden) */
+.sp-br {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .article-body {
     padding: 0 14px;
@@ -1357,9 +1362,4 @@
   .sp-br {
     display: block;
   }
-}
-
-/* Utility for mobile line break (default hidden) */
-.sp-br {
-  display: none;
 }
