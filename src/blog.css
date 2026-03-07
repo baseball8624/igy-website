@@ -1353,12 +1353,13 @@
     transform: rotate(90deg);
   }
 
+  /* Utility for mobile line break */
   .sp-br {
     display: block;
   }
 }
 
-/* Utility for mobile line break */
+/* Utility for mobile line break (default hidden) */
 .sp-br {
   display: none;
 }
