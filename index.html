@@ -376,52 +376,51 @@
         <!-- Content -->
         <div class="relative z-10 py-8 md:py-12 px-5 md:px-8">
           <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-white">
-            <div class="reveal stagger-1 flex flex-col md:flex-row items-start md:items-center gap-4 w-full">
+            <!-- Item 1: Speed -->
+            <div
+              class="reveal stagger-1 flex flex-col items-start w-full relative group overflow-hidden pl-5 py-2 border-l border-white/20 transition-colors duration-500 hover:border-white/60">
+              <!-- Watermark Typography -->
               <div
-                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
+                class="absolute -right-4 -bottom-8 text-8xl md:text-9xl font-black text-white/5 opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-700 ease-out pointer-events-none select-none">
+                S
               </div>
-              <div class="flex-1">
-                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Speed / 圧倒的な速度</h3>
-                <p class="text-white/80 text-xs md:text-sm leading-relaxed">AIと自動化技術により、実装までの時間を劇的に短縮。ビジネスの機会損失を防ぎます。
-                </p>
+              <div class="relative z-10 w-full">
+                <p class="text-accent-gold text-xs font-bold tracking-widest uppercase mb-2">01 / Speed</p>
+                <h3 class="text-lg md:text-xl font-bold mb-3 leading-tight tracking-wide">圧倒的な速度</h3>
+                <p class="text-white/80 text-sm leading-relaxed max-w-[90%]">AIと自動化技術により、実装までの時間を劇的に短縮。<br
+                    class="hidden md:block">ビジネスの機会損失を防ぎます。</p>
               </div>
             </div>
-            <div class="reveal stagger-2 flex flex-col md:flex-row items-start md:items-center gap-4 w-full">
+
+            <!-- Item 2: Logic -->
+            <div
+              class="reveal stagger-2 flex flex-col items-start w-full relative group overflow-hidden pl-5 py-2 border-l border-white/20 transition-colors duration-500 hover:border-white/60">
+              <!-- Watermark Typography -->
               <div
-                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <circle cx="18" cy="5" r="3" />
-                  <circle cx="6" cy="12" r="3" />
-                  <circle cx="18" cy="19" r="3" />
-                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                </svg>
+                class="absolute -right-4 -bottom-8 text-8xl md:text-9xl font-black text-white/5 opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-700 ease-out pointer-events-none select-none flex items-center h-full">
+                L
               </div>
-              <div class="flex-1">
-                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Logic / データに基づく論理</h3>
-                <p class="text-white/80 text-xs md:text-sm leading-relaxed">
-                  勘や経験則には頼りません。アクセス解析と市場データに基づき、最も確率の高い「勝ち筋」だけを実装します。</p>
+              <div class="relative z-10 w-full">
+                <p class="text-accent-gold text-xs font-bold tracking-widest uppercase mb-2">02 / Logic</p>
+                <h3 class="text-lg md:text-xl font-bold mb-3 leading-tight tracking-wide">データに基づく論理</h3>
+                <p class="text-white/80 text-sm leading-relaxed max-w-[90%]">勘や経験則には頼りません。<br
+                    class="hidden md:block">アクセス解析と市場データに基づき、最も確率の高い「勝ち筋」だけを実装します。</p>
               </div>
             </div>
-            <div class="reveal stagger-3 flex flex-col md:flex-row items-start md:items-center gap-4 w-full">
+
+            <!-- Item 3: Asset -->
+            <div
+              class="reveal stagger-3 flex flex-col items-start w-full relative group overflow-hidden pl-5 py-2 border-l border-white/20 transition-colors duration-500 hover:border-white/60">
+              <!-- Watermark Typography -->
               <div
-                class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
-                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="M12 8v4" />
-                  <path d="M12 16h.01" />
-                </svg>
+                class="absolute -right-4 -bottom-8 text-8xl md:text-9xl font-black text-white/5 opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-700 ease-out pointer-events-none select-none flex items-center h-full">
+                A
               </div>
-              <div class="flex-1">
-                <h3 class="text-base md:text-lg font-bold mb-1 leading-tight">Asset / 資産としての構築</h3>
-                <p class="text-white/80 text-xs md:text-sm leading-relaxed">
-                  作って終わりの施策ではなく、継続的な運用によって利益を生み続ける「事業資産」となるシステムを構築します。</p>
+              <div class="relative z-10 w-full">
+                <p class="text-accent-gold text-xs font-bold tracking-widest uppercase mb-2">03 / Asset</p>
+                <h3 class="text-lg md:text-xl font-bold mb-3 leading-tight tracking-wide">資産としての構築</h3>
+                <p class="text-white/80 text-sm leading-relaxed max-w-[90%]">作って終わりの施策ではなく、<br
+                    class="hidden md:block">継続的な運用によって利益を生み続ける「事業資産」となるシステムを構築します。</p>
               </div>
             </div>
           </div>
