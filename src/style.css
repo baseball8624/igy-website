@@ -280,11 +280,34 @@
 /* Right slide reveal */
 .reveal-right {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(-30px);
   transition:
-    opacity 0.8s var(--ease-premium),
-    transform 0.8s var(--ease-premium);
+    opacity 1s var(--ease-premium),
+    transform 1s var(--ease-premium);
   will-change: opacity, transform;
+}
+
+/* Watermark scroll reveal animation */
+.watermark-text {
+  opacity: 0;
+  transform: translate(24px, 12px) scale(0.95);
+  transition:
+    opacity 1.2s var(--ease-premium),
+    transform 1.2s var(--ease-premium);
+}
+
+/* Base state when revealed */
+.reveal.visible .watermark-text {
+  opacity: 0.4;
+  transform: translate(0, 0) scale(1);
+}
+
+/* PC Hover state over parent */
+@media (hover: hover) {
+  .reveal.visible:hover .watermark-text {
+    opacity: 1;
+    transform: translate(-16px, -8px) scale(1.05);
+  }
 }
 
 .reveal-right.visible {
