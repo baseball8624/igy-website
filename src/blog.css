@@ -1043,7 +1043,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: 2px;
   margin: 32px auto;
   max-width: 480px;
 }
@@ -1051,43 +1051,56 @@
 .funnel-step {
   width: 100%;
   text-align: center;
-  padding: 14px 20px;
+  padding: 14px 0;
   font-weight: 700;
   font-size: 0.92rem;
   color: #fff;
   position: relative;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .funnel-step {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.8rem;
+  }
 }
 
 .funnel-step:nth-child(1) {
   background: var(--igy-dark-blue);
-  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
-  border-radius: 10px 10px 0 0;
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .funnel-step:nth-child(2) {
   background: var(--igy-blue);
-  clip-path: polygon(8% 0, 92% 0, 84% 100%, 16% 100%);
-  width: 92%;
+  clip-path: polygon(7% 0, 93% 0, 86% 100%, 14% 100%);
+  padding-left: 14%;
+  padding-right: 14%;
 }
 
 .funnel-step:nth-child(3) {
   background: var(--igy-light-blue);
-  clip-path: polygon(16% 0, 84% 0, 76% 100%, 24% 100%);
-  width: 84%;
+  clip-path: polygon(14% 0, 86% 0, 79% 100%, 21% 100%);
+  padding-left: 21%;
+  padding-right: 21%;
 }
 
 .funnel-step:nth-child(4) {
   background: var(--igy-gold);
-  clip-path: polygon(24% 0, 76% 0, 68% 100%, 32% 100%);
-  width: 76%;
+  clip-path: polygon(21% 0, 79% 0, 72% 100%, 28% 100%);
+  padding-left: 28%;
+  padding-right: 28%;
   color: var(--igy-dark-blue);
 }
 
 .funnel-step:nth-child(5) {
   background: #2dc98a;
-  clip-path: polygon(32% 0, 68% 0, 50% 100%, 50% 100%);
-  width: 68%;
-  border-radius: 0 0 4px 4px;
+  clip-path: polygon(28% 0, 72% 0, 65% 100%, 35% 100%);
+  padding-left: 35%;
+  padding-right: 35%;
 }
 
 .funnel-label {
