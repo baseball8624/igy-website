@@ -1352,4 +1352,13 @@
   .flow-arrow {
     transform: rotate(90deg);
   }
+
+  .sp-br {
+    display: block;
+  }
+}
+
+/* Utility for mobile line break */
+.sp-br {
+  display: none;
 }
