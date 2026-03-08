@@ -31,21 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(hideLoader, remainingWait);
     };
 
-    if (video && video.readyState < 3) {
-      let isReady = false;
-      const onVideoReady = () => {
-        if (isReady) return;
-        isReady = true;
+    if (video) {
+      // Force playback just in case browser suspended autoplay
+      video.play().catch(() => { });
+
+      if (!video.paused && video.currentTime > 0) {
+        // Video is already moving
         tryHidingLoader();
-      };
+      } else {
+        let isReady = false;
+        const onVideoPlaying = () => {
+          if (isReady) return;
+          isReady = true;
+          tryHidingLoader();
+        };
 
-      video.addEventListener('canplay', onVideoReady, { once: true });
-      video.addEventListener('playing', onVideoReady, { once: true });
+        // Wait specifically for the 'playing' event (when frames actually start ticking)
+        video.addEventListener('playing', onVideoPlaying, { once: true });
 
-      // Fallback: Force hide loader after 3.5 seconds if video loading hangs
-      setTimeout(onVideoReady, 3500);
+        // Fallback: Force hide loader after 3.5 seconds if video loading/playback hangs
+        setTimeout(() => {
+          if (!isReady) onVideoPlaying();
+        }, 3500);
+      }
     } else {
-      // Video already loaded or not present on page
+      // Not present on page
       setTimeout(hideLoader, minimumWaitTime);
     }
   }
