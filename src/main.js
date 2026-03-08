@@ -40,18 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
         tryHidingLoader();
       } else {
         let isReady = false;
-        const onVideoPlaying = () => {
+        const confirmPlayingAndHide = () => {
           if (isReady) return;
-          isReady = true;
-          tryHidingLoader();
+          // Check if video time is actually progressing
+          const checkProgress = () => {
+            if (video.currentTime > 0.05) {
+              isReady = true;
+              tryHidingLoader();
+            } else {
+              requestAnimationFrame(checkProgress);
+            }
+          };
+          requestAnimationFrame(checkProgress);
         };
 
         // Wait specifically for the 'playing' event (when frames actually start ticking)
-        video.addEventListener('playing', onVideoPlaying, { once: true });
+        video.addEventListener('playing', confirmPlayingAndHide, { once: true });
 
         // Fallback: Force hide loader after 3.5 seconds if video loading/playback hangs
         setTimeout(() => {
-          if (!isReady) onVideoPlaying();
+          if (!isReady) {
+            isReady = true;
+            tryHidingLoader();
+          }
         }, 3500);
       }
     } else {
