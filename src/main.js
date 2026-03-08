@@ -9,30 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hide page loader
   const loader = document.getElementById('page-loader');
   if (loader) {
-    const progressBar = document.getElementById('loader-progress');
-    let simulatedProgress = 0;
-
-    // Simulate loading progress up to ~90%
-    const progressInterval = setInterval(() => {
-      if (simulatedProgress < 90) {
-        simulatedProgress += (90 - simulatedProgress) * 0.05;
-        if (progressBar) progressBar.style.width = `${simulatedProgress}%`;
-      }
-    }, 50);
-
-    const hideLoader = () => {
-      if (loader.classList.contains('hidden')) return;
-
-      clearInterval(progressInterval);
-      // Snap to 100%
-      if (progressBar) progressBar.style.width = '100%';
-
-      // Give it 400ms to show the bar hitting 100% before fading out
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        setTimeout(() => loader.remove(), 600);
-      }, 400);
-    };
+    const hasHash = window.location.hash.length > 0;
+    const hasSeenLoader = sessionStorage.getItem('igy_loader_shown');
 
     // Find the hero video based on device
     const isMobile = window.innerWidth < 768;
@@ -40,53 +18,92 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById(wrapperId);
     const video = wrapper ? wrapper.querySelector('.active-video') : null;
 
-    // Minimum display time for logo animation to complete smoothly
-    const minimumWaitTime = 1500;
-    const startTime = Date.now();
+    if (hasHash || hasSeenLoader) {
+      // Skip loader instantly
+      loader.style.display = 'none';
+      loader.remove();
 
-    const tryHidingLoader = () => {
-      const elapsed = Date.now() - startTime;
-      const remainingWait = Math.max(0, minimumWaitTime - elapsed);
-      setTimeout(hideLoader, remainingWait);
-    };
-
-    if (video) {
-      // Force playback just in case browser suspended autoplay
-      video.play().catch(() => { });
-
-      if (!video.paused && video.currentTime > 0) {
-        // Video is already moving
-        tryHidingLoader();
-      } else {
-        let isReady = false;
-        const confirmPlayingAndHide = () => {
-          if (isReady) return;
-          // Check if video time is actually progressing
-          const checkProgress = () => {
-            if (video.currentTime > 0.05) {
-              isReady = true;
-              tryHidingLoader();
-            } else {
-              requestAnimationFrame(checkProgress);
-            }
-          };
-          requestAnimationFrame(checkProgress);
-        };
-
-        // Wait specifically for the 'playing' event (when frames actually start ticking)
-        video.addEventListener('playing', confirmPlayingAndHide, { once: true });
-
-        // Fallback: Force hide loader after 3.5 seconds if video loading/playback hangs
-        setTimeout(() => {
-          if (!isReady) {
-            isReady = true;
-            tryHidingLoader();
-          }
-        }, 3500);
+      // Ensure video plays
+      if (video) {
+        video.play().catch(() => { });
       }
     } else {
-      // Not present on page
-      setTimeout(hideLoader, minimumWaitTime);
+      // Mark as seen for future navigation in the same session
+      sessionStorage.setItem('igy_loader_shown', 'true');
+
+      const progressBar = document.getElementById('loader-progress');
+      let simulatedProgress = 0;
+
+      // Simulate loading progress up to ~90%
+      const progressInterval = setInterval(() => {
+        if (simulatedProgress < 90) {
+          simulatedProgress += (90 - simulatedProgress) * 0.05;
+          if (progressBar) progressBar.style.width = `${simulatedProgress}%`;
+        }
+      }, 50);
+
+      const hideLoader = () => {
+        if (loader.classList.contains('hidden')) return;
+
+        clearInterval(progressInterval);
+        // Snap to 100%
+        if (progressBar) progressBar.style.width = '100%';
+
+        // Give it 400ms to show the bar hitting 100% before fading out
+        setTimeout(() => {
+          loader.classList.add('hidden');
+          setTimeout(() => loader.remove(), 600);
+        }, 400);
+      };
+
+      // Minimum display time for logo animation to complete smoothly
+      const minimumWaitTime = 1500;
+      const startTime = Date.now();
+
+      const tryHidingLoader = () => {
+        const elapsed = Date.now() - startTime;
+        const remainingWait = Math.max(0, minimumWaitTime - elapsed);
+        setTimeout(hideLoader, remainingWait);
+      };
+
+      if (video) {
+        // Force playback just in case browser suspended autoplay
+        video.play().catch(() => { });
+
+        if (!video.paused && video.currentTime > 0) {
+          // Video is already moving
+          tryHidingLoader();
+        } else {
+          let isReady = false;
+          const confirmPlayingAndHide = () => {
+            if (isReady) return;
+            // Check if video time is actually progressing
+            const checkProgress = () => {
+              if (video.currentTime > 0.05) {
+                isReady = true;
+                tryHidingLoader();
+              } else {
+                requestAnimationFrame(checkProgress);
+              }
+            };
+            requestAnimationFrame(checkProgress);
+          };
+
+          // Wait specifically for the 'playing' event (when frames actually start ticking)
+          video.addEventListener('playing', confirmPlayingAndHide, { once: true });
+
+          // Fallback: Force hide loader after 3.5 seconds if video loading/playback hangs
+          setTimeout(() => {
+            if (!isReady) {
+              isReady = true;
+              tryHidingLoader();
+            }
+          }, 3500);
+        }
+      } else {
+        // Not present on page
+        setTimeout(hideLoader, minimumWaitTime);
+      }
     }
   }
 
