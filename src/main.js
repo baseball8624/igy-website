@@ -9,11 +9,45 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hide page loader
   const loader = document.getElementById('page-loader');
   if (loader) {
-    setTimeout(() => {
+    const hideLoader = () => {
+      if (loader.classList.contains('hidden')) return;
       loader.classList.add('hidden');
-      // Remove loader from DOM after animation
       setTimeout(() => loader.remove(), 500);
-    }, 800); // Minimum display time for smooth transition
+    };
+
+    // Find the hero video based on device
+    const isMobile = window.innerWidth < 768;
+    const wrapperId = isMobile ? 'video-sp-wrapper' : 'video-pc-wrapper';
+    const wrapper = document.getElementById(wrapperId);
+    const video = wrapper ? wrapper.querySelector('.active-video') : null;
+
+    // Minimum display time for logo animation to complete smoothly
+    const minimumWaitTime = 1500;
+    const startTime = Date.now();
+
+    const tryHidingLoader = () => {
+      const elapsed = Date.now() - startTime;
+      const remainingWait = Math.max(0, minimumWaitTime - elapsed);
+      setTimeout(hideLoader, remainingWait);
+    };
+
+    if (video && video.readyState < 3) {
+      let isReady = false;
+      const onVideoReady = () => {
+        if (isReady) return;
+        isReady = true;
+        tryHidingLoader();
+      };
+
+      video.addEventListener('canplay', onVideoReady, { once: true });
+      video.addEventListener('playing', onVideoReady, { once: true });
+
+      // Fallback: Force hide loader after 3.5 seconds if video loading hangs
+      setTimeout(onVideoReady, 3500);
+    } else {
+      // Video already loaded or not present on page
+      setTimeout(hideLoader, minimumWaitTime);
+    }
   }
 
   initScrollProgress();
