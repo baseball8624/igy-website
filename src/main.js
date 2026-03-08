@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hide page loader
   const loader = document.getElementById('page-loader');
   if (loader) {
-    const hasHash = window.location.hash.length > 0;
-    const hasSeenLoader = sessionStorage.getItem('igy_loader_shown');
+    // Only skip if there is a hash (navigating to a specific section like #services),
+    // because the video won't be in the initial view.
+    // We DO NOT use sessionStorage here, because revisiting the top page (or reloading) 
+    // needs the loader to hide the video loading lag.
+    const hasHash = window.location.hash.length > 0 && window.location.hash !== '#hero';
 
     // Find the hero video based on device
     const isMobile = window.innerWidth < 768;
@@ -18,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById(wrapperId);
     const video = wrapper ? wrapper.querySelector('.active-video') : null;
 
-    if (hasHash || hasSeenLoader) {
+    if (hasHash) {
       // Skip loader instantly
       loader.style.display = 'none';
       loader.remove();
@@ -28,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video.play().catch(() => { });
       }
     } else {
-      // Mark as seen for future navigation in the same session
-      sessionStorage.setItem('igy_loader_shown', 'true');
 
       const progressBar = document.getElementById('loader-progress');
       let simulatedProgress = 0;
