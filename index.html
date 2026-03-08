@@ -85,31 +85,61 @@
       align-items: center;
       justify-content: center;
       z-index: 99999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     #page-loader.hidden {
       opacity: 0;
       visibility: hidden;
+      transform: scale(1.02);
     }
 
     .loader-logo {
-      width: 240px;
+      width: 220px;
       height: auto;
-      animation: pulse 1.5s ease-in-out infinite;
     }
 
-    @keyframes pulse {
+    #loader-text span {
+      animation: charFade 1.5s infinite both;
+    }
+
+    #loader-text span:nth-child(1) {
+      animation-delay: 0.0s;
+    }
+
+    #loader-text span:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    #loader-text span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    #loader-text span:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    #loader-text span:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+
+    #loader-text span:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+
+    #loader-text span:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes charFade {
 
       0%,
       100% {
-        opacity: 1;
-        transform: scale(1);
+        opacity: 0.2;
       }
 
       50% {
-        opacity: 0.7;
-        transform: scale(0.95);
+        opacity: 1;
       }
     }
   </style>
@@ -119,7 +149,23 @@
 
   <!-- ========== PAGE LOADER ========== -->
   <div id="page-loader">
-    <img src="/logo_full.png" alt="Igy" class="loader-logo">
+    <div class="loader-content flex flex-col items-center">
+      <img src="/logo_full.png" alt="Igy" class="loader-logo mb-8">
+
+      <!-- Premium Progress Bar -->
+      <div class="w-48 h-[2px] bg-gray-100 rounded-full overflow-hidden mb-4 relative">
+        <div id="loader-progress"
+          class="absolute top-0 left-0 h-full bg-gradient-to-r from-accent-gold to-primary w-0 rounded-full transition-all duration-300 ease-out">
+        </div>
+      </div>
+
+      <!-- Subtle Loading Text -->
+      <div
+        class="text-[10px] md:text-xs tracking-[0.3em] text-text-secondary uppercase font-medium flex gap-1 justify-center opacity-70 ml-1"
+        id="loader-text">
+        <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span>
+      </div>
+    </div>
   </div>
 
 

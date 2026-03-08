@@ -9,10 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hide page loader
   const loader = document.getElementById('page-loader');
   if (loader) {
+    const progressBar = document.getElementById('loader-progress');
+    let simulatedProgress = 0;
+
+    // Simulate loading progress up to ~90%
+    const progressInterval = setInterval(() => {
+      if (simulatedProgress < 90) {
+        simulatedProgress += (90 - simulatedProgress) * 0.05;
+        if (progressBar) progressBar.style.width = `${simulatedProgress}%`;
+      }
+    }, 50);
+
     const hideLoader = () => {
       if (loader.classList.contains('hidden')) return;
-      loader.classList.add('hidden');
-      setTimeout(() => loader.remove(), 500);
+
+      clearInterval(progressInterval);
+      // Snap to 100%
+      if (progressBar) progressBar.style.width = '100%';
+
+      // Give it 400ms to show the bar hitting 100% before fading out
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        setTimeout(() => loader.remove(), 600);
+      }, 400);
     };
 
     // Find the hero video based on device
