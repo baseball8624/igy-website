@@ -1196,8 +1196,12 @@ textarea:focus-visible {
     font-size: 0.7rem;
   }
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   overflow-wrap: break-word;
-  word-break: break-word;
+  word-break: keep-all;
   line-break: strict;
+  overflow: visible;
 }
