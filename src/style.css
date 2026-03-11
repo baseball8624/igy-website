@@ -1201,7 +1201,7 @@ h1,
 h2,
 h3 {
   overflow-wrap: break-word;
-  word-break: keep-all;
+  word-break: normal;
   line-break: strict;
   overflow: visible;
 }
