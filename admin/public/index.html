@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テキスト管理ツール | Igy</title>
+    <link rel="stylesheet" href="/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <h1 class="header-title">🎛️ テキスト管理ツール</h1>
+                <select id="page-select" class="page-select">
+                    <option value="">ページを選択...</option>
+                </select>
+            </div>
+            <div class="header-actions">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">すべて</button>
+                    <button class="filter-tab" data-filter="heading">見出しのみ</button>
+                    <button class="filter-tab" data-filter="text">本文のみ</button>
+                </div>
+                <button id="btn-deploy" class="btn btn-deploy-main">🚀 デプロイ</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Split Pane -->
+    <main class="split-pane">
+        <!-- Left: Editor -->
+        <div class="editor-pane" id="editor-pane">
+            <div class="editor-empty" id="editor-empty">
+                <div class="editor-empty-icon">📄</div>
+                <p>上のセレクトボックスからページを選択してください</p>
+            </div>
+            <div id="block-list" class="block-list" style="display:none;"></div>
+        </div>
+
+        <!-- Resize Handle -->
+        <div class="resize-handle" id="resize-handle"></div>
+
+        <!-- Right: Live Preview -->
+        <div class="preview-pane" id="preview-pane">
+            <div class="preview-toolbar">
+                <div class="preview-device-tabs">
+                    <button class="device-tab active" data-width="375">📱 SP</button>
+                    <button class="device-tab" data-width="768">📋 Tablet</button>
+                    <button class="device-tab" data-width="1280">🖥️ PC</button>
+                    <button class="device-tab" data-width="0">📐 自動</button>
+                </div>
+                <button id="btn-refresh-preview" class="btn btn-sm btn-ghost">🔄</button>
+            </div>
+            <div class="preview-container" id="preview-container">
+                <div class="preview-empty">
+                    <p>ページを選択するとプレビューが表示されます</p>
+                </div>
+                <iframe id="preview-iframe" class="preview-iframe" style="display:none;"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Deploy Modal -->
+    <div class="modal-overlay" id="deploy-modal" style="display:none;">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3>🚀 デプロイ</h3>
+                <button class="btn-icon" id="deploy-modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <label class="field-label">コミットメッセージ</label>
+                <input type="text" id="deploy-message" class="field-input" value="管理画面からテキストを更新">
+                <div id="deploy-result" class="deploy-result" style="display:none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="deploy-cancel">キャンセル</button>
+                <button class="btn btn-primary" id="deploy-exec">🚀 実行</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" style="display:none;"></div>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "node blog/build.js && vite build && BLOG_DIST=1 node blog/build.js",
     "build:blog": "node blog/build.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "admin": "node admin/server.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
