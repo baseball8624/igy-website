@@ -1199,9 +1199,19 @@ textarea:focus-visible {
 
 h1,
 h2,
-h3 {
+h3,
+p,
+li,
+a,
+span,
+div {
   overflow-wrap: break-word;
   word-break: normal;
   line-break: strict;
+}
+
+h1,
+h2,
+h3 {
   overflow: visible;
 }
