@@ -71,37 +71,102 @@
             margin: 0 auto;
         }
 
-        .ceo-message-layout {
+        /* CEO Profile Card (Business Card Style) */
+        .ceo-profile-card {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        .ceo-message-image {
-            width: 100%;
+        .ceo-profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-accent-gold);
         }
 
-        .ceo-message-image img {
+        .ceo-profile-card-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .ceo-profile-card-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .ceo-profile-card-photo img {
             width: 100%;
-            height: auto;
-            max-height: 400px;
+            height: 100%;
             object-fit: cover;
-            object-position: top center;
+            object-position: center 20%;
+        }
+
+        .ceo-profile-card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .ceo-profile-card-company {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-accent-gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .ceo-profile-card-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.05em;
+        }
+
+        .ceo-profile-card-name span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            margin-top: 0.25rem;
+            letter-spacing: 0.05em;
         }
 
         @media (min-width: 768px) {
-            .ceo-message-layout {
+            .ceo-profile-card {
+                padding: 3rem 4rem;
+            }
+
+            .ceo-profile-card-inner {
                 flex-direction: row;
-                align-items: flex-start;
-                gap: 3.5rem;
+                text-align: left;
+                align-items: center;
+                gap: 3rem;
             }
 
-            .ceo-message-image {
-                flex: 0 0 300px;
-            }
-
-            .ceo-message-image img {
-                height: 380px;
+            .ceo-profile-card-photo {
+                width: 140px;
+                height: 140px;
             }
         }
 
@@ -110,46 +175,6 @@
             font-size: 1rem;
             line-height: 2;
             letter-spacing: 0.02em;
-            flex: 1;
-        }
-
-        .ceo-message-content p {
-            margin-bottom: 2rem;
-        }
-
-        .ceo-message-content p:last-of-type {
-            margin-bottom: 3rem;
-        }
-
-        /* Highlighted text with elegant underline */
-        .ceo-highlight {
-            position: relative;
-            display: inline;
-            font-weight: 600;
-            color: var(--color-primary);
-            background: linear-gradient(to bottom, transparent 60%, rgba(201, 169, 98, 0.25) 60%);
-            padding: 0.1em 0.2em;
-            line-height: 1.8;
-        }
-
-        /* Signature section */
-        .ceo-signature {
-            text-align: right;
-            margin-top: 3rem;
-            margin-bottom: 4rem;
-            padding-right: 1rem;
-        }
-
-        .ceo-signature-company {
-            font-size: 0.875rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .ceo-signature-name {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--color-primary);
         }
 
         /* Timeline section */
@@ -366,70 +391,72 @@
             </div>
 
             <!-- Content -->
-            <div class="ceo-message-layout">
-                <div class="ceo-message-image">
-                    <img src="/images/ceo-photo.jpg" alt="Igy代表 藤井拓真" />
-                </div>
-                <div class="ceo-message-content">
-                    <p>
-                        数ある企業の中から、IgyのWebサイトをご覧いただき、誠にありがとうございます。
-                    </p>
+            <div class="ceo-message-content">
+                <p>
+                    数ある企業の中から、IgyのWebサイトをご覧いただき、誠にありがとうございます。
+                </p>
 
-                    <p>
-                        代表の藤井拓真と申します。<br>
-                        私はIT企業(現・東証プライム上場)において、医療機関や各業界の事業者様100社以上のデジタル化・業務効率化を支援してまいりました。お客様の課題解決にこだわり抜いた結果、社内の月間・年間最高記録を塗り替え、全国トップセールスを達成。その後、部長として組織マネジメントに携わる機会をいただきました。現場で1,000を超える事業者様と向き合う中で、確信したことがあります。
-                    </p>
+                <p>
+                    代表の藤井拓真と申します。<br>
+                    私はIT企業(現・東証プライム上場)において、医療機関や各業界の事業者様100社以上のデジタル化・業務効率化を支援してまいりました。お客様の課題解決にこだわり抜いた結果、社内の月間・年間最高記録を塗り替え、全国トップセールスを達成。その後、部長として組織マネジメントに携わる機会をいただきました。現場で1,000を超える事業者様と向き合う中で、確信したことがあります。
+                </p>
 
-                    <p>
-                        それは、<span
-                            class="ceo-highlight">テクノロジーは「使う人」と「提供する人」、そして「社会」の三者すべてが幸せになってこそ、真の価値を持つ</span>ということです。
-                    </p>
+                <p>
+                    それは、<span class="ceo-highlight">テクノロジーは「使う人」と「提供する人」、そして「社会」の三者すべてが幸せになってこそ、真の価値を持つ</span>ということです。
+                </p>
 
-                    <p>
-                        大企業には大企業の強みがあります。しかし、一人ひとりのお客様に深く寄り添い、その企業独自の課題に最適解を届けるには、スピード感と柔軟性が不可欠です。「もっと目の前のお客様を、本気で成功させたい」——その想いが、私を起業へと突き動かしました。
-                    </p>
+                <p>
+                    大企業には大企業の強みがあります。しかし、一人ひとりのお客様に深く寄り添い、その企業独自の課題に最適解を届けるには、スピード感と柔軟性が不可欠です。「もっと目の前のお客様を、本気で成功させたい」——その想いが、私を起業へと突き動かしました。
+                </p>
 
-                    <p>
-                        いま、AI技術の進化は目覚ましく、ビジネスの在り方そのものを変えようとしています。この変革の波を、一部の大企業だけでなく、すべての企業が活かせる時代にしたい。Igyは、最先端のAI・システム開発技術と、現場で培った「成果を出すための実行力」を掛け合わせ、お客様の競争力を確実に高めるパートナーであり続けます。
-                    </p>
+                <p>
+                    いま、AI技術の進化は目覚ましく、ビジネスの在り方そのものを変えようとしています。この変革の波を、一部の大企業だけでなく、すべての企業が活かせる時代にしたい。Igyは、最先端のAI・システム開発技術と、現場で培った「成果を出すための実行力」を掛け合わせ、お客様の競争力を確実に高めるパートナーであり続けます。
+                </p>
 
-                    <p>
-                        <span class="ceo-highlight">お客様の成功が、私たちの成功です。</span>
-                    </p>
+                <p>
+                    <span class="ceo-highlight">お客様の成功が、私たちの成功です。</span>
+                </p>
 
-                    <p>
-                        共に未来を創る仲間として、ぜひお力添えさせてください。
-                    </p>
-                </div>
+                <p>
+                    共に未来を創る仲間として、ぜひお力添えさせてください。
+                </p>
             </div>
 
-            <!-- Signature -->
-            <div class="ceo-signature">
-                <div class="ceo-signature-company">Igy 代表</div>
-                <div class="ceo-signature-name">藤井 拓真</div>
-            </div>
-
-            <!-- Timeline -->
-            <div class="ceo-timeline-section">
-                <h2 class="ceo-timeline-title">【経歴】</h2>
-                <div class="ceo-timeline">
-                    <div class="ceo-timeline-item">
-                        <p class="ceo-timeline-text">大学まで野球に打ち込む</p>
+            <!-- Profile Card (Business Card Style) -->
+            <div class="ceo-profile-card">
+                <div class="ceo-profile-card-inner">
+                    <div class="ceo-profile-card-photo">
+                        <img src="/images/ceo-photo.jpg" alt="Igy代表 藤井拓真" />
                     </div>
-                    <div class="ceo-timeline-item">
-                        <p class="ceo-timeline-text">IT企業入社(現・東証プライム上場企業)</p>
-                    </div>
-                    <div class="ceo-timeline-item">
-                        <p class="ceo-timeline-text">社内記録を更新し、全国トップセールス達成</p>
-                    </div>
-                    <div class="ceo-timeline-item">
-                        <p class="ceo-timeline-text">部長として組織マネジメントを経験</p>
-                    </div>
-                    <div class="ceo-timeline-item">
-                        <p class="ceo-timeline-text">2026年1月 Igy創業</p>
+                    <div class="ceo-profile-card-info">
+                        <div class="ceo-profile-card-company">Igy 代表</div>
+                        <div class="ceo-profile-card-name">藤井 拓真 <span>Takuma Fujii</span></div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="ceo-timeline-section">
+            <h2 class="ceo-timeline-title">【経歴】</h2>
+            <div class="ceo-timeline">
+                <div class="ceo-timeline-item">
+                    <p class="ceo-timeline-text">大学まで野球に打ち込む</p>
+                </div>
+                <div class="ceo-timeline-item">
+                    <p class="ceo-timeline-text">IT企業入社(現・東証プライム上場企業)</p>
+                </div>
+                <div class="ceo-timeline-item">
+                    <p class="ceo-timeline-text">社内記録を更新し、全国トップセールス達成</p>
+                </div>
+                <div class="ceo-timeline-item">
+                    <p class="ceo-timeline-text">部長として組織マネジメントを経験</p>
+                </div>
+                <div class="ceo-timeline-item">
+                    <p class="ceo-timeline-text">2026年1月 Igy創業</p>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
