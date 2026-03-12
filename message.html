@@ -32,7 +32,8 @@
         /* CEO Message Section Styles */
         #ceo-message {
             background: linear-gradient(to bottom, #F8F9FA 0%, #FFFFFF 100%);
-            padding: 10rem 1.5rem 6rem;
+            padding: 12rem 1.5rem 6rem !important;
+            /* Fixed header overlap */
             min-height: 100vh;
         }
 
@@ -153,9 +154,27 @@
 
         .ceo-message-content {
             color: var(--color-text-secondary);
-            font-size: 1rem;
-            line-height: 2;
+            font-size: 1.0625rem;
+            line-height: 2.1;
             letter-spacing: 0.02em;
+        }
+
+        .ceo-message-content p {
+            margin-bottom: 2.5rem;
+        }
+
+        .ceo-message-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Highlighted text with elegant underline */
+        .ceo-highlight {
+            position: relative;
+            display: inline;
+            font-weight: 600;
+            color: var(--color-primary);
+            background: linear-gradient(to bottom, transparent 60%, rgba(201, 169, 98, 0.2) 60%);
+            padding: 0.1em 0.2em;
         }
 
         /* Timeline section */
