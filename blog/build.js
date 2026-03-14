@@ -125,33 +125,77 @@ function generateTOC(bodyHtml) {
 // ── JSON-LD生成 ──
 
 function generateJsonLd(post) {
-    return JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": post.title,
-        "description": post.description,
-        "image": `${SITE_URL}${post.eyecatch}`,
-        "author": {
-            "@type": "Person",
-            "name": "藤井 拓真",
-            "jobTitle": "代表",
-            "worksFor": {
+    const graph = [
+        {
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.description,
+            "image": `${SITE_URL}${post.eyecatch}`,
+            "author": {
+                "@type": "Person",
+                "name": "藤井 拓真",
+                "jobTitle": "代表",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Igy",
+                    "url": `${SITE_URL}/`
+                }
+            },
+            "publisher": {
                 "@type": "Organization",
                 "name": "Igy",
-                "url": `${SITE_URL}/`
-            }
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": `${SITE_URL}/logo_full.png`
+                }
+            },
+            "datePublished": post.publishedAt,
+            "dateModified": post.modifiedAt,
+            "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}.html`
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Igy",
-            "logo": {
-                "@type": "ImageObject",
-                "url": `${SITE_URL}/logo_full.png`
-            }
-        },
-        "datePublished": post.publishedAt,
-        "dateModified": post.modifiedAt,
-        "mainEntityOfPage": `${SITE_URL}/blog/${post.slug}.html`
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "TOP",
+                    "item": `${SITE_URL}/`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": `${SITE_URL}/blog/`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": post.title,
+                    "item": `${SITE_URL}/blog/${post.slug}.html`
+                }
+            ]
+        }
+    ];
+
+    // FAQPage schema if post has faq field
+    if (post.faq && Array.isArray(post.faq)) {
+        graph.push({
+            "@type": "FAQPage",
+            "mainEntity": post.faq.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.answer
+                }
+            }))
+        });
+    }
+
+    return JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": graph
     }, null, 2);
 }
 
