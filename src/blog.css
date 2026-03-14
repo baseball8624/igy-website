@@ -380,10 +380,17 @@
 }
 
 .blog-content img {
+  width: 100%;
   max-width: 100%;
   height: auto;
+  display: block;
   border-radius: 8px;
   margin: 20px 0;
+}
+
+.blog-content .article-body {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .blog-content a {
