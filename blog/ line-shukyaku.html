@@ -1,0 +1,641 @@
+<!--
+  SEO設定メモ（Antigravityでhead内に設置してください）
+  <title>LINE集客は効果ある？歯科医院のキャンペーン配信で15件成約した方法と実例を解説 | Igy</title>
+  <meta name="description" content="LINE集客の効果を実例で解説。友だち300人のLINEアカウントからホワイトニングキャンペーンを配信し、15件の予約獲得に成功した方法と、配信コストを抑えるセグメント活用術を紹介します。">
+  <link rel="canonical" href="https://www.igy-inc.jp/blog/line-shukyaku.html">
+-->
+
+<style>
+  :root {
+    --igy-blue: #1E6FBF;
+    --igy-dark-blue: #1A3A6B;
+    --igy-light-blue: #4A9FE0;
+    --igy-gold: #F0A500;
+    --igy-red: #E63946;
+    --igy-bg: #F7FAFD;
+    --igy-text: #1a2a3a;
+    --igy-muted: #5a6a7a;
+    --igy-border: #dde8f5;
+  }
+
+  .article-body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    color: var(--igy-text);
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    background: #fff;
+  }
+
+  .article-body h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 900;
+    color: var(--igy-dark-blue);
+    line-height: 1.45;
+    margin: 48px 0 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 14px 0 40px;
+    font-size: 0.82rem;
+    color: var(--igy-muted);
+    flex-wrap: wrap;
+  }
+
+  .article-meta .tag {
+    background: var(--igy-light-blue);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .article-body h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    border-left: 5px solid var(--igy-blue);
+    padding: 6px 0 6px 16px;
+    margin: 60px 0 22px;
+    line-height: 1.45;
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--igy-blue);
+    margin: 38px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px dashed var(--igy-border);
+  }
+
+  .article-body p { margin: 0 0 22px; }
+  .article-body ul, .article-body ol { margin: 0 0 22px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 10px; }
+
+  /* 結果ハイライトボックス */
+  .result-box {
+    background: linear-gradient(135deg, #EEF6FF 0%, #e0eefa 100%);
+    border: 2px solid var(--igy-blue);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin: 36px 0;
+    text-align: center;
+  }
+  .result-box .result-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--igy-blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .result-box .result-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .result-box .result-item {
+    text-align: center;
+  }
+  .result-box .result-num {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: 900;
+    color: var(--igy-dark-blue);
+    line-height: 1;
+    display: block;
+  }
+  .result-box .result-unit {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--igy-blue);
+  }
+  .result-box .result-desc {
+    font-size: 0.82rem;
+    color: var(--igy-muted);
+    margin-top: 4px;
+    display: block;
+  }
+  .result-box .result-note {
+    font-size: 0.88rem;
+    color: var(--igy-muted);
+    margin-top: 12px;
+  }
+
+  /* ポイントボックス */
+  .point-box {
+    background: linear-gradient(135deg, #EEF6FF 0%, #e8f2fc 100%);
+    border: 2px solid var(--igy-light-blue);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .point-box .point-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--igy-blue);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .point-box p { margin: 0; font-size: 0.96rem; }
+  .point-box ul { margin: 8px 0 0; }
+
+  /* 警告ボックス */
+  .warn-box {
+    background: linear-gradient(135deg, #fff8ee 0%, #fff3e0 100%);
+    border: 2px solid var(--igy-gold);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .warn-box .warn-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #b07000;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .warn-box p { margin: 0; font-size: 0.96rem; color: #5a3a00; }
+  .warn-box ul { margin: 8px 0 0; color: #5a3a00; }
+
+  /* ステップボックス */
+  .steps {
+    margin: 32px 0;
+    counter-reset: step-counter;
+  }
+  .step-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    padding: 24px 28px;
+    background: var(--igy-bg);
+    border-radius: 12px;
+    border: 1px solid var(--igy-border);
+  }
+  .step-num {
+    background: var(--igy-blue);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; }
+  .step-content strong {
+    display: block;
+    font-size: 1.02rem;
+    color: var(--igy-dark-blue);
+    margin-bottom: 6px;
+  }
+  .step-content p { margin: 0; font-size: 0.95rem; color: var(--igy-muted); }
+
+  /* ワンポイントアドバイス */
+  .onepoint-box {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6f9ec 100%);
+    border: 2px solid #2ecc71;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .onepoint-box::before {
+    content: "💡 ワンポイントアドバイス";
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #1a7a40;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+    padding: 4px 14px;
+    background: #d4f5e2;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  .onepoint-box h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1a5c30;
+    margin: 12px 0 16px;
+    padding: 0;
+    border: none;
+  }
+  .onepoint-box p { font-size: 0.96rem; color: #1a4a28; }
+  .onepoint-box ul { color: #1a4a28; font-size: 0.96rem; }
+  .onepoint-box .tool-tag {
+    display: inline-block;
+    background: #2ecc71;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-right: 6px;
+  }
+
+  /* テーブル */
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.93rem;
+  }
+  .article-body th {
+    background: var(--igy-dark-blue);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .article-body td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--igy-border);
+  }
+  .article-body tr:nth-child(even) td {
+    background: var(--igy-bg);
+  }
+
+
+
+  /* 目次 */
+  .toc {
+    background: var(--igy-bg);
+    border: 1px solid var(--igy-border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+  .toc-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .toc li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  .toc a {
+    color: var(--igy-blue);
+    text-decoration: none;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .article-body { padding: 0 16px 60px; }
+    .result-box { padding: 24px 20px; }
+    .result-box .result-numbers { gap: 24px; }
+    .point-box, .warn-box, .onepoint-box { padding: 22px 20px; }
+    .step-item { padding: 18px 16px; }
+  }
+</style>
+
+<div class="article-body">
+
+  <h1>LINE集客は効果ある？歯科医院のキャンペーン配信で15件成約した方法と実例を解説</h1>
+
+  <div class="article-meta">
+    <span class="tag">LINE・SNS活用</span>
+    <span>2026年3月18日</span>
+    <span>著者：藤井 拓真（Igy代表）</span>
+  </div>
+
+  <!-- 目次 -->
+  <nav class="toc">
+    <div class="toc-title">📋 この記事の目次</div>
+    <ol>
+      <li><a href="#result">結論：LINE集客は効果ある。ただし「やり方」次第</a></li>
+      <li><a href="#why-line">なぜLINEは集客に向いているのか</a></li>
+      <li><a href="#three-points">成果を出すキャンペーン配信の3つのポイント</a></li>
+      <li><a href="#case">実例解説：歯科医院のホワイトニングキャンペーン</a></li>
+      <li><a href="#application">他業種への応用</a></li>
+      <li><a href="#onepoint">【ワンポイント】配信コストを抑えるセグメント活用術</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </nav>
+
+  <p>「LINE公式アカウントを作ったけど、本当に集客につながるの？」と半信半疑な方は少なくありません。SNSや広告と比べると地味に見えるLINEですが、<strong>使い方を間違えなければ非常に高い成約率を出せるツール</strong>です。</p>
+  <p>この記事では、実際に友だち300人規模のLINEアカウントからキャンペーンを配信し、<strong>15件の予約成約</strong>につながった事例をもとに、LINE集客で成果を出す方法を具体的に解説します。</p>
+
+  <!-- 結果サマリー -->
+  <div class="result-box" id="result">
+    <span class="result-label">実績サマリー</span>
+    <div class="result-numbers">
+      <div class="result-item">
+        <span class="result-num">300<span class="result-unit">人</span></span>
+        <span class="result-desc">LINE友だち数</span>
+      </div>
+      <div class="result-item">
+        <span class="result-num">1<span class="result-unit">回</span></span>
+        <span class="result-desc">配信回数</span>
+      </div>
+      <div class="result-item">
+        <span class="result-num">15<span class="result-unit">件</span></span>
+        <span class="result-desc">成約（予約確定）</span>
+      </div>
+      <div class="result-item">
+        <span class="result-num">5<span class="result-unit">%+</span></span>
+        <span class="result-desc">成約転換率</span>
+      </div>
+    </div>
+    <p class="result-note">※ 歯科医院のホワイトニングキャンペーンにおける実績。配信コスト・広告費ゼロ。</p>
+  </div>
+
+  <!-- セクション1: なぜLINEか -->
+  <h2 id="why-line">なぜLINEは集客に向いているのか</h2>
+
+  <p>LINE集客が効果的な理由は、他のSNSや広告にはない「<strong>届く確実性</strong>」にあります。</p>
+
+  <h3>開封率が圧倒的に高い</h3>
+  <p>メールマーケティングの開封率は一般的に20〜30%程度と言われていますが、LINE公式アカウントのメッセージはその日のうちに約80%のユーザーが確認するというデータがあります。友だち登録している時点でその店舗・サービスに興味があるユーザーなので、情報が届きやすいのです。</p>
+
+  <h3>プッシュ通知で見てもらいやすい</h3>
+  <p>InstagramやX（旧Twitter）はアルゴリズムによって投稿が届かないことがありますが、LINEのメッセージ配信はプッシュ通知として届きます。「見てもらえない」というリスクが極めて低い点が大きな強みです。</p>
+
+  <h3>既存顧客に直接アプローチできる</h3>
+  <p>Google広告やMeta広告は新規顧客を獲得するための手段ですが、LINEはすでに一度接触した見込み客・既存顧客に対して繰り返しアプローチできます。<strong>「知っている人」への訴求は、新規向け広告よりもはるかに成約率が高い</strong>のが一般的です。</p>
+
+  <!-- セクション2: 3つのポイント -->
+  <h2 id="three-points">成果を出すキャンペーン配信の3つのポイント</h2>
+
+  <p>LINEでキャンペーンを打っても成果が出ない場合、多くは以下の3要素のどれかが欠けています。</p>
+
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>タイミング設計：「今やる理由」を作る</strong>
+        <p>人が行動するのは「今じゃないといけない理由」があるときです。「新年度が始まる前に」「季節の変わり目に」など、ターゲットの心理的なタイミングに合わせてキャンペーンを設計することが重要です。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>限定性：「今だけ・ここだけ」を演出する</strong>
+        <p>期間限定クーポン、先着N名様、友だち限定価格など、限定性を持たせることで「後でもいいか」という先送りを防ぎます。特に期限は必ず設けること。1ヶ月程度が行動を促すのに適した長さです。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>導線設計：予約・問い合わせへのハードルを下げる</strong>
+        <p>LINE内からそのまま予約・問い合わせができる状態を作ること。「電話してください」だけでは離脱します。LINEチャットと電話の両方を導線として用意し、ユーザーが動きやすい選択肢を複数提示しましょう。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="point-box">
+    <div class="point-title">✅ ポイント</div>
+    <p>この3つが揃うと「今すぐ動く理由」が生まれます。逆に言えば、どれか1つが欠けると成約率は大きく落ちます。「とりあえず配信しよう」ではなく、必ずこの3要素を設計してから配信に進んでください。</p>
+  </div>
+
+  <!-- セクション3: 実例 -->
+  <h2 id="case">実例解説：歯科医院のホワイトニングキャンペーン</h2>
+
+  <p>実際にこの3要素を組み合わせて実施したキャンペーンを紹介します。</p>
+
+  <h3>背景と状況</h3>
+  <p>対象は歯科医院のLINE公式アカウント。友だち数は約300人の段階でした。広告費をかけずにホワイトニングの予約を増やしたいという課題があり、LINE配信を活用したキャンペーンを企画しました。</p>
+
+  <h3>キャンペーンの設計</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>要素</th>
+        <th>設計内容</th>
+        <th>狙い</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>タイミング</strong></td>
+        <td>3月上旬（新年度・入学・就職シーズン直前）</td>
+        <td>「新生活前に歯を白くしたい」という自然なニーズと合致させる</td>
+      </tr>
+      <tr>
+        <td><strong>限定性</strong></td>
+        <td>1ヶ月間限定の期間限定クーポン（友だち限定）</td>
+        <td>「今月中に予約しないと損」という心理を生む</td>
+      </tr>
+      <tr>
+        <td><strong>導線</strong></td>
+        <td>LINEチャット予約 + 電話予約の両方を案内</td>
+        <td>ユーザーの状況に合わせて動きやすい選択肢を用意</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>結果</h3>
+  <p>友だち数300人という小規模なリストからの1回の配信で、<strong>15件の予約成約</strong>を獲得。転換率は5%超という結果でした。</p>
+  <p>LINE配信における一般的な成約転換率は1〜3%程度と言われる中で、タイミング・限定性・導線の3要素を揃えた設計によって高い成果につながりました。</p>
+
+  <div class="point-box">
+    <div class="point-title">✅ なぜ成果が出たか</div>
+    <ul>
+      <li>「新年度前」という<strong>納得感のある理由</strong>をつけることで、「今やる必然性」が生まれた</li>
+      <li>1ヶ月の期限付きクーポンで<strong>先送りを防いだ</strong></li>
+      <li>LINEと電話の<strong>両方の導線</strong>を用意し、予約のハードルを下げた</li>
+      <li>友だち限定という<strong>特別感</strong>が、受け取った人の反応率を高めた</li>
+    </ul>
+  </div>
+
+  <!-- セクション4: 他業種 -->
+  <h2 id="application">他業種への応用</h2>
+
+  <p>重要なのは「なぜ今やるのか」という理由と「今月中に」という期限の組み合わせです。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>業種</th>
+        <th>タイミング例</th>
+        <th>キャンペーン例</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>リフォーム・工務店</td>
+        <td>年度末・GW前・梅雨前</td>
+        <td>「梅雨前の外壁・屋根点検 無料キャンペーン（今月末まで）」</td>
+      </tr>
+      <tr>
+        <td>美容室・サロン</td>
+        <td>成人式・卒業式・入学式シーズン</td>
+        <td>「春の新生活スタート応援 友だち限定20%OFF」</td>
+      </tr>
+      <tr>
+        <td>飲食店</td>
+        <td>記念日・季節イベント</td>
+        <td>「バレンタイン限定コースを友だち先行予約受付中」</td>
+      </tr>
+      <tr>
+        <td>整体・接骨院</td>
+        <td>連休明け・年度末の疲労感ピーク</td>
+        <td>「GW明けのカラダリセット 初回体験500円（今月限り）」</td>
+      </tr>
+      <tr>
+        <td>士業・コンサル</td>
+        <td>確定申告・決算期・新年度</td>
+        <td>「年度末の経営課題を無料で相談（3月限定 先着5社）」</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>業種に関係なく、<strong>「ターゲットが今まさに感じているニーズ」と「期限つきの特典」を掛け合わせる</strong>のがポイントです。</p>
+
+  <!-- セクション5: ワンポイント -->
+  <div class="onepoint-box" id="onepoint">
+    <h3>配信コストを抑えるセグメント活用術</h3>
+
+    <p>友だち数が増えてくると、全員への一斉配信は<strong>月間の配信通数上限を圧迫する</strong>ため注意が必要です。LINE公式アカウントの無料プランは月200通まで、ライトプランでも15,000通という制限があります。</p>
+
+    <p>例えば友だち数が1,000人を超えてくると、1回の全員配信で1,000通を消費するため、月に配信できる回数が限られてきます。これを解決するのが<strong>セグメント配信</strong>です。</p>
+
+    <p><strong>具体的な方法：</strong></p>
+    <ul>
+      <li><span class="tool-tag">Lステップ</span>などのツールを使い、リッチメニューに「ホワイトニングに興味がある」「ホワイトニングは不要」などの選択肢を設ける</li>
+      <li>過去の配信で反応（タップ・クリック）したユーザーにタグをつけてセグメント化する</li>
+      <li>次回のホワイトニングキャンペーンは<strong>興味ありのユーザーだけに配信</strong>することで、配信数を大幅に削減</li>
+    </ul>
+
+    <p>LINEマーケティングの費用対効果を高めるには、「全員に配る」から「興味がある人に絞って届ける」への発想転換が重要です。</p>
+  </div>
+
+  <!-- まとめ -->
+  <h2 id="summary">まとめ</h2>
+
+  <p>LINE集客の効果は、設計次第で大きく変わります。今回紹介した3要素を整理すると：</p>
+
+  <ul>
+    <li><strong>タイミング</strong>：ターゲットが「今まさに」感じているニーズに合わせて配信する</li>
+    <li><strong>限定性</strong>：期間・人数・対象を限定して「今すぐ動く理由」を作る</li>
+    <li><strong>導線</strong>：LINE・電話など複数の方法で予約・問い合わせしやすくする</li>
+  </ul>
+
+  <p>この型は歯科医院のホワイトニングで15件成約という実績をもとにしていますが、業種を問わず活用できます。さらに友だち数が増えてきたら、セグメント配信を取り入れて配信コストをコントロールするのも重要なステップです。</p>
+
+  <p class="no-margin-bottom">「LINEを作ったものの活用できていない」「キャンペーンをやってみたいが設計がわからない」という方は、ぜひIgyにご相談ください。</p>
+
+  <!-- CTA -->
+  <style>
+    :root {
+      --color-primary: #0a192f;
+      --color-primary-light: #172a45;
+      --color-accent-gold: #c9a962;
+    }
+    .blog-cta { margin: 0; }
+    .no-margin-bottom { margin-bottom: 0 !important; }
+    .blog-cta-inner {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      .blog-cta-inner { padding: 48px 40px; }
+    }
+    .blog-cta-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: white !important;
+      border: none !important;
+      padding: 0 !important;
+      background: none !important;
+    }
+    @media (min-width: 768px) {
+      .blog-cta-title { font-size: 1.5rem; }
+    }
+    .blog-cta-text {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .blog-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (min-width: 480px) {
+      .blog-cta-buttons { flex-direction: row; justify-content: center; }
+    }
+    .blog-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .blog-cta-btn-primary { background: white; color: var(--color-primary); }
+    .blog-cta-btn-primary:hover {
+      background: var(--color-accent-gold);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .blog-cta-btn-line { background: #06C755; color: white; }
+    .blog-cta-btn-line:hover {
+      background: #05b34c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6,199,85,0.35);
+    }
+    .blog-cta-icon { width: 20px; height: 20px; flex-shrink: 0; }
+  </style>
+  <section class="blog-cta">
+    <div class="blog-cta-inner">
+      <h2 class="blog-cta-title">広告運用・Web集客のお悩み、プロに相談しませんか？</h2>
+      <p class="blog-cta-text">Igyでは、データに基づいた戦略立案から実行・改善まで、ワンストップでサポートいたします。まずはお気軽にご相談ください。</p>
+      <div class="blog-cta-buttons">
+        <a href="/contact.html" class="blog-cta-btn blog-cta-btn-primary">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          お問い合わせ
+        </a>
+        <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer" class="blog-cta-btn blog-cta-btn-line">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+          </svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
