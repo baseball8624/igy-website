@@ -53,17 +53,10 @@
 .blog-breadcrumb li[aria-current="page"] {
   color: var(--color-text-primary);
   font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 200px;
+  word-break: break-word;
 }
 
-@media (min-width: 768px) {
-  .blog-breadcrumb li[aria-current="page"] {
-    max-width: 400px;
-  }
-}
+
 
 /* ========== Page Header (List/Category pages) ========== */
 .blog-page-header {
