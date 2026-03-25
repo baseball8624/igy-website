@@ -140,6 +140,8 @@
 
 .blog-article-category-tag {
   display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
   padding: 4px 14px;
   border-radius: 100px;
   font-size: 0.75rem;
