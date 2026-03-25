@@ -203,19 +203,19 @@ function generateJsonLd(post) {
 
 function generateRelatedPosts(currentPost, allPosts, categories) {
     const related = allPosts
-        .filter(p => p.slug !== currentPost.slug && p.category === currentPost.category)
+        .filter(p => p.slug !== currentPost.slug && p.categories && p.categories.some(c => currentPost.categories && currentPost.categories.includes(c)))
         .slice(0, 3);
     if (related.length === 0) return '';
 
     let html = '<section class="blog-related">\n<h2 class="blog-related-title">関連記事</h2>\n<div class="blog-related-grid">\n';
     related.forEach(post => {
-        const cat = categories.find(c => c.slug === post.category);
+        const catsHtml = post.categories ? post.categories.map(slug => { const cat = categories.find(c => c.slug === slug); return `<span class="blog-card-category">${cat ? cat.name : slug}</span>`; }).join('') : '';
         html += `<a href="/blog/${post.slug}.html" class="blog-card">
-  <div class="blog-card-image-wrapper">
-    <img src="${post.eyecatch}" alt="${escapeHtml(post.eyecatchAlt || post.title)}" width="${post.eyecatchWidth || 1200}" height="${post.eyecatchHeight || 630}" loading="lazy" class="blog-card-image">
-  </div>
-  <div class="blog-card-body">
-    <span class="blog-card-category">${cat ? cat.name : post.category}</span>
+          <div class="blog-card-image-wrapper">
+            <img src="${post.eyecatch}" alt="${escapeHtml(post.eyecatchAlt || post.title)}" width="${post.eyecatchWidth || 1200}" height="${post.eyecatchHeight || 630}" loading="lazy" class="blog-card-image">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">${catsHtml}</div>
     <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
     <time class="blog-card-date" datetime="${post.publishedAt}">${formatDate(post.publishedAt)}</time>
   </div>
@@ -228,13 +228,14 @@ function generateRelatedPosts(currentPost, allPosts, categories) {
 // ── 記事カードHTML生成 ──
 
 function generatePostCard(post, categories) {
-    const cat = categories.find(c => c.slug === post.category);
-    return `<a href="/blog/${post.slug}.html" class="blog-card" id="post-${post.slug}">
-  <div class="blog-card-image-wrapper">
-    <img src="${post.eyecatch}" alt="${escapeHtml(post.eyecatchAlt || post.title)}" width="${post.eyecatchWidth || 1200}" height="${post.eyecatchHeight || 630}" loading="lazy" class="blog-card-image">
-  </div>
-  <div class="blog-card-body">
-    <span class="blog-card-category" data-category="${post.category}">${cat ? cat.name : post.category}</span>
+    const catsHtml = post.categories ? post.categories.map(slug => { const cat = categories.find(c => c.slug === slug); return `<span class="blog-card-category" data-category="${slug}">${cat ? cat.name : slug}</span>`; }).join('') : '';
+    const catSlugs = post.categories ? post.categories.join(' ') : '';
+    return `<a href="/blog/${post.slug}.html" class="blog-card" id="post-${post.slug}" data-categories="${catSlugs}">
+      <div class="blog-card-image-wrapper">
+        <img src="${post.eyecatch}" alt="${escapeHtml(post.eyecatchAlt || post.title)}" width="${post.eyecatchWidth || 1200}" height="${post.eyecatchHeight || 630}" loading="lazy" class="blog-card-image">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">${catsHtml}</div>
     <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
     <time class="blog-card-date" datetime="${post.publishedAt}">${formatDate(post.publishedAt)}</time>
   </div>
@@ -320,7 +321,7 @@ function buildListPage(posts, categories, distAssets) {
     // カテゴリフィルタータブ
     let categoryTabs = '<button class="blog-filter-btn blog-filter-active" data-category="all">すべて</button>\n';
     categories.forEach(cat => {
-        const count = posts.filter(p => p.category === cat.slug).length;
+        const count = posts.filter(p => p.categories && p.categories.includes(cat.slug)).length;
         if (count > 0) {
             categoryTabs += `<button class="blog-filter-btn" data-category="${cat.slug}">${cat.name} (${count})</button>\n`;
         }
@@ -359,7 +360,7 @@ function buildCategoryPages(posts, categories, distAssets) {
     if (DIST_MODE) ensureDir(distOutputDir);
 
     categories.forEach(cat => {
-        const catPosts = posts.filter(p => p.category === cat.slug);
+        const catPosts = posts.filter(p => p.categories && p.categories.includes(cat.slug));
 
         let allCards = '';
         catPosts.forEach(post => {

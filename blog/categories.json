@@ -5,6 +5,16 @@
         "description": "Google広告・Meta広告の運用ノウハウ、比較"
     },
     {
+        "slug": "google-ads",
+        "name": "Google広告",
+        "description": "Google広告の運用戦略・改善策"
+    },
+    {
+        "slug": "meta-ads",
+        "name": "Meta広告",
+        "description": "Meta広告（Facebook・Instagram）の運用戦略"
+    },
+    {
         "slug": "seo-content",
         "name": "SEO・コンテンツ",
         "description": "SEO対策、コンテンツマーケティング"
@@ -18,5 +28,15 @@
         "slug": "ai-automation",
         "name": "AI・業務自動化",
         "description": "AI導入事例、業務効率化、ツール紹介"
+    },
+    {
+        "slug": "ai-tech",
+        "name": "AI",
+        "description": "最新のAI技術トレンドや活用法"
+    },
+    {
+        "slug": "llmo",
+        "name": "LLMO対策",
+        "description": "大規模言語モデルへの最適化（LLMO/AIO）施策"
     }
 ]

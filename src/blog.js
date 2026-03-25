@@ -67,12 +67,9 @@ function initCategoryFilter() {
 
             // カードのフィルタリング
             cards.forEach(card => {
-                const cardCategory = card.querySelector('.blog-card-category');
-                if (!cardCategory) return;
+                const catSlugs = card.dataset.categories ? card.dataset.categories.split(' ') : [];
 
-                const catSlug = cardCategory.dataset.category;
-
-                if (category === 'all' || catSlug === category) {
+                if (category === 'all' || catSlugs.includes(category)) {
                     card.style.display = '';
                     // フェードインアニメーション
                     card.style.opacity = '0';
