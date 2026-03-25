@@ -275,7 +275,10 @@ function buildArticlePages(posts, categories, distAssets) {
     if (DIST_MODE) ensureDir(distOutputDir);
 
     posts.forEach(post => {
-        const cat = categories.find(c => c.slug === post.category);
+        const categoryTagsHtml = post.categories ? post.categories.map(slug => {
+            const c = categories.find(cat => cat.slug === slug);
+            return `<a href="/blog/category/${slug}.html" class="blog-article-category-tag">${c ? c.name : slug}</a>`;
+        }).join('') : '';
         const toc = generateTOC(post.body);
         const relatedHtml = generateRelatedPosts(post, posts, categories);
         const jsonLd = generateJsonLd(post);
@@ -294,8 +297,7 @@ function buildArticlePages(posts, categories, distAssets) {
             .replace(/{{MODIFIED_DATE}}/g, post.modifiedAt)
             .replace(/{{PUBLISHED_DATE_DISPLAY}}/g, formatDate(post.publishedAt))
             .replace(/{{MODIFIED_DATE_DISPLAY}}/g, formatDate(post.modifiedAt))
-            .replace(/{{CATEGORY_SLUG}}/g, post.category)
-            .replace(/{{CATEGORY_NAME}}/g, cat ? cat.name : post.category)
+            .replace(/<a href="\/blog\/category\/{{CATEGORY_SLUG}}\.html" class="blog-article-category-tag">{{CATEGORY_NAME}}<\/a>/g, categoryTagsHtml)
             .replace(/{{TOC}}/g, toc)
             .replace(/{{BODY}}/g, post.body)
             .replace(/{{RELATED_POSTS}}/g, relatedHtml)
