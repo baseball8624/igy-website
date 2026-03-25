@@ -1,0 +1,526 @@
+<!--
+  SEO設定メモ（Antigravityでhead内に設置してください）
+  <title>【2026年最新】Google広告の費用対効果を上げる4つの改善策【基礎から解説】 | Igy</title>
+  <meta name="description" content="Google広告を出しているのに成果が出ない方へ。配信時間の絞り込み・予算配分のPDCA・マッチタイプの見直し・検索語句レポートの活用など、費用対効果を上げる4つの改善策を基礎から解説します。">
+  <link rel="canonical" href="https://www.igy-inc.jp/blog/google-ads-cost.html">
+-->
+
+<!-- 画像①：ここにアイキャッチ画像を挿入 -->
+
+<style>
+  :root {
+    --igy-blue: #1E6FBF;
+    --igy-dark-blue: #1A3A6B;
+    --igy-light-blue: #4A9FE0;
+    --igy-gold: #F0A500;
+    --igy-red: #E63946;
+    --igy-bg: #F7FAFD;
+    --igy-text: #1a2a3a;
+    --igy-muted: #5a6a7a;
+    --igy-border: #dde8f5;
+  }
+
+  .article-body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    color: var(--igy-text);
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    background: #fff;
+  }
+
+  .article-body h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 900;
+    color: var(--igy-dark-blue);
+    line-height: 1.45;
+    margin: 48px 0 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 14px 0 40px;
+    font-size: 0.82rem;
+    color: var(--igy-muted);
+    flex-wrap: wrap;
+  }
+
+  .article-meta .tag {
+    background: var(--igy-light-blue);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .article-body h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    border-left: 5px solid var(--igy-blue);
+    padding: 6px 0 6px 16px;
+    margin: 60px 0 22px;
+    line-height: 1.45;
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--igy-blue);
+    margin: 38px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px dashed var(--igy-border);
+  }
+
+  .article-body p { margin: 0 0 22px; }
+  .article-body ul, .article-body ol { margin: 0 0 22px 0; padding-left: 24px; }
+  .article-body li { margin-bottom: 10px; }
+
+  /* 目次 */
+  .toc {
+    background: var(--igy-bg);
+    border: 1px solid var(--igy-border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+  .toc-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    margin: 0 0 14px;
+  }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { font-size: 0.9rem; margin-bottom: 8px; }
+  .toc a { color: var(--igy-blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* pain box */
+  .pain-box {
+    background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+    border: 2px solid var(--igy-red);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .pain-box .pain-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--igy-red);
+    margin: 0 0 12px;
+    display: block;
+  }
+  .pain-box p { margin: 0; font-size: 0.96rem; }
+
+  /* point box */
+  .point-box {
+    background: linear-gradient(135deg, #EEF6FF 0%, #e8f2fc 100%);
+    border: 2px solid var(--igy-light-blue);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .point-box .point-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--igy-blue);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .point-box p { margin: 0; font-size: 0.96rem; }
+  .point-box ul { margin: 8px 0 0; }
+
+  /* 改善策カード */
+  .improvement-cards {
+    margin: 32px 0;
+  }
+  .improvement-card {
+    border: 1px solid var(--igy-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(30,111,191,0.06);
+  }
+  .improvement-card .card-num {
+    position: absolute;
+    top: -16px;
+    left: 24px;
+    background: var(--igy-blue);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+  .improvement-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    margin: 8px 0 16px;
+    padding: 0;
+    border: none;
+  }
+  .improvement-card p { margin: 0 0 14px; font-size: 0.96rem; }
+  .improvement-card p:last-child { margin: 0; }
+
+  /* 実例ボックス */
+  .example-box {
+    background: #f0f7ff;
+    border-left: 4px solid var(--igy-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.93rem;
+  }
+  .example-box .example-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--igy-blue);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .example-box p { margin: 0; color: var(--igy-text); }
+
+  /* テーブル */
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.93rem;
+  }
+  .article-body th {
+    background: var(--igy-dark-blue);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .article-body td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--igy-border);
+  }
+  .article-body tr:nth-child(even) td { background: var(--igy-bg); }
+
+  /* まとめ */
+  .summary-box {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f2fc 100%);
+    border: 2px solid var(--igy-blue);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin: 40px 0;
+  }
+  .summary-box h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--igy-dark-blue);
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+  }
+  .summary-box ul { margin: 0; }
+  .summary-box li { font-size: 0.96rem; margin-bottom: 10px; }
+
+  @media (max-width: 600px) {
+    .article-body { padding: 0 16px 60px; }
+    .toc, .pain-box, .point-box { padding: 20px 18px; }
+    .improvement-card { padding: 24px 18px; }
+    .summary-box { padding: 24px 20px; }
+  }
+</style>
+
+<div class="article-body">
+
+  <h1>【2026年最新】Google広告の費用対効果を上げる4つの改善策【基礎から解説】</h1>
+
+  <div class="article-meta">
+    <span class="tag">Web広告</span>
+    <span>2026年3月25日</span>
+    <span>著者：藤井 拓真（Igy代表）</span>
+  </div>
+
+  <!-- 目次 -->
+  <nav class="toc">
+    <div class="toc-title">📋 この記事の目次</div>
+    <ol>
+      <li><a href="#problem">「広告を出しているのに成果が出ない」本当の理由</a></li>
+      <li><a href="#tip1">改善策①：配信時間・曜日をターゲットに合わせて絞る</a></li>
+      <li><a href="#tip2">改善策②：予算配分をPDCAで段階的に最適化する</a></li>
+      <li><a href="#tip3">改善策③：マッチタイプを見直して無駄な消化を防ぐ</a></li>
+      <li><a href="#tip4">改善策④：検索語句レポートを定期チェックする</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </nav>
+
+  <p>「Google広告を出しているのに、なかなか問い合わせにつながらない」「予算を使っているのに成果が見えない」——そう感じている方は少なくありません。</p>
+  <p>実際に私が支援しているあるクライアントでは、Google広告を運用しているにもかかわらず<strong>1ヶ月間コンバージョンがゼロ</strong>という状態が続いていました。しかし配信時間の絞り込みと予算配分の最適化を実施したところ、<strong>10日間で2件のコンバージョンが発生</strong>し、競合に対するインプレッションシェアも<strong>10%未満から20%に改善</strong>しました。</p>
+  <p>変えたのはクリエイティブでも予算でもなく、「どこに・どう配分するか」だけです。この記事では、その具体的な手法を4つの改善策として解説します。</p>
+
+  <!-- セクション1 -->
+  <h2 id="problem">「広告を出しているのに成果が出ない」本当の理由</h2>
+
+  <p>Google広告で成果が出ない原因は、大きく2つに分かれます。</p>
+
+  <div class="pain-box">
+    <span class="pain-title">よくある2つの原因</span>
+    <p><strong>①「見せる相手」がズレている</strong>：本来届けたいターゲット以外に広告が表示され、クリックされても成約しない状態。<br><br>
+    <strong>②「見せる場面」が最適化されていない</strong>：ターゲットが広告を見る可能性が低い時間帯に予算を消化してしまっている状態。</p>
+  </div>
+
+  <p>これらは広告のクリエイティブ（文章・画像）とは無関係に起こります。「広告文を変えても成果が変わらない」という場合、ほとんどはこの2つのどちらかが原因です。以下の4つの改善策で、順番に解決していきましょう。</p>
+
+  <!-- 改善策 -->
+  <h2 id="tip1">改善策①：配信時間・曜日をターゲットに合わせて絞る</h2>
+
+  <p>Google広告はデフォルトで24時間365日配信されますが、ターゲットによって「広告が見られやすい時間帯」は大きく異なります。</p>
+
+  <p>例えば、特定の職種や業種の人をターゲットにしている場合、就業中は広告を見る余裕がないことがほとんどです。昼休み・退勤後・休日の特定の時間帯に集中して配信することで、同じ予算でより多くのターゲットにリーチできます。</p>
+
+  <div class="example-box">
+    <span class="example-label">📌 実例</span>
+    <p>特定の職種向けサービスの広告運用において、就業時間中の配信を絞り、昼休み（12〜13時）・退勤後（18〜21時）に配信を集中させました。ターゲットが実際に広告を見られる時間帯に絞ることで、同じ予算でもインプレッションシェアが改善し始めました。</p>
+  </div>
+
+  <h3>設定方法</h3>
+  <p>Google広告管理画面 → 対象のキャンペーン → 「広告スケジュール」から曜日・時間帯ごとの入札比率を調整できます。まずは「全時間帯のクリック率・コンバージョン率のデータ」を2〜4週間分確認してから絞り込むのがおすすめです。</p>
+
+  <div class="point-box">
+    <div class="point-title">✅ ポイント</div>
+    <p>いきなり全時間帯を絞るのではなく、まずデータを蓄積してから判断しましょう。データが少ない段階で絞りすぎると、逆に機会損失が生まれます。</p>
+  </div>
+
+  <h2 id="tip2">改善策②：予算配分をPDCAで段階的に最適化する</h2>
+
+  <p>限られた予算で表示率を上げるために有効なのが、「反応の良い時間帯・曜日に予算を集中させる」PDCA運用です。</p>
+
+  <p>実際の運用事例では、1ヶ月間コンバージョンがゼロだったアカウントに対してこのPDCAを適用したところ、<strong>10日間で2件のコンバージョンが発生</strong>しました。また競合に対するインプレッションシェアも<strong>10%未満から20%に改善</strong>しています。クリエイティブも予算総額も変えず、配分の最適化だけで起きた変化です。</p>
+
+  <p>多くの方がやりがちなのは、「成果が出ない時間帯の予算を一気にゼロにする」こと。しかしこれは危険で、データが少ない状態での判断はミスにつながります。</p>
+
+  <h3>推奨する予算最適化の流れ</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>フェーズ</th>
+        <th>やること</th>
+        <th>期間の目安</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Phase 1</strong></td>
+        <td>全時間帯・曜日で均等に配信してデータを蓄積</td>
+        <td>2〜4週間</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 2</strong></td>
+        <td>クリック率・CVRが高い時間帯の入札比率を+20〜30%に引き上げ</td>
+        <td>2週間</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 3</strong></td>
+        <td>反応が低い時間帯の入札比率を段階的に下げる（いきなり0にしない）</td>
+        <td>2週間</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 4</strong></td>
+        <td>結果を見て再調整。このサイクルを繰り返す</td>
+        <td>継続</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="point-box">
+    <div class="point-title">✅ ポイント</div>
+    <p>「いきなり0にしない」が鉄則です。入札比率を-50%→-70%→-100%のように段階的に下げながら、各フェーズで結果を確認しましょう。これにより、「実は夜中に意外とコンバージョンしていた」という見逃しを防げます。</p>
+  </div>
+
+  <h2 id="tip3">改善策③：マッチタイプを見直して無駄な消化を防ぐ</h2>
+
+  <!-- 画像②：ここにマッチタイプ説明画像を挿入 -->
+
+  <p>Google広告には「マッチタイプ」という設定があり、どの検索語句に広告を表示するかを制御できます。これを正しく設定しないと、まったく関係のない検索に広告費が消えていきます。</p>
+
+  <h3>マッチタイプの種類と特徴</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>種類</th>
+        <th>特徴</th>
+        <th>向いているケース</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>部分一致</strong></td>
+        <td>関連するあらゆる検索に表示。リーチは広いが無駄も多い</td>
+        <td>データ収集フェーズ</td>
+      </tr>
+      <tr>
+        <td><strong>フレーズ一致</strong></td>
+        <td>指定フレーズを含む検索に表示。バランスが取れている</td>
+        <td>ある程度絞りたい場合</td>
+      </tr>
+      <tr>
+        <td><strong>完全一致</strong></td>
+        <td>指定したキーワードとほぼ同じ検索にのみ表示。精度が高い</td>
+        <td>成果が出ているキーワードを効率化したい場合</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="example-box">
+    <span class="example-label">📌 よくある失敗例</span>
+    <p>「外壁塗装」で部分一致設定にしていたら、「外壁塗装 DIY やり方」「外壁塗装 資格 取り方」など、明らかに顧客ではない人の検索にも広告が表示されていたケース。フレーズ一致や完全一致に変えるだけで無駄な消化が大幅に減ります。</p>
+  </div>
+
+  <p>広告を始めたばかりのフェーズではデータ収集のために部分一致も有効ですが、ある程度データが蓄積されたらフレーズ一致・完全一致に絞ることで、費用対効果が大きく改善します。</p>
+
+  <h2 id="tip4">改善策④：検索語句レポートを定期チェックする</h2>
+
+  <!-- 画像③：ここに検索語句レポート説明画像を挿入 -->
+
+  <p>Google広告の「検索語句レポート」は、実際にどんな検索ワードで広告が表示・クリックされたかを確認できる機能です。これを定期的にチェックすることが、無駄な広告費を削減する最も確実な方法の一つです。</p>
+
+  <h3>検索語句レポートでできること</h3>
+  <ul>
+    <li><strong>無駄なキーワードの発見</strong>：関係のない検索語句を「除外キーワード」に追加して、無駄な表示を防ぐ</li>
+    <li><strong>新しいキーワードの発掘</strong>：思っていなかった有望なキーワードが見つかることがある</li>
+    <li><strong>ターゲットのズレに気づく</strong>：どんな人が広告をクリックしているかを把握できる</li>
+  </ul>
+
+  <div class="example-box">
+    <span class="example-label">📌 チェック頻度の目安</span>
+    <p>月予算5万円以下：月1〜2回<br>月予算10万円以上：週1回<br>月予算30万円以上：週2〜3回<br><br>予算が多いほど、チェック頻度を上げることで無駄な消化を早期に発見・対処できます。</p>
+  </div>
+
+  <h3>除外キーワードの設定方法</h3>
+  <p>検索語句レポートで「関係ない」と判断した語句は、すぐに除外キーワードとして登録しましょう。管理画面 → キーワード → 除外キーワードから設定できます。これを継続するだけで、数ヶ月後には無駄な消化が大幅に減ります。</p>
+
+  <!-- まとめ -->
+  <h2 id="summary">まとめ</h2>
+
+  <p>Google広告の費用対効果を上げるために今日からできる4つの改善策をまとめます。</p>
+
+  <div class="summary-box">
+    <h3>📋 4つの改善策まとめ</h3>
+    <ul>
+      <li><strong>改善策①</strong>：配信時間・曜日をターゲットの生活リズムに合わせて絞る</li>
+      <li><strong>改善策②</strong>：予算配分はデータを見ながら段階的にPDCAで最適化する（いきなり0にしない）</li>
+      <li><strong>改善策③</strong>：マッチタイプをフレーズ一致・完全一致に絞り、無駄な消化を防ぐ</li>
+      <li><strong>改善策④</strong>：検索語句レポートを定期チェックして除外キーワードを積み上げる</li>
+    </ul>
+  </div>
+
+  <p>これらはどれも、広告管理画面から今すぐ確認・設定できる内容です。ただし、正しい判断にはデータの読み方と運用経験が必要で、「どこから手をつければいいかわからない」という方も多いと思います。</p>
+
+  <p>IgyではGoogle広告の運用代行・改善サポートを行っています。現在の広告アカウントの無料診断も承っていますので、お気軽にご相談ください。</p>
+
+  <!-- CTA -->
+  <style>
+    :root {
+      --color-primary: #0a192f;
+      --color-primary-light: #172a45;
+      --color-accent-gold: #c9a962;
+    }
+    .blog-cta { margin: 0; }
+    .no-margin-bottom { margin-bottom: 0 !important; }
+    .blog-cta-inner {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      .blog-cta-inner { padding: 48px 40px; }
+    }
+    .blog-cta-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: white !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+    @media (min-width: 768px) {
+      .blog-cta-title { font-size: 1.5rem; }
+    }
+    .blog-cta-text {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .blog-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (min-width: 480px) {
+      .blog-cta-buttons { flex-direction: row; justify-content: center; }
+    }
+    .blog-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .blog-cta-btn-primary { background: white; color: var(--color-primary); }
+    .blog-cta-btn-primary:hover {
+      background: var(--color-accent-gold);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .blog-cta-btn-line { background: #06C755; color: white; }
+    .blog-cta-btn-line:hover {
+      background: #05b34c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6,199,85,0.35);
+    }
+    .blog-cta-icon { width: 20px; height: 20px; flex-shrink: 0; }
+  </style>
+  <section class="blog-cta">
+    <div class="blog-cta-inner">
+      <h2 class="blog-cta-title">広告運用・Web集客のお悩み、プロに相談しませんか？</h2>
+      <p class="blog-cta-text">Igyでは、データに基づいた戦略立案から実行・改善まで、ワンストップでサポートいたします。まずはお気軽にご相談ください。</p>
+      <div class="blog-cta-buttons">
+        <a href="/contact.html" class="blog-cta-btn blog-cta-btn-primary">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          お問い合わせ
+        </a>
+        <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer" class="blog-cta-btn blog-cta-btn-line">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+          </svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
