@@ -812,12 +812,27 @@ function initCookieConsent() {
   const banner = document.getElementById('cookie-consent-banner');
   const acceptBtn = document.getElementById('cookie-consent-accept');
 
-  // Fade in animation with a slight delay
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      banner.classList.add('visible');
-    });
-  }, 1000);
+  const showBanner = () => {
+    // Fade in animation with a slight delay after loader finishes
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        banner.classList.add('visible');
+      });
+    }, 500);
+  };
+
+  // Wait until page loader is completely removed before showing the banner
+  const pageLoader = document.getElementById('page-loader');
+  if (pageLoader) {
+    const checkLoader = setInterval(() => {
+      if (!document.getElementById('page-loader')) {
+        clearInterval(checkLoader);
+        showBanner();
+      }
+    }, 200);
+  } else {
+    showBanner();
+  }
 
   acceptBtn.addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'accepted');
