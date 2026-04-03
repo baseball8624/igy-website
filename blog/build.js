@@ -283,6 +283,15 @@ function buildArticlePages(posts, categories, distAssets) {
         const relatedHtml = generateRelatedPosts(post, posts, categories);
         const jsonLd = generateJsonLd(post);
 
+        // 記事本文から独自CTAを抽出し、blog-content外に配置する
+        let bodyContent = post.body;
+        let customCta = '';
+        const ctaMatch = bodyContent.match(/<section class="blog-cta">[\s\S]*?<\/section>/);
+        if (ctaMatch) {
+            customCta = ctaMatch[0];
+            bodyContent = bodyContent.replace(ctaMatch[0], '');
+        }
+
         let html = template
             .replace(/{{TITLE}}/g, escapeHtml(post.title))
             .replace(/{{DESCRIPTION}}/g, escapeHtml(post.description))
@@ -299,14 +308,14 @@ function buildArticlePages(posts, categories, distAssets) {
             .replace(/{{MODIFIED_DATE_DISPLAY}}/g, formatDate(post.modifiedAt))
             .replace(/<a href="\/blog\/category\/{{CATEGORY_SLUG}}\.html" class="blog-article-category-tag">{{CATEGORY_NAME}}<\/a>/g, categoryTagsHtml)
             .replace(/{{TOC}}/g, toc)
-            .replace(/{{BODY}}/g, post.body)
+            .replace(/{{BODY}}/g, bodyContent)
             .replace(/{{RELATED_POSTS}}/g, relatedHtml)
             .replace(/{{JSON_LD}}/g, jsonLd)
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
-        // もし記事本文に独自のCTAが含まれている場合は、デフォルトのCTAを削除する
-        if (post.body.includes('class="blog-cta"')) {
-            html = html.replace(/<!-- DEFAULT_CTA_START -->[\s\S]*?<!-- DEFAULT_CTA_END -->/, '');
+        // 独自CTAがある場合はデフォルトCTAを独自CTAに置き換える
+        if (customCta) {
+            html = html.replace(/<!-- DEFAULT_CTA_START -->[\s\S]*?<!-- DEFAULT_CTA_END -->/, customCta);
         }
 
         writeFileSync(join(outputDir, `${post.slug}.html`), html, 'utf-8');
