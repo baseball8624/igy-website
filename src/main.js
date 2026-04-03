@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTouchFeedback();
   initVideoPoster();
   initSeamlessLoop();
+  initCookieConsent();
 });
 
 // ========== Seamless Video Loop (動画のシームレスループ) ==========
@@ -787,3 +788,43 @@ function initStickyBanner() {
   // 初期チェック
   handleScroll();
 }
+
+// ========== Cookie Consent Banner ==========
+function initCookieConsent() {
+  const consentStatus = localStorage.getItem('cookieConsent');
+  if (consentStatus === 'accepted') return;
+
+  const bannerHTML = `
+    <div id="cookie-consent-banner" class="cookie-banner">
+      <div class="cookie-banner-content">
+        <p class="cookie-banner-text">
+          当サイトでは、サービスの品質向上および利便性向上のためにCookieを使用しています。「同意する」をクリックすると、Cookieの使用に同意したことになります。詳しくは<a href="/privacy.html" class="cookie-banner-link">プライバシーポリシー</a>をご確認ください。
+        </p>
+        <div class="cookie-banner-actions">
+          <button id="cookie-consent-accept" class="cookie-banner-btn cookie-banner-accept">同意する</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', bannerHTML);
+
+  const banner = document.getElementById('cookie-consent-banner');
+  const acceptBtn = document.getElementById('cookie-consent-accept');
+
+  // Fade in animation with a slight delay
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      banner.classList.add('visible');
+    });
+  }, 1000);
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.classList.remove('visible');
+    setTimeout(() => {
+      banner.remove();
+    }, 400);
+  });
+}
+
