@@ -304,6 +304,11 @@ function buildArticlePages(posts, categories, distAssets) {
             .replace(/{{JSON_LD}}/g, jsonLd)
             .replace(/{{SITE_URL}}/g, SITE_URL);
 
+        // もし記事本文に独自のCTAが含まれている場合は、デフォルトのCTAを削除する
+        if (post.body.includes('class="blog-cta"')) {
+            html = html.replace(/<!-- DEFAULT_CTA_START -->[\s\S]*?<!-- DEFAULT_CTA_END -->/, '');
+        }
+
         writeFileSync(join(outputDir, `${post.slug}.html`), html, 'utf-8');
         if (DIST_MODE) writeFileSync(join(distOutputDir, `${post.slug}.html`), replaceAssetsForDist(html, distAssets), 'utf-8');
         console.log(`✅ 記事ページ生成: blog/${post.slug}.html`);
