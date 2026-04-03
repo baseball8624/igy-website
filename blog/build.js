@@ -16,7 +16,7 @@ const __dirname = dirname(__filename);
 const ROOT_DIR = join(__dirname, '..');
 const DIST_MODE = process.env.BLOG_DIST === '1'; // dist/blog/ にも出力するフラグ
 
-const SITE_URL = 'https://igy-inc.jp';
+const SITE_URL = 'https://www.igy-inc.jp';
 const POSTS_PER_PAGE = 10;
 
 // ── ヘルパー関数 ──
