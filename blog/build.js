@@ -395,7 +395,7 @@ function updateSitemap(posts, categories) {
 
     // 既存のブログURLを削除
     const cleaned = existingContent
-        .replace(/\s*<url>\s*<loc>https:\/\/igy-inc\.jp\/blog\/[^<]*<\/loc>[\s\S]*?<\/url>/g, '')
+        .replace(/\s*<url>\s*<loc>https:\/\/(www\.)?igy-inc\.jp\/blog\/[^<]*<\/loc>[\s\S]*?<\/url>/g, '')
         .replace('</urlset>', '');
 
     let blogUrls = '';
