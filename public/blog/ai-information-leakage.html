@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ChatGPTなどの生成AIを業務で使う企業が急増する中、情報漏洩リスクが新たな脅威として浮上しています。実際に起きた事例と、今日からできる具体的な対策を解説します。" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.igy-inc.jp/blog/ai-information-leakage.html" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策 ｜ Igy" />
+    <meta property="og:description" content="ChatGPTなどの生成AIを業務で使う企業が急増する中、情報漏洩リスクが新たな脅威として浮上しています。実際に起きた事例と、今日からできる具体的な対策を解説します。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content="https://www.igy-inc.jp/blog/images/ai-information-leakage-1.png" />
+    <meta property="og:url" content="https://www.igy-inc.jp/blog/ai-information-leakage.html" />
+    <meta property="og:site_name" content="Igy" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策 ｜ Igy" />
+    <meta name="twitter:description" content="ChatGPTなどの生成AIを業務で使う企業が急増する中、情報漏洩リスクが新たな脅威として浮上しています。実際に起きた事例と、今日からできる具体的な対策を解説します。" />
+    <meta name="twitter:image" content="https://www.igy-inc.jp/blog/images/ai-information-leakage-1.png" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策",
+      "description": "ChatGPTなどの生成AIを業務で使う企業が急増する中、情報漏洩リスクが新たな脅威として浮上しています。実際に起きた事例と、今日からできる具体的な対策を解説します。",
+      "image": "https://www.igy-inc.jp/blog/images/ai-information-leakage-1.png",
+      "author": {
+        "@type": "Person",
+        "name": "藤井 拓真",
+        "jobTitle": "代表",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Igy",
+          "url": "https://www.igy-inc.jp/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Igy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.igy-inc.jp/logo_full.png"
+        }
+      },
+      "datePublished": "2026-04-03",
+      "dateModified": "2026-04-03",
+      "mainEntityOfPage": "https://www.igy-inc.jp/blog/ai-information-leakage.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "TOP",
+          "item": "https://www.igy-inc.jp/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.igy-inc.jp/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策",
+          "item": "https://www.igy-inc.jp/blog/ai-information-leakage.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <title>【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策 ｜ Igy</title>
+    <link rel="stylesheet" href="/assets/style-CeQt0ayI.css" />
+    <link rel="stylesheet" href="/assets/blog-B4BKPgIm.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EJ6RNG08GY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EJ6RNG08GY');
+</script>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-scrolled">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="block group">
+                    <img src="/images/logo_full.png" alt="Igy Logo"
+                        class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li>
+                        <a href="/#about" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">ABOUT US</span>
+                            <span class="block text-xs opacity-60">私たちについて</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/message.html"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">MESSAGE</span>
+                            <span class="block text-xs opacity-60">代表ご挨拶</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#services"
+                            class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">SERVICES</span>
+                            <span class="block text-xs opacity-60">事業内容</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">BLOG</span>
+                            <span class="block text-xs opacity-60">コラム</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#faq" class="text-text-secondary hover:text-primary transition-colors font-medium">
+                            <span class="block text-sm font-bold">FAQ</span>
+                            <span class="block text-xs opacity-60">よくあるご質問</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact.html"
+                            class="btn-primary inline-flex flex-col items-center px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-light">
+                            <span class="text-sm font-bold">CONTACT</span>
+                            <span class="text-xs opacity-80">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="メニューを開く">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 md:w-64 bg-white shadow-2xl md:hidden">
+        <div class="p-6">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-primary" aria-label="メニューを閉じる">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <ul class="mt-12 space-y-6">
+                <li>
+                    <a href="/#about" class="block text-text-primary">
+                        <span class="block text-lg font-bold">ABOUT US</span>
+                        <span class="block text-sm text-text-secondary">私たちについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/message.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">MESSAGE</span>
+                        <span class="block text-sm text-text-secondary">代表ご挨拶</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#services" class="block text-text-primary">
+                        <span class="block text-lg font-bold">SERVICES</span>
+                        <span class="block text-sm text-text-secondary">事業内容</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog/" class="block text-text-primary">
+                        <span class="block text-lg font-bold">BLOG</span>
+                        <span class="block text-sm text-text-secondary">コラム</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#faq" class="block text-text-primary">
+                        <span class="block text-lg font-bold">FAQ</span>
+                        <span class="block text-sm text-text-secondary">よくあるご質問</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="block text-text-primary">
+                        <span class="block text-lg font-bold">CONTACT</span>
+                        <span class="block text-sm text-text-secondary">お問い合わせ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========== ARTICLE ========== -->
+    <main class="blog-main">
+        <!-- パンくずリスト -->
+        <nav class="blog-breadcrumb" aria-label="パンくずリスト">
+            <ol>
+                <li><a href="/">TOP</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li aria-current="page">【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策</li>
+            </ol>
+        </nav>
+
+        <article class="blog-article">
+            <!-- 記事ヘッダー -->
+            <header class="blog-article-header">
+                <h1 class="blog-article-title">【2026年最新】企業がAIを使う上で知っておくべき情報漏洩リスクと対策</h1>
+                <div class="blog-article-meta">
+                    <time class="blog-article-date" datetime="2026-04-03">
+                        <svg class="blog-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                        公開: 2026年4月3日
+                    </time>
+                    <time class="blog-article-date" datetime="2026-04-03">
+                        <svg class="blog-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        更新: 2026年4月3日
+                    </time>
+                </div>
+                <a href="/blog/category/ai-tech.html" class="blog-article-category-tag">AI</a>
+            </header>
+
+            <!-- アイキャッチ画像 -->
+            <div class="blog-eyecatch">
+                <img src="/blog/images/ai-information-leakage-1.png" alt="企業のAI情報漏洩リスクと対策" width="1200" height="630"
+                    loading="eager" class="blog-eyecatch-img">
+            </div>
+
+            <!-- 目次 -->
+            <nav class="blog-toc" aria-label="目次">
+<p class="blog-toc-title">目次</p>
+<ol class="blog-toc-list">
+<li><a href="#risk">「悪意がない」から気づけない、AIの情報漏洩</a></li>
+<li><a href="#cases">実際に何が起きたか</a></li>
+<li><a href="#mechanism">なぜ漏れるのか——3つの仕組み</a></li>
+<li><a href="#measures">今日からできる4つの対策</a></li>
+<li><a href="#summary">まとめ</a></li>
+</ol>
+</nav>
+
+            <!-- 記事本文 -->
+            <div class="blog-content">
+                <p>「議事録の要約をChatGPTに頼んだ」「ソースコードのバグをAIに直してもらった」——こういった使い方、社内でも当たり前になってきていると思います。</p>
+  <p>「AIに何を入れるかは気をつけた方がいい」という感覚はある。でも<strong>具体的に何がどう危ないのか、正直よくわかっていない</strong>という方も多いのではないでしょうか。この記事では、実際に起きた事例をもとに、AIによる情報漏洩の仕組みと今すぐできる対策を整理します。</p>
+
+  <h2 id="risk">「悪意がない」から気づけない、AIの情報漏洩</h2>
+
+  <p>従来の情報漏洩は「ハッカーによる不正アクセス」や「内部の人間による持ち出し」が主な原因でした。だから対策も「外からの攻撃を防ぐ」「怪しい行動を監視する」という方向性になりがちでした。</p>
+  <p>しかしAI時代の情報漏洩は、まったく違う構造で起きます。<strong>普通の業務を、普通のやり方でやっているだけで、気づかないうちに情報が外に出ていく</strong>。これがAI特有のリスクです。</p>
+
+  <div class="alert-block">
+    <span class="alert-label">こんな使い方、していませんか？</span>
+    <p>
+      「会議の録音をそのままAIに貼り付けて要約させた」<br>
+      「顧客から届いたメールの内容をAIに見せて返信文を作った」<br>
+      「開発中のシステムのコードをAIに貼り付けてエラーを直してもらった」<br><br>
+      どれも「便利だから」という普通の動機で行われる行為です。しかしこれらは、場合によっては<strong>機密情報をAI企業のサーバーに送信していること</strong>と同じです。
+    </p>
+  </div>
+
+  <h2 id="cases">実際に何が起きたか</h2>
+
+  <!-- 画像② 事例セクション：ai-information-leakage-2.png をここに挿入 -->
+  <!-- <img src="/blog/images/ai-information-leakage-2.png" alt="AI情報漏洩の実際の事例" width="1200" height="630" style="width:100%;border-radius:12px;margin:0 0 32px;" loading="lazy"> -->
+
+  <p>「理論上のリスク」ではなく、すでに大手企業でも実際に起きています。</p>
+
+  <h3>大手電子機器メーカーでのソースコード流出</h3>
+  <p>2023年、大手電子機器メーカーのエンジニアが開発中の製品ソースコードをChatGPTに貼り付け、バグの修正を依頼しました。コードには製品の設計情報など、外部に一切出してはならない機密情報が含まれていました。</p>
+  <p>当時使用していたChatGPTは入力内容を学習データとして使用する設定になっており、社外秘のコードがAIの学習に取り込まれるリスクが生じました。同社はその後、社内ネットワークでの生成AI利用を即座に禁止しています。</p>
+
+  <div class="case-note">
+    <span class="case-note-label">ポイント</span>
+    <p>悪意はゼロ。「バグを早く直したかった」という普通の動機で起きた事故です。社内でのAI利用ルールがなければ、同じことはどの会社でも起こります。</p>
+  </div>
+
+  <h3>ChatGPTのバグによる他ユーザーへの履歴流出</h3>
+  <p>ChatGPT自体のシステムバグにより、あるユーザーのチャット履歴が、まったく無関係の別ユーザーの画面に表示されるという事故が起きました。「学習に使わない設定にしている」「有料プランだから安全」という認識は、システム障害が起きた瞬間には意味をなしません。</p>
+  <p>AIサービスに入力した情報は、何らかの形でサーバー上に残ります。<strong>そのサーバーが完璧に安全であり続ける保証は、どのサービスにも存在しません。</strong></p>
+
+  <h3>議事録をそのままアップロードして経営情報が流出</h3>
+  <p>重要な経営会議の録音データを文字起こしし、そのまま生成AIに渡して要約を作成させた事例。入力されたテキストには未発表の新事業・人事情報・財務の見通しなど、外部に出れば大きな影響を与える情報が含まれていました。「要約するだけだから大丈夫」という感覚が、情報漏洩の入口になります。</p>
+
+  <h2 id="mechanism">なぜ漏れるのか——3つの仕組み</h2>
+
+  <p>事例を見ると「自分ならやらない」と思うかもしれません。ただ仕組みを理解すると、実は身近な行為がリスクになっていることがわかります。</p>
+
+  <h3>① 入力内容がAIの学習データになる</h3>
+  <p>多くの生成AIサービスは、無料プランや初期設定のままだと、ユーザーの入力内容をAIの改善・学習に利用します。社員が入力した顧客情報・契約内容・未発表情報が、将来的に他のユーザーへの回答に影響する可能性があります。有料プランへの切り替えや設定変更で対応できる場合が多いですが、確認せずに使い続けているケースが大半です。</p>
+
+  <h3>② チャット履歴がサーバーに残り続ける</h3>
+  <p>AIとのやり取りはサービス提供会社のサーバーに保存されます。学習オプトアウトの設定をしていても、データ自体がサーバーに存在する限り、外部攻撃やシステムバグによる流出リスクはゼロにはなりません。</p>
+
+  <h3>③ 社員の端末経由でログイン情報が抜かれる</h3>
+  <p>企業のシステムが安全でも、社員の端末に悪意のあるソフトウェアが侵入していれば、AIサービスへのログイン情報や入力内容が第三者に抜き取られます。例えば、怪しいメールの添付ファイルを開いたり、不審なサイトからファイルをダウンロードしたりすることで、知らないうちにキー入力や画面を監視するプログラムが端末に入り込むことがあります。2025年には大手AIサービスのアカウント情報2,000万件以上がダークウェブで売買されていたことが確認されており、その多くがこうした端末への不正侵入が原因とされています。</p>
+
+  <h2 id="measures">今日からできる4つの対策</h2>
+
+  <!-- 画像③ 対策セクション：ai-information-leakage-3.png をここに挿入 -->
+  <!-- <img src="/blog/images/ai-information-leakage-3.png" alt="AIの情報漏洩対策" width="1200" height="630" style="width:100%;border-radius:12px;margin:0 0 32px;" loading="lazy"> -->
+
+  <p>リスクの話ばかりしていても仕方がないので、現実的に今日からできる対策を4つ整理します。技術的な知識は不要で、<strong>意思決定とルール作りで対応できるもの</strong>がほとんどです。</p>
+
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>「AIに入れてはいけない情報」を明文化して全社に周知する</strong>
+        <p>顧客の個人情報・契約書・未発表の経営情報・ソースコード・パスワードなど、入力禁止の情報をリスト化し、全社員に伝える。ルールがなければ社員は善意で情報を入力してしまいます。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>使用するAIツールを会社として指定する</strong>
+        <p>社員が各自で好きなAIツールを使う状態は危険です。会社として承認したツールのみを使用するよう統一し、セキュリティ設定が適切なものを選定する。承認されていないツールの使用禁止も明記しましょう。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>学習オプトアウトの設定を今すぐ確認する</strong>
+        <p>ChatGPTをはじめ多くのサービスには「入力データを学習に使用しない」設定があります。有料プランへの切り替えや設定変更で対応できる場合が多いので、今使っているツールの設定を必ず確認してください。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>「なぜ危ないのか」を社員全員が理解できる状態にする</strong>
+        <p>ルールを作っても、背景を理解していなければ守られません。「禁止」だけでなく「なぜ禁止なのか」を伝えることが重要です。定期的な研修や事例共有で、AIリテラシーを組織全体で底上げしていきましょう。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-block">
+    <p>全部を一気にやろうとしなくて大丈夫です。<strong>「入力禁止情報のリストを作って社員に送る」</strong>——これだけで今日のリスクを大幅に下げられます。完璧なルール整備より、まず動き出すことが重要です。</p>
+  </div>
+
+  <h2 id="summary">まとめ</h2>
+
+  <p>生成AIを業務で使うこと自体は、正しく使えば強力な武器になります。問題は「便利だから」という感覚で使い続け、リスクを把握しないまま社員全員が思い思いのやり方でAIを使っている状態です。</p>
+  <p>今のうちにルールを整備しておくことが、後から取り返しのつかない情報漏洩を防ぐ唯一の方法です。まず「入力してはいけない情報の明文化」と「使用ツールの統一」から始めてみてください。</p>
+  <p>IgyではAIを活用したマーケティング支援を行っています。「AIを安全に業務で使いたい」「どのツールをどう導入すればいいかわからない」という方はお気軽にご相談ください。</p>
+
+  <!-- CTA -->
+  <style>
+    :root {
+      --color-primary: #0a192f;
+      --color-primary-light: #172a45;
+      --color-accent-gold: #c9a962;
+    }
+    .blog-cta { margin: 0; }
+    .blog-cta-inner {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      color: white;
+    }
+    @media (min-width: 768px) { .blog-cta-inner { padding: 48px 40px; } }
+    .blog-cta-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: white !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+    @media (min-width: 768px) { .blog-cta-title { font-size: 1.5rem; } }
+    .blog-cta-text { font-size: 0.875rem; color: rgba(255,255,255,0.8); margin-bottom: 24px; line-height: 1.7; }
+    .blog-cta-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    @media (min-width: 480px) { .blog-cta-buttons { flex-direction: row; justify-content: center; } }
+    .blog-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .blog-cta-btn-primary { background: white; color: var(--color-primary); }
+    .blog-cta-btn-primary:hover { background: var(--color-accent-gold); color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .blog-cta-btn-line { background: #06C755; color: white; }
+    .blog-cta-btn-line:hover { background: #05b34c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(6,199,85,0.35); }
+    .blog-cta-icon { width: 20px; height: 20px; flex-shrink: 0; }
+  </style>
+  <section class="blog-cta">
+    <div class="blog-cta-inner">
+      <h2 class="blog-cta-title">AIを活用したマーケティング支援についてはこちら</h2>
+      <p class="blog-cta-text">Igyでは、AIを安全・効果的に活用したマーケティング支援を行っています。まずはお気軽にご相談ください。</p>
+      <div class="blog-cta-buttons">
+        <a href="/contact.html" class="blog-cta-btn blog-cta-btn-primary">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          お問い合わせ
+        </a>
+        <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer" class="blog-cta-btn blog-cta-btn-line">
+          <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+          </svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+            </div>
+
+            <!-- CTA -->
+            <section class="blog-cta">
+                <div class="blog-cta-inner">
+                    <h2 class="blog-cta-title">広告運用・Web集客のお悩み、プロに相談しませんか？</h2>
+                    <p class="blog-cta-text">Igyでは、データに基づいた戦略立案から実行・改善まで、ワンストップでサポートいたします。まずはお気軽にご相談ください。</p>
+                    <div class="blog-cta-buttons">
+                        <a href="/contact.html" class="blog-cta-btn blog-cta-btn-primary">
+                            <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            お問い合わせ
+                        </a>
+                        <a href="https://lin.ee/E6cJSdc" target="_blank" rel="noopener noreferrer"
+                            class="blog-cta-btn blog-cta-btn-line">
+                            <svg class="blog-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                            </svg>
+                            LINEで相談する
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連記事 -->
+            <section class="blog-related">
+<h2 class="blog-related-title">関連記事</h2>
+<div class="blog-related-grid">
+<a href="/blog/llmo-aio-seo.html" class="blog-card">
+          <div class="blog-card-image-wrapper">
+            <img src="/blog/images/llmo-aio-seo-5.png" alt="LLMO対策・AIO対策のやり方解説" width="1200" height="630" loading="lazy" class="blog-card-image">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span class="blog-card-category">SEO・コンテンツ</span><span class="blog-card-category">AI</span><span class="blog-card-category">LLMO対策</span></div>
+    <h3 class="blog-card-title">【2026年最新】LLMO対策とは？やり方と具体的な手順を徹底解説</h3>
+    <time class="blog-card-date" datetime="2026-03-12">2026年3月12日</time>
+  </div>
+</a>
+</div>
+</section>
+
+            <!-- 記事一覧への戻りリンク -->
+            <div class="blog-back-link">
+                <a href="/blog/" class="blog-back-btn">
+                    <svg class="blog-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    記事一覧に戻る
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-5 md:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <a href="/" class="text-2xl font-bold font-brand tracking-tight">Igy</a>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Links</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li><a href="/#about" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">ABOUT US</span><span
+                                    class="block text-sm opacity-70">私たちについて</span></a></li>
+                        <li><a href="/message.html" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">MESSAGE</span><span
+                                    class="block text-sm opacity-70">代表ご挨拶</span></a></li>
+                        <li><a href="/#services" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">SERVICES</span><span
+                                    class="block text-sm opacity-70">事業内容</span></a></li>
+                        <li><a href="/blog/" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">BLOG</span><span
+                                    class="block text-sm opacity-70">コラム</span></a></li>
+                        <li><a href="/#faq" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">FAQ</span><span
+                                    class="block text-sm opacity-70">よくあるご質問</span></a></li>
+<li><a href="/contact.html" class="hover:text-white transition-colors"><span
+                                    class="block font-semibold">CONTACT</span><span
+                                    class="block text-sm opacity-70">お問い合わせ</span></a></li>
+                        <li>
+                            <a href="/privacy.html" class="hover:text-white transition-colors">
+                                <span class="block font-semibold" style="letter-spacing: 0.05em; padding-top: 0.5rem;">PRIVACY POLICY</span>
+                                <span class="block text-sm opacity-70 mt-1">プライバシーポリシー</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li>igy.official.contact@gmail.com</li>
+                        <li>〒151-0051 東京都渋谷区千駄ヶ谷5-12-4</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">© 2026 Igy. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://lin.ee/E6cJSdc" class="text-white/40 hover:text-white transition-colors"
+                        aria-label="LINE" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/igy_official_?igsh=MTRsd3V5eTNpbm94dg%3D%3D&utm_source=qr"
+                        class="text-white/40 hover:text-white transition-colors" aria-label="Instagram" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/assets/blog-rHQbHMOc.js"></script>
+</body>
+
+</html>
