@@ -12,6 +12,7 @@ export default defineConfig({
         contact: 'contact.html',
         message: 'message.html',
         privacy: 'privacy.html',
+        philosophy: 'philosophy.html',
         blog: 'blog/index.html',
         ads: 'services/ads.html',
         ai: 'services/ai.html',
