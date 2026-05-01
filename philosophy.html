@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="/favicon.png?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
 
     <title>企業理念 | Igy</title>
     <meta name="description" content="Igyの企業理念。「世界中の人々を幸せにする」という存在目的と、6つの基本的価値観をご紹介します。">
@@ -92,13 +92,9 @@
 
         /* Core Purpose */
         .core-purpose {
-            background: #ffffff;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
             padding: 4rem 2rem;
             text-align: center;
             margin-bottom: 6rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .core-purpose-label {
@@ -139,40 +135,46 @@
         .core-values-list {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2.5rem;
+            max-width: 680px;
+            margin: 0 auto;
         }
 
         .value-item {
-            background: #ffffff;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: 2rem;
             display: flex;
             align-items: flex-start;
             gap: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .value-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-color: rgba(201, 169, 98, 0.3);
+            transform: translateX(10px);
         }
 
         .value-num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
             color: var(--color-accent-gold);
-            line-height: 1;
-            padding-top: 0.25rem;
+            line-height: 1.2;
+            padding-top: 0;
+            white-space: nowrap;
         }
 
         .value-text {
-            font-size: 1.125rem;
-            font-weight: 700;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
             color: var(--color-primary);
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
         }
 
         @media (max-width: 768px) {
@@ -181,8 +183,8 @@
             }
             .value-item {
                 flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
+                gap: 0.5rem;
+                padding-bottom: 2rem;
             }
             .core-purpose {
                 padding: 3rem 1.5rem;
@@ -323,27 +325,27 @@
                 </div>
                 <div class="core-values-list">
                     <div class="value-item">
-                        <div class="value-num">01</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">人格者たれ。</div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">02</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">お客様以上にお客様の立場で考える。</div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">03</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">目の前のお客様に全力を注ぎ、全てのお客様に感動を与える。</div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">04</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">より良い世界にするために、圧倒的な量とスピードで行動し続ける。</div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">05</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">個人を尊重し、全員が成長する。</div>
                     </div>
                     <div class="value-item">
-                        <div class="value-num">06</div>
+                        <div class="value-num">一、</div>
                         <div class="value-text">全員が誇りを持って仕事ができる企業になる。</div>
                     </div>
                 </div>
