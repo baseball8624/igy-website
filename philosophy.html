@@ -49,43 +49,144 @@
     </script>
 
     <style>
-        .value-item {
-            border-left: 3px solid var(--color-accent-gold);
-            padding: 1.5rem 1.5rem 1.5rem 2rem;
-            background: #fff;
-            border-radius: 0 0.75rem 0.75rem 0;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        #philosophy-section {
+            background: linear-gradient(to bottom, #F8F9FA 0%, #FFFFFF 100%);
+            padding: 12rem 1.5rem 6rem !important;
+            min-height: 100vh;
         }
-        .value-item:hover {
-            background: var(--color-bg-alt);
-            transform: translateX(6px);
-            box-shadow: 0 4px 20px rgba(10,25,47,0.08);
+
+        .philosophy-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .value-number {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 800;
+
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .philosophy-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
             letter-spacing: 0.15em;
             color: var(--color-accent-gold);
-            display: block;
+            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
-        .philosophy-hero-bg {
-            background: linear-gradient(135deg, #0A192F 0%, #112240 50%, #0d1f38 100%);
+
+        .philosophy-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
-        .core-purpose-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 1rem;
-            padding: 3rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        .divider-gold {
+
+        .philosophy-divider {
             width: 60px;
             height: 3px;
             background: var(--color-accent-gold);
             margin: 0 auto;
+        }
+
+        /* Core Purpose */
+        .core-purpose {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 6rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .core-purpose-label {
+            font-family: 'Outfit', sans-serif;
+            color: var(--color-accent-gold);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .core-purpose-jp {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .core-purpose-main {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 768px) {
+            .core-purpose-main {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Core Values */
+        .core-values-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .core-values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .value-item {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: rgba(201, 169, 98, 0.3);
+        }
+
+        .value-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-accent-gold);
+            line-height: 1;
+            padding-top: 0.25rem;
+        }
+
+        .value-text {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            #philosophy-section {
+                padding: 8rem 1.25rem 4rem !important;
+            }
+            .value-item {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            .core-purpose {
+                padding: 3rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -195,115 +296,58 @@
         </div>
     </div>
 
-    <!-- ========== BREADCRUMB ========== -->
-    <div class="pt-24 bg-bg-alt">
-        <div class="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 py-4">
-            <nav class="flex items-center gap-2 text-sm text-text-secondary">
-                <a href="/" class="hover:text-primary transition-colors">Home</a>
-                <span>/</span>
-                <span class="text-primary font-medium">企業理念</span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- ========== HERO ========== -->
-    <section class="philosophy-hero-bg relative overflow-hidden py-24 md:py-36">
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="geometric-orb geometric-orb-1 absolute w-80 h-80 bg-accent-gold/10 -top-20 -right-20 blur-[120px]"></div>
-        <div class="geometric-orb geometric-orb-2 absolute w-96 h-96 bg-blue-500/10 bottom-0 -left-20 blur-[140px]"></div>
-
-        <div class="relative z-10 max-w-4xl mx-auto px-5 md:px-6 lg:px-8 text-center text-white">
-            <p class="text-accent-gold font-bold tracking-widest uppercase text-sm mb-4 reveal">PHILOSOPHY</p>
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 reveal delay-100">企業理念</h1>
-            <div class="divider-gold mb-8 reveal delay-200"></div>
-            <p class="text-white/70 text-lg leading-relaxed reveal delay-300">Igyが大切にする考え方と、私たちを突き動かす価値観</p>
-        </div>
-    </section>
-
-    <!-- ========== CORE PURPOSE ========== -->
-    <section class="py-20 lg:py-28 bg-primary">
-        <div class="max-w-4xl mx-auto px-5 md:px-6 lg:px-8">
-            <div class="core-purpose-card reveal">
-                <p class="text-accent-gold font-bold tracking-widest uppercase text-xs mb-6">Core Purpose / 存在目的</p>
-                <p class="text-accent-gold font-bold tracking-widest uppercase text-xs mb-3">基本理念</p>
-                <div class="divider-gold mb-8"></div>
-                <p class="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                    世界中の人々を<br class="md:hidden">幸せにする。
-                </p>
-                <p class="text-white/50 text-base mt-6">Make People Around the World Happy.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CORE VALUES ========== -->
-    <section class="py-20 lg:py-28 bg-bg-alt">
-        <div class="max-w-4xl mx-auto px-5 md:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <p class="text-accent-gold font-bold tracking-widest uppercase text-xs mb-3">Core Values</p>
-                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">基本的価値観</h2>
-                <div class="divider-gold mb-6 mx-auto"></div>
-                <p class="text-text-secondary">私たちが日々の行動において大切にしている6つの価値観</p>
+    <!-- ========== PHILOSOPHY SECTION ========== -->
+    <section id="philosophy-section">
+        <div class="philosophy-container">
+            <!-- Header -->
+            <div class="philosophy-header">
+                <span class="philosophy-label">PHILOSOPHY</span>
+                <h1 class="philosophy-title">企業理念</h1>
+                <div class="philosophy-divider"></div>
             </div>
 
-            <div class="space-y-4">
-                <div class="value-item reveal stagger-1">
-                    <span class="value-number">VALUE 01</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">人格者たれ。</p>
-                </div>
-                <div class="value-item reveal stagger-2">
-                    <span class="value-number">VALUE 02</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">お客様以上にお客様の立場で考える。</p>
-                </div>
-                <div class="value-item reveal stagger-3">
-                    <span class="value-number">VALUE 03</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">目の前のお客様に全力を注ぎ、全てのお客様に感動を与える。</p>
-                </div>
-                <div class="value-item reveal stagger-4">
-                    <span class="value-number">VALUE 04</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">より良い世界にするために、圧倒的な量とスピードで行動し続ける。</p>
-                </div>
-                <div class="value-item reveal stagger-5">
-                    <span class="value-number">VALUE 05</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">個人を尊重し、全員が成長する。</p>
-                </div>
-                <div class="value-item reveal stagger-6">
-                    <span class="value-number">VALUE 06</span>
-                    <p class="text-primary font-bold text-lg md:text-xl">全員が誇りを持って仕事ができる企業になる。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== VISION (暫定) ========== -->
-    <section class="py-20 lg:py-28 bg-white">
-        <div class="max-w-4xl mx-auto px-5 md:px-6 lg:px-8 text-center reveal">
-            <p class="text-accent-gold font-bold tracking-widest uppercase text-xs mb-3">Vision</p>
-            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">私たちのビジョン</h2>
-            <div class="divider-gold mb-10"></div>
-            <div class="bg-bg-alt rounded-2xl p-10 md:p-16">
-                <p class="text-primary text-2xl md:text-3xl font-bold leading-relaxed mb-6">
-                    テクノロジーは、<br>ビジネスを「正しく」するためにある。
-                </p>
-                <p class="text-text-secondary text-lg leading-relaxed">
-                    無駄なコスト、長すぎる開発期間、根拠のない提案。それらはすべて、お客様の情熱を削ぐ「ノイズ」です。<br class="hidden md:block">
-                    私たちがAIや最新技術にこだわる理由はただ一つ。そのノイズを極限まで取り除き、お客様の事業が持つ「本来の価値」を最短・最速で社会に届けるためです。
+            <!-- Core Purpose -->
+            <div class="core-purpose reveal">
+                <div class="core-purpose-label">CORE PURPOSE</div>
+                <div class="core-purpose-jp">存在目的</div>
+                <p class="core-purpose-main">
+                    世界中の人々を幸せにする。
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- ========== CTA ========== -->
-    <section class="py-20 bg-gradient-to-br from-primary via-primary to-primary-light">
-        <div class="max-w-4xl mx-auto px-5 md:px-6 lg:px-8 text-center reveal">
-            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">まずはお気軽にご相談ください。</h2>
-            <p class="text-lg text-white/80 mb-10">理念に共感していただけましたら、ぜひ一度お話しましょう。</p>
-            <a href="/contact.html" class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                無料でご相談する
-                <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </a>
+            <!-- Core Values -->
+            <div class="core-values reveal">
+                <div class="core-values-header">
+                    <div class="core-purpose-label">CORE VALUES</div>
+                    <div class="core-purpose-jp">基本的価値観</div>
+                </div>
+                <div class="core-values-list">
+                    <div class="value-item">
+                        <div class="value-num">01</div>
+                        <div class="value-text">人格者たれ。</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-num">02</div>
+                        <div class="value-text">お客様以上にお客様の立場で考える。</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-num">03</div>
+                        <div class="value-text">目の前のお客様に全力を注ぎ、全てのお客様に感動を与える。</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-num">04</div>
+                        <div class="value-text">より良い世界にするために、圧倒的な量とスピードで行動し続ける。</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-num">05</div>
+                        <div class="value-text">個人を尊重し、全員が成長する。</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-num">06</div>
+                        <div class="value-text">全員が誇りを持って仕事ができる企業になる。</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
