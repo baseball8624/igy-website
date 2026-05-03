@@ -23,6 +23,7 @@ export default defineConfig({
         line: 'services/line.html',
         marketing: 'services/marketing.html',
         sales_dx: 'services/sales-dx.html',
+        sales_partnership: 'services/sales-partnership.html',
         support: 'services/support.html',
         web: 'services/web.html',
       },
