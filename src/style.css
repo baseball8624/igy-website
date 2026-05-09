@@ -212,7 +212,7 @@
     max-width: 100vw;
     position: relative;
     -webkit-tap-highlight-color: transparent;
-    background-color: var(--color-primary);
+    overscroll-behavior: none;
   }
 
   body {
@@ -227,6 +227,7 @@
     width: 100%;
     max-width: 100vw;
     position: relative;
+    overscroll-behavior: none;
   }
 
   @media (max-width: 767px) {
