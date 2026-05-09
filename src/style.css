@@ -212,6 +212,7 @@
     max-width: 100vw;
     position: relative;
     -webkit-tap-highlight-color: transparent;
+    background-color: var(--color-primary);
   }
 
   body {
