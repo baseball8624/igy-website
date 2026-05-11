@@ -535,6 +535,13 @@ function initContactForm() {
       if (response.ok) {
         showNotification('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。', 'success');
         form.reset();
+        
+        // GTM Conversion Tracking
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'contact_form_submit',
+          'form_name': 'contact_form'
+        });
       } else {
         throw new Error('Network response was not ok');
       }
