@@ -26,6 +26,7 @@ export default defineConfig({
         sales_dx: 'services/sales-dx.html',
         sales_partnership: 'services/sales-partnership.html',
         support: 'services/support.html',
+        web_development: 'services/web-development.html',
         web: 'services/web.html',
       },
     },
